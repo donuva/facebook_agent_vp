@@ -18,7 +18,7 @@ To get started, clone this repository to your local machine using the following 
 
 ```cmd
 git clone https://github.com/group4-LLM-fin/llm_fin.git
-cd llm_fin
+cd chabot_demo
 ```
 ### Installation
 Create and activate a virtual environment (optional but recommended)
