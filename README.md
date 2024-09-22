@@ -18,6 +18,7 @@ To get started, clone this repository to your local machine using the following 
 
 ```cmd
 git clone https://github.com/group4-LLM-fin/llm_fin.git
+cd chabot_demo
 cd chatbot_demo
 ```
 ### Installation
