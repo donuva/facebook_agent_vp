@@ -7,11 +7,19 @@ try:
 except Exception as e:
     raise Exception("Error : {}".format(e))
 
+st.set_page_config(
+    page_title="Chatbot",
+    page_icon="graphics/icon1.png" 
+)
+st.logo('graphics/app_logo.png')
+
 if 'memory' not in st.session_state:
     st.session_state.memory = ConversationBufferMemory(return_messages=True, memory_key="chat_history")
 
+with st.chat_message(avatar=r"graphics\app_logo.png", name="system"):
+    st.markdown("© 2024 EDA - VPBank. All rights reserved.")
+
 # Display previous chat history
-print(st.session_state.memory.chat_memory.messages)
 for message in st.session_state.memory.chat_memory.messages:
     if message["role"] == "assistant" or message["role"] == "user":
         with st.chat_message(message["role"]):
