@@ -1,5 +1,4 @@
 try:
-    import faiss
     import numpy as np
 except Exception as e:
     raise Exception("Error : {}".format(e))

@@ -18,7 +18,7 @@ To get started, clone this repository to your local machine using the following 
 
 ```cmd
 git clone https://github.com/group4-LLM-fin/llm_fin.git
-cd llm_fin
+cd chatbot_demo
 ```
 ### Installation
 Create and activate a virtual environment (optional but recommended)
@@ -30,20 +30,14 @@ Install dependencies
 ```cmd
 pip install -r requirements.txt
 ```
+### Config environment
+- Create .env file
+- Copy content in .env.example
+- Fill your environment config
 
 ### Start the app
 ```cmd
 streamlit run Home.py --server.port 6789
 ```
 
-# TO DO
-- [x] Format project structure
-  - [ ] [Minh Anh] Complete project structure: create environment, adding requirements.txt and .env files 
-- [ ] [Ngoc] Implement RAG logic
-  - [ ] LLM API
-  - [ ] Embedding search
-  - [ ] Reranking model
-  - [ ] ...  
-- [ ] [Hoang Minh] Implement OCR
-  - [ ] OCR model weight
-  - [ ] ...
+

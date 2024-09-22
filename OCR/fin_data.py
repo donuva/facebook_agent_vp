@@ -3,20 +3,14 @@ This is not OCR implementation yet. This part of code is only a demo that using 
 The OCR implementation will be added later.
 """
 
-from vnstock3 import Vnstock
 import pandas as pd
 
 def get_fin_data(): 
-    stock = Vnstock().stock(symbol='TCB', source='VCI')
-    df = stock.finance.income_statement(period='year', lang='vi').head()
-    new_columns = []
-    for i, col in enumerate(df.columns):
-        if col in df.columns[:i]:
-            count = df.columns[:i].tolist().count(col)
-            new_columns.append(f"{col}_{count + 1}")
-        else:
-            new_columns.append(col)
-
-    df.columns = new_columns
-
+    data = {
+        'Company': ['Company A', 'Company B', 'Company C', 'Company D', 'Company E'],
+        'Price': [100, 200, 150, 300, 250],
+        'Revenue': [1000, 2000, 1500, 3000, 2500],
+        'Profit': [100, 200, 150, 300, 250]
+    }
+    df = pd.DataFrame(data)
     return df   
