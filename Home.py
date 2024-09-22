@@ -1,4 +1,3 @@
-from pages import Data, Chat
 import streamlit as st
 
 st.set_page_config(
