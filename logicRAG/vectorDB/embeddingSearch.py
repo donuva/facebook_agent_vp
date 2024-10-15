@@ -1,7 +1,4 @@
-try:
-    import numpy as np
-except Exception as e:
-    raise Exception("Error : {}".format(e))
+import numpy as np
 
 def search_faiss(index, query_embedding, k=5):
     try:
@@ -10,4 +7,3 @@ def search_faiss(index, query_embedding, k=5):
         return distances, indices
     except Exception as e:
         raise Exception("Error : {}".format(e))
-    
