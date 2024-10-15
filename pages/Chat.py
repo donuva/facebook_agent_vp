@@ -54,7 +54,7 @@ if input_text:
         content = f.read()
     all_chunks = content.split('\n|||')
     all_chunks = [chunk for chunk in all_chunks if chunk.strip()]
-    search_results = query(query=input_text, index=st.session_state.index, chunks=all_chunks, top_k=3)
+    search_results = query(query=input_text, index=st.session_state.index, chunks=all_chunks, top_k=5)
     docs = ''
     for doc in search_results:
         docs += doc
