@@ -10,9 +10,10 @@ st.logo('graphics/app_logo.png')
 st.title("Data manipulator")
 st.subheader("Upload your documents here")
 
-uploaded_files = st.file_uploader("Upload .docx or .pdf files", type=["pdf", "docx"], accept_multiple_files=True)
 index = vectordb()
 all_chunks = []
+chunk_size = st.slider('Select chunk size', min_value=200, max_value=1000, value=300)
+uploaded_files = st.file_uploader("Upload .docx or .pdf files", type=["pdf", "docx"], accept_multiple_files=True)
 
 if uploaded_files:
     with st.spinner('Wait for it...'):
@@ -22,7 +23,7 @@ if uploaded_files:
         
         # Prepare files for RAG
         for file in uploaded_files:
-            processor = Processor(file, index)
+            processor = Processor(file, index, chunk_size)
             text, chunks = processor.process()
             all_chunks.extend(chunks)
             st.text_area(f"Content of {file.name}", text)
@@ -30,8 +31,8 @@ if uploaded_files:
     with open('data/.cache/chunks.txt', 'w', encoding = 'utf-8') as f:
         for chunk in all_chunks:
             f.write(chunk + "\n|||")  
-    st.success("Done!")
-    save_index(index,filename='data/.cache/faiss_index.bin')
+
+    save_index(index, filename='data/.cache/faiss_index.bin')
 
 footer = """
     <style>
