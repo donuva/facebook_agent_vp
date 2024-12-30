@@ -12,7 +12,7 @@ class Chunker:
     def chunk_text_worker(self, queue, index):
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=self.chunk_size, chunk_overlap=self.chunk_overlap)
         chunks = text_splitter.split_text(self.text)
-        queue.put((index, chunks))
+        queue.put((index, chunks)) # đảm bảo các chunk cùng 1 index
 
     def chunk_text(self, num_workers=4):
         chunk_queue = PriorityQueue()

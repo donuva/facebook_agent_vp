@@ -19,8 +19,11 @@ class Reader:
         return text
 
     def read_docx(self):
+        #doc = Document(self.file)
+        doc = Document()
         try:
             doc = Document(self.file)
+            print("load doc success!")
         except Exception as e:
             print('Error when reading file:', e)
         text = ""
@@ -32,6 +35,7 @@ class Reader:
     def read(self):
         if self.file.name.endswith(".pdf"):
             pdf_text = self.read_pdf()
+            print("pdf text laf ........:" , pdf_text)
             return pdf_text
         
         elif self.file.name.endswith(".docx"):
