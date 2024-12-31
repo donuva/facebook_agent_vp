@@ -1,4 +1,9 @@
 import streamlit as st
+
+if "is_login" not in st.session_state or not st.session_state.is_login:
+    st.warning("CHƯA ĐĂNG NHẬP")
+    st.switch_page("Home.py")
+    
 st.set_page_config(
     page_title="Data manipulation",
     page_icon="graphics/icon1.png"  

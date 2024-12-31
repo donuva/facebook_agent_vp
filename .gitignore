@@ -4,3 +4,5 @@ OCR\
 __pycache__
 data/.cache/chunks.txt
 data/.cache/faiss_index.bin
+
+.codegpt

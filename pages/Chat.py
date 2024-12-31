@@ -1,4 +1,14 @@
 import streamlit as st
+import sqlite3
+
+conn = sqlite3.connect("vpbank.sqlite")
+cur = conn.cursor()
+#
+if "is_login" not in st.session_state or not st.session_state.is_login:
+    st.warning("CHƯA ĐĂNG NHẬP")
+    st.switch_page("Home.py")
+
+#
 st.set_page_config(
     page_title="Chatbot",
     page_icon="graphics/icon1.png" 
@@ -23,10 +33,15 @@ with st.chat_message(avatar=r"graphics\app_logo.png", name="system"):
     st.markdown("© 2024 EDA - VPBank. All rights reserved.")
 
 # Display previous chat history
-for message in st.session_state.memory.chat_memory.messages:
-    if message["role"] == "assistant" or message["role"] == "user":
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+cur.execute('SELECT user_id, role, message from history WHERE user_id=?', (st.session_state.id))
+conn.commit()
+exist_chat = cur.fetchall()
+for chat in exist_chat:
+    role = chat[1]
+    message = chat[2]
+    if role == "assistant" or role == "user":
+        with st.chat_message(role):
+            st.markdown(message)
 
 input_text = st.chat_input("Chat with your bot here")
 
@@ -47,7 +62,11 @@ def stream_response(response_generator):
 if input_text:
     with st.chat_message("user"):
         st.markdown(input_text)
-
+        # cur.execute('CREATE TABLE IF NOT EXISTS history (user_id TEXT, role TEXT, message TEXT)')
+        # conn.commit()
+    #UPDATE USER MESSAGE
+        cur.execute("INSERT INTO history (user_id, role, message) VALUES (?,?,?)", (st.session_state.id[0], "user", input_text) )   
+        conn.commit()
     # Append user's message to the chat history in memory
     st.session_state.memory.chat_memory.add_message({"role": "user", "content": input_text})
     with open('data/.cache/chunks.txt', 'r', encoding='utf-8') as f:
@@ -62,5 +81,15 @@ if input_text:
     st.session_state.memory.chat_memory.add_message({"role": "system", "content": f"Retrieved Document: {docs}"})
     response_generator = get_gpt_response(st.session_state.memory.load_memory_variables({}), input_text)
     chat_response = stream_response(response_generator)
-
+    #UPDATE RESPONSE MESSAGE
+    cur.execute("INSERT INTO history (user_id, role, message) VALUES (?,?,?)", (st.session_state.id[0], "assistant", chat_response) )   
+    conn.commit()
+    #TEST
+    # cur.execute('SELECT user_id, role, message from history WHERE user_id=?', (st.session_state.id))
+    # conn.commit()
+    # exist_chat = cur.fetchall()
+    # for c in exist_chat:
+    #     print(c)
+    #
     st.session_state.memory.chat_memory.add_message({"role": "assistant", "content": chat_response})
+    
