@@ -16,7 +16,7 @@ st.set_page_config(
 st.logo('graphics/app_logo.png')
 
 from langchain.memory import ConversationBufferMemory
-from logicRAG.stream_output import get_gpt_response
+from logicRAG.stream_output import get_gpt_response, get_llama_response
 from logicRAG.vectorDB.query import query
 from logicRAG.vectorDB.indexing import load_index
 
@@ -73,23 +73,18 @@ if input_text:
         content = f.read()
     all_chunks = content.split('\n|||')
     all_chunks = [chunk for chunk in all_chunks if chunk.strip()]
+    #lỗi đoạn query
     search_results = query(query=input_text, index=st.session_state.index, chunks=all_chunks, top_k=5)
     docs = ''
     for doc in search_results:
         docs += doc
         docs += ' '
     st.session_state.memory.chat_memory.add_message({"role": "system", "content": f"Retrieved Document: {docs}"})
-    response_generator = get_gpt_response(st.session_state.memory.load_memory_variables({}), input_text)
-    chat_response = stream_response(response_generator)
-    #UPDATE RESPONSE MESSAGE
-    cur.execute("INSERT INTO history (user_id, role, message) VALUES (?,?,?)", (st.session_state.id[0], "assistant", chat_response) )   
-    conn.commit()
-    #TEST
-    # cur.execute('SELECT user_id, role, message from history WHERE user_id=?', (st.session_state.id))
+    response_generator = get_llama_response(st.session_state.memory.load_memory_variables({}), input_text)
+    # chat_response = stream_response(response_generator)
+    # #UPDATE RESPONSE MESSAGE
+    # cur.execute("INSERT INTO history (user_id, role, message) VALUES (?,?,?)", (st.session_state.id[0], "assistant", chat_response) )   
     # conn.commit()
-    # exist_chat = cur.fetchall()
-    # for c in exist_chat:
-    #     print(c)
-    #
-    st.session_state.memory.chat_memory.add_message({"role": "assistant", "content": chat_response})
+    # #
+    # st.session_state.memory.chat_memory.add_message({"role": "assistant", "content": chat_response})
     

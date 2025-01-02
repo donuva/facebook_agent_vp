@@ -35,7 +35,7 @@ class Reader:
     def read(self):
         if self.file.name.endswith(".pdf"):
             pdf_text = self.read_pdf()
-            print("pdf text laf ........:" , pdf_text)
+            #print("pdf text laf ........:" , pdf_text)
             return pdf_text
         
         elif self.file.name.endswith(".docx"):

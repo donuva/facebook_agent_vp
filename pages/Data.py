@@ -15,7 +15,7 @@ st.logo('graphics/app_logo.png')
 st.title("Data manipulator")
 st.subheader("Upload your documents here")
 
-index = vectordb()
+index = vectordb(384)
 all_chunks = []
 chunk_size = st.slider('Select chunk size', min_value=200, max_value=1000, value=300)
 uploaded_files = st.file_uploader("Upload .docx or .pdf files", type=["pdf", "docx"], accept_multiple_files=True)
