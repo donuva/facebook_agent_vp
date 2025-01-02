@@ -4,6 +4,9 @@ import sqlite3
 conn = sqlite3.connect("vpbank.sqlite")
 cur = conn.cursor()
 #
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+#
 if "is_login" not in st.session_state or not st.session_state.is_login:
     st.warning("CHƯA ĐĂNG NHẬP")
     st.switch_page("Home.py")
@@ -20,13 +23,13 @@ from logicRAG.stream_output import get_gpt_response, get_llama_response
 from logicRAG.vectorDB.query import query
 from logicRAG.vectorDB.indexing import load_index
 
-if 'index' not in st.session_state:
+if 'index' not in st.session_state or st.session_state.index == None:
     try:
         st.session_state.index = load_index(filename='data/.cache/faiss_index.bin')
     except Exception as e:
         print('Error loading index', e)
 
-if 'memory' not in st.session_state:
+if 'memory' not in st.session_state or st.session_state.memory == None:
     st.session_state.memory = ConversationBufferMemory(return_messages=True, memory_key="chat_history")
 
 with st.chat_message(avatar=r"graphics\app_logo.png", name="system"):
@@ -81,10 +84,10 @@ if input_text:
         docs += ' '
     st.session_state.memory.chat_memory.add_message({"role": "system", "content": f"Retrieved Document: {docs}"})
     response_generator = get_llama_response(st.session_state.memory.load_memory_variables({}), input_text)
-    # chat_response = stream_response(response_generator)
-    # #UPDATE RESPONSE MESSAGE
+    chat_response = stream_response(response_generator)
+    # #UPDATE RESPONSE MESSAGE: ĐANG KHÔNG UPDATE LƯU LỊCH SỬ TRẢ LỜI CỦA BOT VÌ LLaMA-VISION free input không quá 4069 token
     # cur.execute("INSERT INTO history (user_id, role, message) VALUES (?,?,?)", (st.session_state.id[0], "assistant", chat_response) )   
     # conn.commit()
     # #
-    # st.session_state.memory.chat_memory.add_message({"role": "assistant", "content": chat_response})
+    st.session_state.memory.chat_memory.add_message({"role": "assistant", "content": chat_response})
     
