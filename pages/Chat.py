@@ -76,14 +76,18 @@ if input_text:
         content = f.read()
     all_chunks = content.split('\n|||')
     all_chunks = [chunk for chunk in all_chunks if chunk.strip()]
-    #lỗi đoạn query
-    search_results = query(query=input_text, index=st.session_state.index, chunks=all_chunks, top_k=5)
+    #search_results là list các chunk liên quan
+    search_results = query(query=input_text, index=st.session_state.index, chunks=all_chunks, top_k=10)    #Sử dụng Chain of Agents để nâng cái top_k lên
+    # Chia nhỏ chunk_list , Chain of Agents, Summarize dần dần
     docs = ''
     for doc in search_results:
         docs += doc
         docs += ' '
-    st.session_state.memory.chat_memory.add_message({"role": "system", "content": f"Retrieved Document: {docs}"})
-    response_generator = get_llama_response(st.session_state.memory.load_memory_variables({}), input_text)
+    #KHÔNG NHỚ Retrieved Document NỮA, ĐỂ NẶNG BỘ NHỚ , CHỈ NHỚ QUESTION CỦA USER & ANSWER CỦA ASSISTANT & current retrived docs
+    #st.session_state.memory.chat_memory.add_message({"role": "system", "content": f"Retrieved Document: {docs}"})
+    current_retrived_docs = {"role": "system", "content": f"Retrieved Document: {docs}"}
+    #print("WHOLE MEMORY IS : ", st.session_state.memory.load_memory_variables({}))
+    response_generator = get_llama_response(st.session_state.memory.load_memory_variables({}), current_retrived_docs, input_text)
     chat_response = stream_response(response_generator)
     # #UPDATE RESPONSE MESSAGE: ĐANG KHÔNG UPDATE LƯU LỊCH SỬ TRẢ LỜI CỦA BOT VÌ LLaMA-VISION free input không quá 4069 token
     # cur.execute("INSERT INTO history (user_id, role, message) VALUES (?,?,?)", (st.session_state.id[0], "assistant", chat_response) )   

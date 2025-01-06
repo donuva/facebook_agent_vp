@@ -1,6 +1,6 @@
 import numpy as np
 
-def search_faiss(index, query_embedding, k=5):
+def search_faiss(index, query_embedding, k=50):
     try:
         query_np = np.array([query_embedding]).astype('float32')
         print("CHIỀU Ở FAISS LƯU LÀ : ",query_np.reshape((1,-1)).shape)
