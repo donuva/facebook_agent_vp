@@ -19,7 +19,7 @@ st.set_page_config(
 st.logo('graphics/app_logo.png')
 
 from langchain.memory import ConversationBufferMemory
-from logicRAG.stream_output import get_gpt_response, get_llama_response
+from logicRAG.stream_output import get_gpt_response, get_llama_response, intergrate_context
 from logicRAG.vectorDB.query import query
 from logicRAG.vectorDB.indexing import load_index
 
@@ -77,18 +77,29 @@ if input_text:
     all_chunks = content.split('\n|||')
     all_chunks = [chunk for chunk in all_chunks if chunk.strip()]
     #search_results là list các chunk liên quan
-    search_results = query(query=input_text, index=st.session_state.index, chunks=all_chunks, top_k=10)    #Sử dụng Chain of Agents để nâng cái top_k lên
+    search_results = query(query=input_text, index=st.session_state.index, chunks=all_chunks, top_k=500)    #Sử dụng Chain of Agents để nâng cái top_k lên
     # Chia nhỏ chunk_list , Chain of Agents, Summarize dần dần
-    docs = ''
+    docs = ""
+    current_summary = ""
+    sum_step = 0
     for doc in search_results:
         docs += doc
         docs += ' '
+        if len(docs) > 3000:
+            sum_step += 1
+            print(sum_step)
+            new_summary = intergrate_context(docs, current_summary)
+            current_summary = new_summary
+            docs = ""
+        
+    
+    print("TEST TEST TEST ", current_summary)
     #KHÔNG NHỚ Retrieved Document NỮA, ĐỂ NẶNG BỘ NHỚ , CHỈ NHỚ QUESTION CỦA USER & ANSWER CỦA ASSISTANT & current retrived docs
     #st.session_state.memory.chat_memory.add_message({"role": "system", "content": f"Retrieved Document: {docs}"})
-    current_retrived_docs = {"role": "system", "content": f"Retrieved Document: {docs}"}
-    #print("WHOLE MEMORY IS : ", st.session_state.memory.load_memory_variables({}))
-    response_generator = get_llama_response(st.session_state.memory.load_memory_variables({}), current_retrived_docs, input_text)
+    current_retrived_summary = {"role": "system", "content": f"Retrieved Document: {current_summary}"}
+    response_generator = get_llama_response(st.session_state.memory.load_memory_variables({}), current_retrived_summary, input_text)
     chat_response = stream_response(response_generator)
+
     # #UPDATE RESPONSE MESSAGE: ĐANG KHÔNG UPDATE LƯU LỊCH SỬ TRẢ LỜI CỦA BOT VÌ LLaMA-VISION free input không quá 4069 token
     # cur.execute("INSERT INTO history (user_id, role, message) VALUES (?,?,?)", (st.session_state.id[0], "assistant", chat_response) )   
     # conn.commit()
