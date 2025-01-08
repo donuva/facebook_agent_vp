@@ -72,7 +72,7 @@ def stream_response(response_generator):
     return streamed_text
 
 def answer_proccess(input_text, indexdb, all_chunks):
-    search_results = query(query=input_text, index=indexdb, chunks=all_chunks, top_k=15)    
+    search_results = query(query=input_text, index=indexdb, chunks=all_chunks, top_k=50)    
     #Sử dụng phương pháp Chain of Agents để nâng cái top_k lên -> search toàn diện hơn
     # Chia nhỏ chunk_list , Chain of Agents, Summarize dần dần
     docs = ""
