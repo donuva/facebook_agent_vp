@@ -77,7 +77,7 @@ if input_text:
     all_chunks = content.split('\n|||')
     all_chunks = [chunk for chunk in all_chunks if chunk.strip()]
     #search_results là list các chunk liên quan
-    search_results = query(query=input_text, index=st.session_state.index, chunks=all_chunks, top_k=500)    #Sử dụng Chain of Agents để nâng cái top_k lên
+    search_results = query(query=input_text, index=st.session_state.index, chunks=all_chunks, top_k=50)    #Sử dụng Chain of Agents để nâng cái top_k lên
     # Chia nhỏ chunk_list , Chain of Agents, Summarize dần dần
     docs = ""
     current_summary = ""
