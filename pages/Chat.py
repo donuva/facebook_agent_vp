@@ -72,7 +72,7 @@ def stream_response(response_generator):
     return streamed_text
 
 def answer_proccess(input_text, indexdb, all_chunks):
-    search_results = query(query=input_text, index=indexdb, chunks=all_chunks, top_k=5)    
+    search_results = query(query=input_text, index=indexdb, chunks=all_chunks, top_k=15)    
     #Sử dụng phương pháp Chain of Agents để nâng cái top_k lên -> search toàn diện hơn
     # Chia nhỏ chunk_list , Chain of Agents, Summarize dần dần
     docs = ""
@@ -81,14 +81,14 @@ def answer_proccess(input_text, indexdb, all_chunks):
     for doc in search_results:
         docs += doc
         docs += ' '
-        if len(docs) > 3000:
+        if len(docs) > 2000:
             sum_step += 1
             print(sum_step)
             new_summary = intergrate_context([docs, current_summary])
             current_summary = new_summary
             docs = ""
         
-    
+    print("TOP_K NEAREST IS : ", docs)
     #print("TEST TEST TEST ", current_summary)
     #KHÔNG NHỚ Retrieved Document NỮA, ĐỂ NẶNG BỘ NHỚ , CHỈ NHỚ QUESTION CỦA USER & ANSWER CỦA ASSISTANT & current retrived docs
     #st.session_state.memory.chat_memory.add_message({"role": "system", "content": f"Retrieved Document: {docs}"})
@@ -131,8 +131,8 @@ if input_text:
         pre_answer3 = answer_proccess(input_text, Drive_index, all_chunks)
         pre_answer_list.append(pre_answer3)
 
-    for answer in pre_answer_list:
-        print("PRE ANSWER IS    :   ", answer)  
+    # for answer in pre_answer_list:
+    #     print("PRE ANSWER IS    :   ", answer)  
 
     final_answer = intergrate_context(pre_answer_list)   
     assistant_message = st.chat_message("ai").empty()
