@@ -132,7 +132,7 @@ if input_text:
         pre_answer_list.append(pre_answer3)
 
     for answer in pre_answer_list:
-        print(answer)  
+        print("PRE ANSWER IS    :   ", answer)  
 
     final_answer = intergrate_context(pre_answer_list)   
     assistant_message = st.chat_message("ai").empty()

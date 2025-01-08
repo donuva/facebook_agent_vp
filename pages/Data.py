@@ -15,19 +15,25 @@ st.logo('graphics/app_logo.png')
 st.title("Data manipulator")
 st.subheader("Upload your documents here")
 
-options = st.multiselect(
-    "Save files in vector database:",
-    ["Mail Database", "Default Database", "Drive Database"],
-)
-
 #init step
 Mail_index = vectordb(384)
 Default_index = vectordb(384)
 Drive_index = vectordb(384)
 
-all_chunks = []
+# all_chunks = []
+#Mỗi lần nhấn nút trong Data page thì gán lại all_chunk từ file chunk.txt
+with open('data/.cache/chunks.txt', 'r', encoding='utf-8') as f:
+        content = f.read()
+        all_chunks = content.split('\n|||')
+        all_chunks = [chunk for chunk in all_chunks if chunk.strip()]
+
+options = st.multiselect(
+    "Save files in vector database:",
+    ["Mail Database", "Default Database", "Drive Database"],
+)
 chunk_size = st.slider('Select chunk size', min_value=200, max_value=1000, value=300)
 uploaded_files = st.file_uploader("Upload .docx or .pdf files", type=["pdf", "docx"], accept_multiple_files=True)
+
 
 if uploaded_files:
     with st.spinner('Wait for it...'):
@@ -47,6 +53,7 @@ if uploaded_files:
 
     with open('data/.cache/chunks.txt', 'w', encoding = 'utf-8') as f:
         for chunk in all_chunks:
+            print(chunk)
             f.write(chunk + "\n|||")  
 
     if "Mail Database" in options: save_index(Mail_index, filename='data/.cache/faiss_Mail_index.bin')
