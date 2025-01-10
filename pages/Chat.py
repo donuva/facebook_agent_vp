@@ -1,6 +1,6 @@
 import streamlit as st
 import sqlite3
-
+from viet_badwords_filter.filter import VNBadwordsFilter
 conn = sqlite3.connect("vpbank.sqlite")
 cur = conn.cursor()
 #
@@ -23,6 +23,16 @@ options = st.multiselect(
     ["Mail Database", "Default Database", "Drive Database"],
 )
 
+#Profanity is vietnamse custom bad word list
+with open("./data/vn_offensive_words.txt",'r', encoding='utf-8') as file:
+    offensive_words = file.read().split("\n")
+    profanity = []
+    for word in offensive_words:
+        w_len = len(word)
+        if (word[0]=='"'):
+            word = word[1:w_len-2]
+        profanity.append(word)
+    
 from langchain.memory import ConversationBufferMemory
 from logicRAG.stream_output import get_gpt_response, get_llama_response, intergrate_context
 from logicRAG.vectorDB.query import query
@@ -45,6 +55,7 @@ if 'memory' not in st.session_state or st.session_state.memory == None:
 with st.chat_message(avatar=r"graphics\app_logo.png", name="system"):
     st.markdown("© 2024 EDA - VPBank. All rights reserved.")
 
+
 # Display previous chat history
 cur.execute('SELECT user_id, role, message from history WHERE user_id=?', (st.session_state.id))
 conn.commit()
@@ -57,8 +68,14 @@ for chat in exist_chat:
             st.markdown(message)
 
 input_text = st.chat_input("Chat with your bot here")
-
-
+#Filter bad words
+if input_text != None: 
+    print("INPUT TEXT IS ", input_text.split())
+    for word in profanity:
+        if (word in input_text):
+            input_text = input_text.replace(word, "***")
+            print(input_text)
+   
 # Stream the response and update the UI
 def stream_response(response_generator):
     assistant_message = st.chat_message("ai").empty()  
@@ -72,7 +89,7 @@ def stream_response(response_generator):
     return streamed_text
 
 def answer_proccess(input_text, indexdb, all_chunks):
-    search_results = query(query=input_text, index=indexdb, chunks=all_chunks, top_k=50)    
+    search_results = query(query=input_text, index=indexdb, chunks=all_chunks, top_k=5)    
     #Sử dụng phương pháp Chain of Agents để nâng cái top_k lên -> search toàn diện hơn
     # Chia nhỏ chunk_list , Chain of Agents, Summarize dần dần
     docs = ""
@@ -88,7 +105,7 @@ def answer_proccess(input_text, indexdb, all_chunks):
             current_summary = new_summary
             docs = ""
         
-    print("TOP_K NEAREST IS : ", docs)
+    #print("TOP_K NEAREST IS : ", docs)
     #print("TEST TEST TEST ", current_summary)
     #KHÔNG NHỚ Retrieved Document NỮA, ĐỂ NẶNG BỘ NHỚ , CHỈ NHỚ QUESTION CỦA USER & ANSWER CỦA ASSISTANT & current retrived docs
     #st.session_state.memory.chat_memory.add_message({"role": "system", "content": f"Retrieved Document: {docs}"})
@@ -134,7 +151,12 @@ if input_text:
     # for answer in pre_answer_list:
     #     print("PRE ANSWER IS    :   ", answer)  
 
-    final_answer = intergrate_context(pre_answer_list)   
+    final_answer = intergrate_context(pre_answer_list)  
+    # filter bad words 
+    for word in profanity:
+        if (word in final_answer):
+            final_answer = final_answer.replace(word, "***")
+            
     assistant_message = st.chat_message("ai").empty()
     assistant_message.write(final_answer) 
     # chat_response = stream_response(final_answer)
