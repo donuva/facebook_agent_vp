@@ -1,8 +1,37 @@
-.conda
-.env
-OCR\
-__pycache__
-data/.cache/chunks.txt
-data/.cache/faiss_index.bin
+# Ignore Python cache & environment folders
+__pycache__/
+*.py[cod]
+*.so
 
+# Ignore virtual environments
+venv/
+.env/
+.conda/
+env/
+
+# Ignore CodeGPT config
 .codegpt
+
+# Ignore VSCode settings (nếu dùng)
+.vscode/
+
+# Ignore OS system files
+.DS_Store
+Thumbs.db
+
+# Ignore OCR or other output folders (tuỳ bạn)
+OCR/
+
+# Ignore local data/cache files
+data/.cache/
+*.log
+*.sqlite
+*.db
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore compiled C extensions or DLLs
+*.dll
+*.lib
+*.pyd
