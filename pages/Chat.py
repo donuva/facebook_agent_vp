@@ -81,9 +81,13 @@ def filter_profanity(text, profanity_list):
     return text
 
 # -------------------- Xử lý truy vấn và tạo phản hồi --------------------
+from logicRAG.semantic_search import DenseSemanticSearch
 def process_database_response(user_input, index, all_chunks):
     search_results = query(query_text=user_input, index=index, chunks=all_chunks, distance_threshold=5)
+    dense_search = DenseSemanticSearch(all_chunks)
+    dense_results = dense_search.search(user_input, top_k=5)
     
+    # Vector context
     docs, summary = "", ""
     for i, doc in enumerate(search_results):
         docs += doc + " "
@@ -92,17 +96,24 @@ def process_database_response(user_input, index, all_chunks):
             docs = ""
     if docs:
         summary = intergrate_context([docs, summary])
-    
-    retrieved_context = {"role": "system", "content": f"Retrieved Document: {summary}"}
+    retrieved_context = {"role": "system", "content": f"Retrieved Document (Vector): {summary}"}
+
+    # Dense context
+    dense_docs = " ".join(dense_results)
+    dense_summary = intergrate_context([dense_docs]) if dense_docs else ""
+    dense_context = {"role": "system", "content": f"Retrieved Document (Dense): {dense_summary}"}
 
     print(f"retrieved_context is {retrieved_context}")
+    print(f"dense_context is {dense_context}")
+
+    # Gộp context lại
+    merged_context = {"role": "system", "content": f"{retrieved_context['content']}\n{dense_context['content']}"}
 
     response_gen = get_llama_response(
         st.session_state.memory.load_memory_variables({}),
-        retrieved_context,
+        merged_context,
         user_input
     )
-    
     response = "".join([chunk for chunk in response_gen])
     return response
 
