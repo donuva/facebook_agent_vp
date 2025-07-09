@@ -1,45 +1,45 @@
-
 from PyPDF2 import PdfReader
 from docx import Document
 
 class Reader:
+    """
+    Lớp dùng để đọc nội dung từ tệp PDF và DOCX.
+    """
+
     def __init__(self, file):
-        super().__init__()
         self.file = file
 
     def read_pdf(self):
-        pdf_reader = PdfReader(self.file)
+        """Đọc văn bản từ file PDF"""
         text = ""
-        for page in pdf_reader.pages:
-            try:
-                text += page.extract_text()
-            except Exception as e:
-                print('Error when reading pdf file:', e)
-            
+        try:
+            pdf_reader = PdfReader(self.file)
+            for page in pdf_reader.pages:
+                extracted = page.extract_text()
+                if extracted:
+                    text += extracted
+        except Exception as e:
+            print('Lỗi khi đọc file PDF:', e)
         return text
 
     def read_docx(self):
-        #doc = Document(self.file)
-        doc = Document()
+        """Đọc văn bản từ file DOCX"""
+        text = ""
         try:
             doc = Document(self.file)
-            print("load doc success!")
+            print("Tải file DOCX thành công!")
+            for para in doc.paragraphs:
+                text += para.text + "\n"
         except Exception as e:
-            print('Error when reading file:', e)
-        text = ""
-        for para in doc.paragraphs:
-            text += para.text
-
+            print('Lỗi khi đọc file DOCX:', e)
         return text
 
     def read(self):
+        """Tự động xác định định dạng và đọc file"""
         if self.file.name.endswith(".pdf"):
-            pdf_text = self.read_pdf()
-            #print("pdf text laf ........:" , pdf_text)
-            return pdf_text
-        
+            return self.read_pdf()
         elif self.file.name.endswith(".docx"):
-            docx_text = self.read_docx()
-            return docx_text
-        
-        return None
+            return self.read_docx()
+        else:
+            print("Định dạng không được hỗ trợ.")
+            return None

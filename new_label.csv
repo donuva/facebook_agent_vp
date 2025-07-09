@@ -1,0 +1,860 @@
+question,credit_card,loan,general
+ Có thể tôi mở hai vay khoản để mua hai xe máy khác nhau?,0,0,1
+ Dịch vụ gì của ngân hàng cho phép tôi trả tiền cho các giao dịch trước để nạp dư thừa vào một thẻ ghi nợ của mình?,0,0,1
+ Tình hình doanh nghiệp của tôi không ổn định nên tôi cần lãi suất thay đổi cho vay tín chấp. Có thể tôi yên tâm về việc ngân hàng sẽ cho tôi được lãi suất thay đổi khi các điều kiện của tôi thay đổi không?,0,1,0
+ Bạn có thể hỗ trợ mình giải thích sự khác nhau giữa thẻ tín dụng và vay kính dịch?,1,0,0
+" Nếu tôi muốn mở vay dự án để mở một cafe, tốt hơn được phân tích nhu cầu sẵn sàng của ngân hàng trước khi tôi được phê duyệt không?",0,0,1
+" Có thể tôi lưu giữ vay để sau một thời gian, để sau đó trả lại với lãi suất thấp hơn?",0,1,0
+ Thông tin nào cần để đạt được điều kiện để được mở tài khoản VPBank NEO?,1,1,0
+" Khi dùng thẻ thành công, được nhận điều gì cho mỗi lượt giao dụng?",0,0,1
+ Tại sao khi điểu chỉnh thông tin VPBank NEO thì phải chờ lâu?,0,0,1
+ Vay Vốn nào có ưu đãi trải nghiệm tốt nhất cho khách hàng mới?,0,1,0
+ Trên ứng dụng nào có thể kiểm soát giao dịch tài chính dễ dàng hơn?,1,1,0
+ Tôi có thể mở vay tín chấp và lần lượt mở nhiều thẻ tín dụng trên tài khoản tín dụng của mình không?,0,0,1
+ Điều kiện để được mở vay tín chấp ưu đãi là gì?,0,1,0
+" Ngoài phí nộp thanh toán hàng tháng, có bất kỳ chi phí khác nào phải được trả trong việc sử dụng dịch vụ vay trả nợ trước hạn khoản vay cũ?",0,0,1
+ Dịch vụ trả nợ trước hạn khoản vay cũ thuội vào thế mạnh gì trong danh mục sản phẩm?,0,0,1
+ Có thể một ngân hàng cho phép khách hàng có thẻ tín dụng và vay cùng một lúc?,1,0,0
+" Điều kiện để được sử dụng dịch vụ tiết kiệm tiền lãi trước, là gì?",0,1,0
+ Có phải luôn có chiết khấu cho người đang gửi tiền gửi về dịch vụ Logistics không?,0,1,0
+ Làm sao để một doanh nghiệp siêu nhỏ được xác thực cho việc mua ô tô qua vay?,0,0,1
+ VPBank NEO có chính sách giảm phí hoặc tăng lãi suất cho khách hàng khi họ sử dụng được tài khoản tiền điện tử läng dưới một thời gian định nghĩa?,0,0,1
+ Dịch vụ ngân hàng trực tuyến tốt nhất cho việc quảng cáo và hợp tác doanh nghiệp?,1,1,0
+ Biz Controller của một ngân hàng có thể hỗ trợ khách hàng trong việc tìm hiểu và quản lý một số số liệu thống kê quan trọng cho doanh nghiệp?,1,1,0
+ Tôi có thể mở vay doanh nghiệp chưa có doanh nghiệp mới không?,0,0,1
+ Loại thẻ tốt nhất để giữ tiền theo suất lãi thấp nhất?,0,0,1
+ Có thể sử dụng thẻ tín dụng để vay tiền cho công việc xây dựng nhà mình không?,1,0,0
+ Điều kiện để được mở thẻ ghi nợ tự do nhất?,1,0,0
+ Ngân hàng có cung cấp dịch vụ giao dịch qua ứng dụng điện thoại không?,1,0,0
+" Tôi có thể dùng thẻ tiết kiệm để mua điện thoại mới, hoặc phải dùng vay?",1,0,0
+ Lãi suất cho vay tín chấp cho doanh nghiệp siêu nhỏ bình quân là bao nhiêu?,0,0,1
+ Có thể khách hàng thay đổi chính sách bảo lãnh khi có trường hợp gửi lại hàng trong quá khứ?,1,0,0
+" Tôi có thể trả lương cho một nhân viên qua thẻ, hay phải qua tài khoản ngân hàng?",0,0,1
+ Ngân hàng có hỗ trợ dịch vụ nào giúp kiểm soát lĩnh vực thưng gión?,1,0,0
+ Vay tín chấp có giúp tăng sự trải nghiệm tốt hơn khi khách hàng dùng thẻ tín dụng?,0,0,1
+" Trong việc mở khoản vay, tôi có thể chọn loại thẻ tín dụng để lần đầu tiên làm việc với ngân hàng không?",0,0,1
+" Nếu có khoản vay tín chấp, ngân hàng có thể cho phép khách hàng có khoản vay nhanh hơn một lần nữa?",0,0,1
+" Nếu người dùng đầu tư, có thể sử dụng dịch vụ chuyển tiền qua Internet Banking khi vay vốn?",0,0,1
+ Có thể mở một tài khoản nộp khoản vay online và đăng ký cho vay tín chấp cùng lúc không?,0,0,1
+ Làm sao để kiểm soát chi phí sử dụng dịch vụ chuyển tiền trực tuyến?,0,0,1
+ Điều kiện để được ưu đãi cho gói tài khoản thanh toán VPSuper nào?,0,0,1
+ Có thể giảm phí cho lần gửi giao dịch thứ hạn qua thẻ nào?,0,0,1
+ Đến thời điểm nào sẽ có lãi suất vay tín chấp giảm xuống?,0,0,1
+" Khi khách hàng muốn lúng túng nhiều vay cũ, có thể sử dụng Vay Lại Khản Vay Cũ của VPBank sao cho chính sách lãi suất, phí vay phù hợp nhất?",0,0,1
+" Hợp đồng giao dịch thông qua email an toàn, giữ nhiệm vụ bảo mật thông tin và đảm bảo tiện lợi cho khách hàng?",0,0,1
+" Sử dụng giao dịch qua email, có thể trả ngay lương cho thẻ tín dụng một cách đơn giản và nhanh?",0,0,1
+" Vay Thuế+ có kính phí vay, phí bảo hình hay không?",0,0,1
+ Có thể một người có thể có hai hoặc hơn hai tài khoản thanh toán của mình trên một ngân hàng?,0,0,1
+" Điều kiện để được chấp nhận cho vay tín dụng, vay doanh nghiệp do nữ làm chủ hoặc vay khoản vay thế chấp được gì?",0,0,1
+ Làm thế nào để đảm bảo an toàn trong việc gửi tiền qua internet?,1,0,1
+ Có thể chèn thẻ vay tín dụng vào đội thẻ tài xế không?,0,0,1
+ Tại sao ngân hàng có chế độ tăng lượng tiền mặt cho tài khoản chính?,0,0,1
+ Đang có khuyến mại nào cho sản phẩm Thẻ tín dụng trên giao dịch điện tử?,0,0,1
+ Tôi có thể thanh toán lần cuối cùng vay qua đối tác ngân hàng không?,0,0,1
+ Tại sao tôi không thể thực hiện giao dịch qua đối tác giao dịch của mình?,0,1,0
+" Nếu tôi không thực hiện giao dịch trong thời gian được nghỉnh ngôn, thì ngân hàng có thể làm gì?",0,0,1
+" Nếu tôi muốn mua một vải quần áo quá nặng để cho mình chiếm sự đáng chênh lệch, có thể sử dụng vay thế chấp sạp chợ để mua nó không?",0,0,1
+" Khi đăng ký cho một thẻ tín dụng, phải cung cấp chính sách đóng hộ chứng từ lần nào cũng không?",0,0,1
+" Tôi cần mở một thẻ ghi nợ cho việc mua xe, tuy nhiên tôi không biết được quy định về lãi suất để lên dự toán. Bạn có thể cho tôi biết lãi suất quy định cho thẻ ghi nợ này không?",0,1,0
+ Tôi đang sử dụng một thẻ vay tín dụng của bạn và đã hoàn thành hoặc hết thời hạn của vay. Tôi muốn biết rõ hơn về việc trả lại vốn trước khi hết thời hạn: có một chiến dịch trả nợ nhanh hoặc không?,0,1,0
+ Làm thế nào để biết sự tính chất và ưu nghiệp của các loại vay khách họi trước khi đăng ký?,1,0,0
+ Sản phẩm nào của ngân hàng cho phép nạp tiền liên kết với thẻ tín dụng?,0,0,1
+ Ngân hàng có cung cấp gì cho khách hàng khi dùng dịch vụ thanh toán lương qua Internet Banking?,0,0,1
+ Tại sao chúng tôi cần bảo hiểm vấn đề vay vốn?,0,0,1
+ Tại sao việc đăng ký tài khoản tín dụng online của VPBank đang ngạm chuyện?,0,0,1
+ Tại sao tôi không thể nhận thẻ ghi nợ vay tín chấp?,0,0,1
+ Tại sao lãi suất vay của tôi là gần như bằng với phí vay?,0,0,1
+ Có kỳ hạn cho thẻ tín dụng hoặc không?,0,0,1
+ Có thể tôi gửi tiền bằng chứng nhận quy định được nộp trực tuyến hay không?,1,0,0
+ Tôi có thể sử dụng chương trình quảng cáo vay thế chấp cùng vay một lượng cụ thể?,0,0,1
+" Khi một vay tín chấp chế độ trả lại, tài khoản tín dụng của tôi sẽ bị khóa?",0,0,1
+ Ngân hàng có hỗ trợ gì cho khách hàng muốn thay đổi số điện thoại trả lúc trưng bày cho chúng tôi?,0,0,1
+" Điều kiện thông tin gia dụng, mở khóa và hoạt động cho vay tín chấp là gì?",0,1,0
+ Tôi có thể mua sắm quốc tế bằng thẻ tín dụng của mình?,0,0,1
+ Tôi có thể chọn chương trình tài trợ dự án trọn gói và vay thế chấp cùng lúc?,1,0,0
+" Đối với vay tín chấp, tôi phải xin tờ chứng nhận lão độ bằng bất kỳ việc nào không?",0,0,1
+ Ngân hàng có chính sách hỗ trợ giảm lãi suất cho khách hàng dùng dịch vụ Western Union?,0,0,1
+ Tìm hiểu về điều kiện và yêu cầu để được nhận vay thế chấp sạp chợ?,0,0,1
+ Sản phẩm nào giúp tăng sức bảo mật cho tài khoản online?,0,0,1
+ Tại sao việc lữu chọn một thẻ tốt là quan trọng?,0,0,1
+ Dạng dịch vụ vay tốt nhất cho doanh nghiệp?,0,0,1
+ Tôi có thể chuyển thẻ tín dụng sang một loại khác?,0,0,1
+ Lãi suất sử dụng để gửi tiết kiệm được tại đâu tốt nhất?,0,1,0
+ Tại sao chúng tôi cần dịch vụ giám sát tiền bạc đối với quỹ đầu tư của mình?,0,0,1
+ Có thể mở thẻ nội địa và thẻ quốc tế cùng lúc không?,0,0,1
+ Tại sao đại lý tốt hơn các thẻ tín dụng khi giao dịch trực tuyến?,0,0,1
+" Ngoài những gì, công cụ giám sát giao dịch liên tục của ngân hàng có thể mang đến giúp khách hàng sao chép giao dịch?",0,0,1
+" Nếu tôi muốn vay tiền để mua xe mô tô, tìm hiểu về các loại vay vốn của ngân hàng và điều kiện xin vay nào hợp lý nhất?",0,1,0
+ Tôi có thể mở hội khẩu cho sản phẩm tài chính và cho vay hết không?,1,0,0
+" Để được đón tư vấn về sản phẩm Dịch vụ chuyển tiền liên ngân hàng qua Internet Banking, tôi cần giữa gì?",0,0,1
+ VPBank Diamond có tính năng hỗ trợ chuyển tiền từ máy tính sang thiết bị di động không?,0,0,1
+" Khi tôi sử dụng chính sách Chọn đạo hạn với sản phẩm Tài trợ XNK, có bao nhiêu loại lệnh được hỗ trợ?",0,1,0
+" Bạn có thể cho tôi phân tích và so sánh giữa sản phẩm Tiết kiệm Thịnh Vượng và Tiết kiệm Phát Lộc Thịnh Vượng, để tôi biết rõ hơn về lợi ích và hạn chế của mỗi sản phẩm?",1,0,0
+ Ngân hàng có gì mà không có trong Chương Trình Tài trợ dự án trọn gói của mình?,1,0,0
+" Nếu tôi muốn được sử dụng VPBank NEO, tôi phải có một thẻ nào của Ngân hàng VPBank?",0,0,1
+ Tôi cần một gói giải pháp tài chính tốt nhất để bắt đầu kinh doanh. Liệu tôi nên chọn vay hoặc mở thẻ tín dụng?,1,0,0
+ Điều kiện để sử dụng dịch vụ vay trực tuyến trên internet banking là gì?,0,0,1
+ Có thể mở thẻ tín dụng và vay cùng một lúc?,1,0,0
+ Phí giao dịch điện tử của Ngân hàng đối với khách hàng có được thu hộ hoàn toàn miễn phí?,0,0,1
+" Tôi muốn mở một vay thế chấp để mua một xe máy, có nên chọn vay trả góp qua đợt thanh toán (NPL) hoặc vay thế chấp sạp chợ?",0,0,1
+" Nếu mình chọn vay thế chấp sạp chợ, có thể mình cho phép sử dụng tiền ngân hàng để thanh toán lãi?",0,0,1
+ Thanh toán dịch vụ qua email tốt cho khách hàng nào: Vay hoặc Thẻ?,0,0,1
+ Được không được mở nhiều hơn một vay tín chấp để một yêu cầu?,0,0,1
+" Trong quá trình mở thẻ, khiếu nại giao dịch thành công bao nhiêu lần?",0,0,1
+ Có thể mở tài khoản cá nhân và thẻ tín dụng cùng lúc không?,0,0,1
+" Dịch vụ gửi tiền qua email, làm thế nào để an toàn?",1,0,1
+ Có chính sách bảo lưng nào cho khách hàng tiết kiệm với thẻ tín dụng?,0,0,1
+" Thẻ nào tài chính giúp khách hàng học luận về lựa chọn giao dụng, giao dịch điện tử?",0,0,1
+ VPBank có chính sách khuyến mại nào cho khách hàng trang tính đăng ký mới dùng dịch vụ giao dịch qua email?,0,0,1
+ Có thể tôi sử dụng VPBank NEO để gửi giao dịch theo email chức năng gửi tiền một lần duy nhất một lúc?,0,0,1
+ Có thể tôi chuyển khoản bằng ứng dụng VPBank NEO không?,0,0,1
+ Nên chọn VPBank tài khoản gì để nhận ưu đãi tốt nhất khi dùng thẻ tín dụng?,0,0,1
+"Bạn có thể giải thích đơn giản cho tôi việc làm gì khi khách hàng đọng tiền bằng thẻ ghi nợ tại một địa điểm nào đó, sau đó chuyển tiền sang một đối tác trong quá trình mua hàng qua mạng?",1,0,0
+"Khi mua sắm trực tuyến, tại sao bạn khuyến khích khách hàng sử dụng thẻ ghi nợ nội địa hơn thẻ ghi nợ nội địa?",1,0,0
+ Tôi có thể mua quần áo online và được hỗ trợ cho vay chứng khoán để mua hàng không?,1,0,0
+ Vay tín chấp có bất kỳ giảm giá hoặc ưu đãi không nữa?,0,0,1
+" Nếu tôi chấp nhận một chính sách quyết toán, tôi có thể giảm lãi suất vay gì?",0,1,0
+ Có thể khách hàng dự phòng lãi bằng một thẻ để lưu trữ tiền?,0,0,1
+" Nếu tôi dùng thẻ, tôi có thể nạp tiền cho một thẻ game mình có không?",0,0,1
+ Tôi có thể có hai vay về hai gói dự án khác nhau trong một lúc không?,0,0,1
+ Doanh nghiệp siêu nhỏ có thể được cung cấp bảo hình cho gói vay Logistics bằng thẻ tín dụng?,0,0,1
+ Dòng tiền vay tín chấp như thế nào giúp cho việc trả nợ gói vay cũ nhanh hơn?,0,0,1
+" Nếu một khoản vay tín chấp lấp được, đến khi được hoàn trả 100%, liên tục có thể mở một khoản vay mới không?",0,0,1
+ Tôi có thể mở tài khoản thanh toán và lưu tiền trực tuyến giúp cho việc quảng cáo doanh nghiệp siêu nhỏ trở nên dễ dàng hơn?,0,0,1
+" Nếu tôi muốn nhanh chóng được hợp đồng vay, có phải gửi hồ sơ qua email hoặc hệ thống điện tử ngân hàng làm việc nhanh nhất?",0,0,1
+" Khi tôi có bất kỳ vấn đề gì về thẻ tín dụng của mình, có thể liên hệ với chăm sóc khách hàng của ngân hàng qua Facebook hoặc Zalo để được hỗ trợ?",0,0,1
+ Tôi có thể đăng ký cho vay ngân hàng và mở thẻ tài khoản thanh toán trong một gói độc lập không?,1,0,0
+ Bạn có thể cho biết quy định cho việc vay qua ngân hàng cho doanh nghiệp siêu nhỏ?,0,0,1
+ Tôi muốn biết những cách hợp lệ để giảm chi phí vay tài trợ vốn ngắn hạn?,0,0,1
+ Làm thế nào để khách hàng đối tác của bạn tìm thấy dịch vụ giao dịch qua email đáng tin cậy?,0,0,1
+ Đang có ưu đãi tặng quà cho khách mở thẻ tín dụng mới không?,0,0,1
+" Để mở vay tín chấp, khách hàng phải đáp ứng được bộ điều kiện nào?",0,0,1
+ Học viên có thể nhận ưu đãi giáo dục khi mở thẻ tín dụng hay vay?,0,0,1
+ Có thể mở vay bằng thẻ tín dụng trực tuyến không?,0,0,1
+" Ngân hàng có thể cho phép gửi tiền qua nội dung thẻ điện thoại, chứng chỉ tiền gửi tài khoản của khách hàng nào?",0,0,1
+ Tôi có thể mở khoản vay để mua xe máy không?,0,0,1
+ Bao giờ phải thanh toán lại lãi suất cho vay trả nợ trước hạn?,0,1,0
+ Điều kiện mở vay cho doanh nghiệp siêu nhỏ là gì?,0,0,1
+ Bao giờ tôi sẽ nhận được ưu đãi khi sử dụng Thẻ Diamond World trên Shopee?,0,0,1
+ Tôi có thể trả tiền cho vay vốn thông qua điện thoại không?,0,0,1
+ Ngân hàng có cung cấp bao nhiêu loại thẻ tín dụng?,0,0,1
+" Với gói Tài khoản số đẹp VPBank Prime 5in1, có đảm bảo tiện lợi vay nhanh không?",0,0,1
+" Vay thế chấp, có báo cáo trạng thái gấp nhân viên cung cấp vấn đề gì không?",0,1,0
+" Doanh nghiệp do nữ làm chủ muốn mở thẻ tín dụng cho việc bán hàng, phải gặp những điều kiện gì?",0,0,1
+" Với việc dùng VPBank NEO, hết tiền không thể thực hiện gì?",0,0,1
+ Giải pháp vay siêu tốc được sử dụng đến khi nào?,0,0,1
+" Liên kết trực tiếp với dịch vụ trải nghiệm ngân hàng VPBank nhất, tôi muốn biết một số chính sách mua hàng qua website của họ, có được không?",1,0,0
+" Thể thao hóa hình thức lãi suất vay tín chấp, ngân hàng có giúp đỡ tôi không?",0,1,0
+" VPBank Z JCB, VPBank Flex Mastercard, đảm bảo mình có thể giao dịch bằng thẻ tại những nơi mình muốn đi mới?",0,0,1
+ Điều kiện để được sử dụng gói sản phẩm tài khoản thanh toán VPSuper?,0,0,1
+ Sản phẩm nào trong dịch vụ đổi tiền hỗ trợ đổi tiền nhiều nhất một lần?,1,0,0
+ Lãi suất cho vay thế chấp như thế nào?,0,1,0
+ Tôi muốn biết cách đăng ký tài khoản điện tử để dùng dịch vụ Western Union?,0,0,1
+ Có gì khác ngoài VPBank NEO để bảo mật tài khoản trên Internet Banking của VPBank?,0,0,1
+ Tôi có thể có được số thẻ tín dụng một lần cho để gửi hỗ trợ truyền thông cho một đối tác?,0,0,1
+ Làm thế nào để kiểm tra số dư trong tài khoản của mình với thẻ tín dụng?,0,0,1
+ Tôi có thể duy trì trách nhiệm quyết toán với nhiều thẻ tín dụng một lần?,0,0,1
+ Phí vay vay tiếp sức trước khi gửi hợp đồng gì?,0,0,1
+ Có thể mở một vay tín chấp và một thẻ tín dụng cùng lúc được không?,1,0,0
+ Tôi có thể sử dụng vay thế chấp để mua một thông minh?,0,0,1
+ Làm thế nào để tìm hiểu ngân hàng có tài khoản lãi hoàn bảo không?,0,1,0
+ Vay người không có doanh nghiệp có quy định gì?,0,0,1
+ Có thể mua một cái car với thẻ tín dụng không?,0,0,1
+ Tại sao ngân hàng cần đối tác cho dịch vụ vay tín dụng?,0,0,1
+ Hỗ trợ gì cho khách hàng trong quá trình vay giao dịch qua Internet Banking?,0,0,1
+ Vay quốc tế có bao nhiêu cú pháp khác nhau không?,0,0,1
+ Có thể vay một số tiền để mở một doanh nghiệp và sử dụng thẻ tín dụng trong một thời gian ngắn để chi tiêu cho hoạt động kinh doanh không?,1,0,0
+ Khi lãi suất vay được tính bao nhiêu phần trăm của số tiền vay?,0,0,1
+ Điều kiện để được giao dịch tiền qua email bảo mật nhất?,0,0,1
+ Làm thế nào để xác minh rằng một giao dịch qua email là hợp lệ trước khi hoàn thành?,1,1,0
+" Định hướng về tính linh hoạt của dịch vụ thanh toán lương qua chứng từ điện tử E-Payroll, có khả năng gỡ chế độ bật vàng hoặc tắt nguồn lực dùng cho việc thanh toán lương theo yêu cầu của khách hàng?",0,0,1
+ Ngân hàng có chính sách về việc gửi tiền trực tuyến đến nước ngoài không?,0,1,0
+ Thẻ tín dụng nào có được hỗ trợ chăng kính với chính sách trải nghiệm tốt nhất cho khách hàng mới?,0,0,1
+ Bạn có thể hỗ trợ một người vay vốn để mở một cửa hàng đại lý điện tử mới?,0,0,1
+ Vay siêu tốc có được tương tác qua ứng dụng ngân hàng điện tử không?,0,0,1
+ Điều kiện để mở vay thế chấp cho một vấn đề chậm trả cần gặp gẫn gì?,0,0,1
+ Ngân hàng có một chương trình tài trợ giáo dục nào cho trẻ em của khách hàng?,0,1,0
+ Trải nghiệm dịch vụ xử lý vi phạm giao dịch với ngân hàng nào tốt nhất?,0,0,1
+ Có thể mua một loạt sản phẩm quốc tế trên internet và thanh toán bằng thẻ tín dụng của ngân hàng VPBank?,0,0,1
+ Phải thực hiện đúng gì để được đạt chứng nhận thẻ gia dục trong ngân hàng VPBank?,0,0,1
+ Có thể mở một vay tiếp sức chủ sạp và một thẻ tín dụng cùng lúc đấu giá trên internet của ngân hàng VPBank?,1,0,0
+ Tại sao ngân hàng luôn mạo danh dịch vụ bảo lãnh đối ứng hơn bảo lãnh dự thầu?,0,1,0
+ Có thể mở vay thế chấp kèm theo một thẻ ghi nợ?,1,0,0
+ Dịch vụ xuất nhập khẩu qua Internet Banking liên quan gì đến phí?,0,0,1
+" Chính sách bảo mật của một ngân hàng cho phép khách hàng gửi thông tin liên kết tới một website bên thứ ba, không?",0,0,1
+ Hợp đồng quản lý các dự án vay doanh nghiệp có phải bắt buộc phải chuyển tiền qua cảng ngân hàng?,0,0,1
+" Tôi muốn mở một khoản vay cho việc mua xe hơi, có được yêu cầu chứng nhận doanh nghiệp khi yêu cầu một vay nhập khẩu?",0,0,1
+ Có thể tôi sử dụng thẻ ghi nợ để chuyển tiền giữa hai ngân hàng không?,0,0,1
+ Vì sao việc có đủ tiền lương để trả vay là một yêu cầu quan trọng để được chấp nhận vay?,0,0,1
+ Có thể người dùng thẻ tín dụng trả góp cùng một tháng với một vay nhập khẩu?,1,0,0
+" Khi mà đang sử dụng dịch vụ vay trả nợ trước hạn khoản vay cũ, có thể mở vay mới để điều chế hợp lý chi trả lãi?",0,0,1
+" Để được ưu đãi khi gửi tiết kiệm thông qua dịch vụ trực tuyến, tôi cần phải có bao nhiêu tiền gửi?",0,0,1
+ Ngoại hương gì đó có thể giúp tôi đưa ra quyết định trước hết khi quan sát để tìm ra sản phẩm vay tốt nhất?,0,1,0
+ Có thể không mở vay sống được với một thẻ tín dụng?,0,0,1
+" Khi một khách hàng có thẻ tín dụng, phải mở vay mới được lãi?",0,0,1
+ Vay trực tuyến có ưu đãi gì cho khách hàng chưa mở thẻ tín dụng?,0,0,1
+ Dịch vụ cho gửi tiết kiệm qua Internet Banking có miễn phí không?,0,0,1
+ Bộ chứng từ xuất khẩu cho doanh nghiệp siêu nhỏ có giá bao nhiêu?,0,1,0
+ Phí đăng ký cho vay thế chấp sạp chợ bao nhiêu?,0,0,1
+"Trường hợp mình muốn vay vào dự án quảng cáo, tìm hiểu các dạng vay phù hợp nào?",0,0,1
+"Đôi khi mình muốn cầm tiền một chiếc xe hơi, hãy giải thích cho tôi quá trình vay bán lại xe nhé?",0,1,0
+"Tạm thời tôi không có theo dụng cho việc mở thẻ ghi nợ, tôi có thể sử dụng dịch vụ vay thế chấp không?",0,0,1
+Có một loại thẻ tín dụng cho khách hàng tiều dưởng những gì không?,0,0,1
+Tại sao tôi nên chọn thẻ tín dụng nào để phát triển tiều thuẫn tài chính của mình?,0,0,1
+Tôi có thể sử dụng thẻ vay lần đầu tiên cho gì?,0,0,1
+"Ngoài các điều kiện chung, có nào khác gì để được xét duyệt cho vay cá nhân?",0,0,1
+Có thể kết hợp chương trình tiết kiệm với vay đối với gì?,1,0,0
+Màu sắc và kích thước gói thẻ tín dụng là gì?,0,0,1
+ Hãy giới thiệu cho tôi sản phẩm Tài trợ dự án trọn gói nhé?,0,1,0
+ Điều kiện để được chế độ tài trợ nhà phân phối trọn gói là gì?,0,1,0
+ Có thể mở giao dịch qua email với quyền lợi gì so với giao dịch trực tuyến?,0,0,1
+" Hãy giới thiệu cho tôi dịch vụ Chiết khấu nhanh 3 giờ, thế nào hoạt động?",1,1,0
+ Có thể nhập tiền mặt quốc tế qua Thẻ tín dụng không?,0,0,1
+ Tôi có thể dùng thẻ ghi nợ và vay cùng lúc không?,1,0,0
+ Điều kiện để được gửi thẻ tín dụng là gì?,0,0,1
+ Tôi có thể thanh toán hóa đơn mà không sử dụng thẻ ghi nợ?,0,0,1
+ Lợi ích gì cho khách hàng nếu họ sử dụng VPBank NEO?,1,0,0
+" Tôi muốn hủy hợp đơn gửi thẻ, cách làm thế nào?",0,0,1
+ Dịch vụ ngân hàng điện tử hỗ trợ giúp khách hàng quản lý nhanh chóng và hiệu quả không?,1,1,0
+ Tại sao tôi nên lựa chọn Dịch vụ chuyển tiền quốc tế của ngân hàng VPBank?,0,0,1
+ Có khả năng tôi có thể nhanh chóng dùng được Bảo hiểm sống thịnh vượng của VPBank trong trường hợp mình bị việc?,0,0,1
+ Vay tín chấp có thể vay một lượng lớn đối với một khoản thời gian ngắn?,0,0,1
+ Trong gói Dịch vụ thanh toán VPSuper có mô hình hoá trả lương cho công việc tự làm hay không?,0,0,1
+" Khi mình có hoạt động quá trình đấu giá mua một gói thẻ tín dụng, có thể mình huỷ hoặc điều chỉnh yêu cầu bầu tư trước khi đóng yếu tố làm việc?",0,0,1
+" Nếu mình muốn biết giá trị của tài sản đảm bảo của mình nằm trong vay thế chấp, có thể liên hệ với Ngân hàng để biết chính xác không?",0,0,1
+ Tôi có thể gửi tiền đến ngân hàng khác qua ứng dụng Ngân hàng Nói chung?,0,0,1
+ Điều kiện để được chuyển sang chương trình VPBank Loyalty là gì?,0,0,1
+ Thẻ tiết kiệm VPBank Bảo Toàn Thịnh Vượng có thể dùng để giao dịch qua ứng dụng không?,0,0,1
+ Vay dự án trọn gói có quy định về phân bổ dư trống là gì?,0,0,1
+ Điều kiện để được hỗ trợ gói tài trợ dự án trọn gói cho doanh nghiệp nữ là gì?,0,0,1
+ Tôi có thể sử dụng VPBank Diamond với các sản phẩm tài chính khác của ngân hàng không?,0,0,1
+ Điều kiện cho việc mở tài khoản Bảo Lãnh Dự Thầu là gì?,0,1,0
+ Vay tiếp sức chủ sạp có đơn vị hỗ trợ tư vấn kỹ thuật và tư vấn vay như Vay đa năng không?,0,0,1
+ Dạng thẻ nào cho phép hoán đổi lãi suất nhanh nhất?,0,0,1
+ Có thể hủy gói thẻ tín dụng VPBank Loyalty sau đăng ký?,0,0,1
+ Tôi có thể đến một ngân hàng để điều chỉnh chỉ số trung bình hàng tháng (BBR) trên tài khoản tài chính của mình không?,0,0,1
+ Trong trường hợp mình đã nộp hoàn bồi thì được phép làm gì với tiền trả lại cho một gói vay?,0,0,1
+" Điều kiện để nhận ưu đãi khuyến mại khi mua Thẻ tín dụng do VPBank cung cấp, bạn hãy chia sẻ?",0,0,1
+" Làm sao để đăng ký mở vay tín chấp qua điện thoại online, không cần đến ngân hàng trực tiếp?",0,0,1
+" Vay tín chấp có thể dùng để mở dự án kinh doanh siêu nhỏ, chứng nhận mình biết?",0,0,1
+Tôi có thể mở một thẻ giảm giá trực tuyến và vay tín dụng cùng lúc bằng VPBank?,1,0,0
+Phải làm gì để trở thành một VPBank Diamond Member?,1,0,0
+Dịch vụ chuyển tiền giữa các ngân hàng qua Internet Banking của VPBank giá rẻ nhất là bao nhiêu?,0,0,1
+Có khảo sát những điểm yêu cầu cho việc đăng ký cho vay trọn gói tài trợ dự án tại VPBank?,0,0,1
+Ngân hàng VPBank có một dịch vụ bảo hiểm an ninh thẻ nào?,0,0,1
+ Tất cả các loại dịch vụ nạo văn xuất gồm gì?,0,0,1
+ Làm thế nào để biết ngân hàng của mình có chính sách ưu tiên cho khách hàng vay vốn không?,0,0,1
+ Có kể cả tài khoản ngân hàng tốt nhất cho doanh nghiệp hay không?,1,1,0
+ Tại sao doanh nghiệp cần dịch vụ tài trợ xuất nhập khẩu?,0,1,0
+ Được phép mở thêm nhiều tài khoản thẻ tín dụng không?,0,0,1
+ Tôi có thể được đăng ký cho dịch vụ vay hợp vốn một cách đơn giản trực tuyến không?,0,0,1
+ Bảo hiểm sức khỏe được cung cấp bởi những ngân hàng nào?,0,1,0
+" Cho vay giữa các loại tín dụng và tín chấp, được đề nghị làm thế nào cho phần trăm đầu tiên của doanh số giao dịch?",1,0,0
+" Đánh giá trên 10 điểm, hỗ trợ tốt nhất của ngân hàng trong việc cho vay nhập khẩu là gì?",0,0,1
+ Tại sao mình nên mở tài khoản VPBank NEO để gửi tiền qua email?,0,0,1
+ Tôi có thể nhận phiếu được chấp nhận trả vay tại một ngân hàng khác như VPBank?,0,0,1
+ Số tiền tối thiểu để có thể mở vay tín chấp cho giáo viên là bao nhiêu?,0,0,1
+ Vay thế chấp có thể dùng để mở một cafe như thế nào?,0,0,1
+ Tôi có thể kiểm tra tài khoản dịch vụ giao dịch qua email trên ứng dụng VPBank NEO không?,0,0,1
+ Vay nhanh nhất tại đâu để mua điện thoại?,0,0,1
+ Vay giáo dục để trả học phí trong tháng nào?,0,0,1
+" Để có ưu đãi nhất, tôi nên sử dụng thẻ gì để mua hàng trực tuyến?",0,0,1
+ Lãi suất giảm bao nhiêu để đủ điều kiện để được vay ngân hàng?,0,0,1
+" Tôi cần mở vay xuân năm để mở một cafe nhỏ, tôi có thể được ưu đãi gì?",0,0,1
+ Vay tín chấp có tạo ra thúc động cho việc tiết kiệm tiền bạc hay không?,0,0,1
+ Dùng chung các sản phẩm nào mà Ngân hàng TPB có thể hỗ trợ cho một doanh nghiệp?,1,0,0
+ Có thể mở khoản vay tín chấp để góp phần mua sắm một xe máy chính hãng không?,0,0,1
+ Bạn có thể vay tiền cho một chụp hình mới của bạn?,0,0,1
+ Vay thế chấp sạp chợ có ưu đãi khuyến mại nào cho khách hàng mới?,0,1,0
+ VPBank Loyalty có chính sách tăng số điểm thêm cho việc gửi tiền qua đối tác ngoại hối không?,0,0,1
+" Khi trao cho thẻ tín dụng cho một khách hàng do nữ làm chủ, thì ngân hàng có bộ sưu tập quy định gì cho việc điều kiện thẻ?",0,0,1
+" Dạn gần, có khách hàng có thể trả tiền lãi suất thẻ tín dụng hằng tháng với hoạt động thông thường của mình?",0,0,1
+" Để có được một vay xưởng nhà, điều kiện nào phải được đáp ứng?",0,0,1
+ Điều kiện mở tài khoản vay tốt nhất của loại vay nào?,0,0,1
+ Dịch vụ quảng cáo thông tin giá cả ngân hàng điện tử thuộc về nào?,0,1,0
+ Cách nhanh nhất để liên hệ với trung tâm hỗ trợ trực tuyến của ngân hàng?,1,1,0
+ Tôi muốn mở một dòng sản phẩm nào để kinh doanh doanh nghiệp do nữ làm chủ?,1,0,0
+ Ngân hàng có thể cho tốn phí tìm kiếm một dịch vụ kiểm đếm tốt nhất cho doanh nghiệp không?,0,1,0
+ Có thể vay bằng thẻ tín dụng trong nước hoặc quốc tế không?,1,0,0
+ Hơn 50% thẻ ghi nợ tốn phí bao nhiêu cho việc thanh toán hóa đơn khách hàng thông qua thẻ?,0,0,1
+ Điều kiện cho được mở dòng lộc thịnh vượng (super thịnh vượng) là gì?,1,0,0
+" Để được cho vay, hạn mức đạt xemark tối thiểu bao nhiêu?",0,0,1
+" Khi sử dụng thẻ tín dụng, tôi có thể hoạt động trên dịch vụ ngân hàng trực tuyến không?",0,0,1
+" Khi sử dụng thẻ ghi nợ, khách hàng phải trả phí nào mỗi tháng?",0,0,1
+ Tại sao khách hàng nên sử dụng thẻ tín dụng hơn việc mở vay trung hạn?,1,0,0
+" Khi tôi gửi tiết kiệm trên thẻ, điều kiện để kiểm soát số dư bằng trên trang web hay trên thẻ nào tốt hơn?",1,1,0
+ Tôi có thể mở vay thế chấp để mở thẻ tín dụng không?,0,0,1
+" Nếu mình vay thế chấp mua điện thoại và mới khởi tạo doanh nghiệp, có thể tín dụng từ vay này để thanh toán cho công việc không?",0,0,1
+ Tìm hiểu xem ngân hàng có cung cấp những dịch vụ khám sức khỏe nào cho khách hàng không?,0,0,1
+ Có thể mở vay tín dụng để mua xe máy tại ngoại địa?,0,0,1
+ Tại sao nên chọn tài trợ nhà phân phối đại lý của ngân hàng?,0,1,0
+ Có thể dùng thẻ tín dụng vay cùng lúc?,1,0,0
+ Phí tạm thời cho gói sản phẩm tài khoản thanh toán AutoLink là bao nhiêu?,0,0,1
+ Điều kiện để được sử dụng tiết kiệm Thịnh Vượng linh hoạt là gì?,0,1,0
+ Hỗ trợ nào tốt nhất cho việc chuyển tiền quốc tế trực tuyến?,1,0,0
+ Giải thích quy định về phí ưu đãi cho khách hàng vay vốn?,0,1,0
+ Có phải tất cả các dịch vụ tài khoản của ngân hàng đều hỗ trợ chuyển tiền trong nước không?,1,0,0
+ Có thể mở vay thế chấp sạp chợ và mở thẻ tín dụng cùng lúc?,1,0,0
+ Làm thế nào để kiểm tra trạng thái đánh giá tín dụng của tài khoản gói vay của mình?,0,0,1
+" Nếu tôi mượn quá sức mạnh, có thể được nhận hỗ trợ gì từ ngân hàng?",0,0,1
+ Vay nhà có áp dụng lãi suất khác với vay xe hương?,0,0,1
+Tôi có thể đăng kí cho một thẻ ghi nợ và một vay thế chấp cùng lúc không?,1,0,0
+Điều kiện để được nhanh tốt nhất cho việc đặt yêu cầu giao dịch qua email?,0,0,1
+Có một sách nghịch đối cho ngân hàng về dịch vụ truyền thông về dịch vụ cho khách hàng?,0,0,1
+"Khi mở thẻ ghi nợ, bạn có thể chọn một lãi suất cố định hoặc sử dụng lãi suất theo thị trấn?",0,1,0
+Làm thế nào để giảm chi phí truyền thông cho thẻ tín dụng?,0,0,1
+ Dịch vụ cho phép bạn thực hiện giao dịch qua thẻ giảm giá giúp bạn tiết kiệm bao nhiêu tiền?,0,0,1
+ Làm sao để mở một khoản vay xuất khẩu nhanh nhất?,0,0,1
+ Tôi có thể mở khoản vay góp ưu đãi với tính năng cho phép lên hạn trước?,0,0,1
+ Bạn có thể hỏi VPBank qua Email về yêu cầu giao dịch tài chính nào?,0,0,1
+ Thẻ ghi nợ nội địa có quy định gì cho việc hoán đổi?,0,1,0
+" Trong việc lựa chọn một ngân hàng, tôi cần biết các dịch vụ chung họ cung cấp, được liệu họ có đủ?",1,1,0
+ Giá thẻ vay vốn có bao nhiêu loại?,0,0,1
+ Hãy giúp tôi biết phí dùng dịch vụ giao dịch qua email được tính bao nhiêu?,0,0,1
+ Tôi có thể có được giải pháp hoán đổi ngoại tệ trực tuyến và vay tín chấp cùng lúc không?,1,0,0
+ Ngân hàng có cung cấp chương trình tài trợ nhà phân phối đại lý nào?,0,0,1
+ Điều kiện để nhận được giao dịch bảo hiểm thực hiện hợp đồng bằng chất lượng tốt?,0,1,0
+ Bảo lãnh đối ứng có giúp cho người dùng vay tiếp sức chủ sạp không?,0,1,0
+ Vay tín chấp có phí khác ngoài lãi suất không?,0,0,1
+ Đang có khoản vay để mua xe máy cho một người không phải là tài khoản chủ?,0,0,1
+ Điều kiện để mở dịch vụ tài trợ XNK trong ngân hàng?,0,0,1
+ Có thể mua một chiếc xe với chứng nhận L/C nhập khẩu?,0,1,0
+ Làm thế nào để biết L/C của mình được phát hành?,0,0,1
+ Vì sao nên mua bảo lãnh như thế nào cho một hợp đồng dự thầu?,0,1,0
+ Bảo lãnh nào hỗ trợ giao dịch quốc tế tốt nhất?,1,1,0
+ Được khuyến mại nào cho mình nếu mở thẻ tín dụng và tích lũy điểm?,0,0,1
+ An ninh bảo mật cho dịch vụ vay vốn bằng internet như thế nào?,0,1,0
+ Tại sao việc sử dụng chúng tôi ứng dụng điện thoại để thanh toán hóa đơn online tăng lên?,0,0,1
+ Tại sao dịch vụ giao dịch online qua email không phổ biến hơn?,0,0,1
+" Thông qua tính năng xem thống kê chi tiêt giao dịch qua ứng dụng, khách hàng có thể tìm thấy gì?",1,1,0
+" Bằng việc mở thẻ vay gian hạng, tôi có được nhận được vay không?",0,0,1
+ Điều kiện mở thẻ vay trong ngân hàng bạn là gì?,0,0,1
+ Tôi có thể được nhận vay không khi tồn tại những lỗi trên tài khoản thẻ?,0,0,1
+ Ngân hàng có chính sách cho phép gộp nhiều lần vay với lãi suất đầu tiên không?,0,0,1
+" Bằng việc mở thẻ tín dụng, tôi có được vay tiền không?",0,0,1
+" Tình hình vay tín chấp đang bao gồm rất nhiều loại, có thể hỏi tình hình vay tín chấp ưu đãi để chiến thùng giáo dục bạn hay không?",0,1,0
+ Có thể mở tài khoản thanh toán qua ứng dụng ngân hàng không?,0,0,1
+ Nếu mình quên mật khẩu đang sử dụng ứng dụng ngân hàng NEO thì các biết phải làm gì?,0,0,1
+" Vay tín chấp mang lại nhiều lợi ích cho khách hàng, trong đó có vay siêu tốc được chia sẻ không?",0,1,0
+ Tôi muốn biết liệu có thể mua được chuyên môn tài chính để được giúp lập kế hoạch tài chính?,0,1,0
+ Có những tài khoản thanh toán có thể giúp tìm kiếm và quảng cáo giảm giá một cách hiệu quả hơn không?,0,0,1
+ Liệu tôi có thể lập hộp tiết kiệm tự động vào thẻ tín dụng?,0,0,1
+ Có thể mở 1 vay siêu tốc và 1 vay dự án trọn gói cùng lúc không?,0,0,1
+Bạn có thể cho ta biết các loại vay đặc biệt cho doanh nghiệp một cách thông dụng hơn?,1,0,0
+"Đối với việc mở thẻ để nhận hàng, có nên lựa chọn thẻ tín dụng hoặc thẻ thu nhập?",1,0,0
+Doanh nghiệp có thể chuyển tiền trực tiếp qua hệ thống ngân hàng chứng nhận như thế nào?,0,0,1
+Hợp đồng mua bán ngoại tệ hoán đổi có được giao trực tuyến không?,0,1,0
+Vay nhớ gia hạn là bao nhiêu tháng?,0,0,1
+Tôi có thể gửi tiền sang tài khoản của mình qua ứng dụng điện thoại không?,0,0,1
+Có thể đăng ký vay thế chấp qua ứng dụng điện thoại không?,0,0,1
+Tôi có thể gửi tiền sang tài khoản khác trực tiếp qua ứng dụng điện thoại không?,0,0,1
+Có thể mở thẻ trực tuyến và gửi tiền sang thẻ của mình qua ứng dụng điện thoại không?,0,0,1
+ Tôi có thể mở thẻ quốc tế và vay vốn cùng lúc ở VPBank?,1,0,0
+ Chịu phí gì để sử dụng thẻ tín dụng để mua sắm trên internet?,0,0,1
+" Nếu tôi quá hạn sử dụng thẻ tín dụng và có giữ một lượng gửi tiết kiệm, có sẽ bị trừ phí gì?",0,0,1
+ Có thể mở vay nhân dân để trả lương cho nhân viên của mình ở VPBank không?,0,0,1
+ Vay vốn tốt nhất cho người mới đi làm là gì?,0,0,1
+ Tạm dừng dịch vụ gửi tiền qua ứng dụng Ngân Hàng như thế nào?,0,0,1
+ Vay tín dụng có đối số lãi suất cố định không?,0,0,1
+ Ngân Hàng đang có khuyến mại nào cho dịch vụ vay thế chấp?,0,0,1
+ Dịch vụ tín dụng số hoạt động như thế nào?,0,0,1
+" Nếu tôi mở 2 thẻ tín dụng, có thể có quyền lãi ưu đãi gì hơn không?",0,0,1
+ Thông tin bảo mật về phản hồi khi quên mật khẩu đăng nhập ứng dụng vay tín chấp?,0,1,0
+ Trong tình huống một người có thể mở hai thẻ ghi nợ không? Hãy xác định cho từng ngân hàng.,1,0,0
+" Khi tôi có sách bảo hiểm yêu cầu phải có ""Danh sách giá trị bảo hiểm"", được gọi là gì trong thường hầu?",0,1,0
+" Trong quá trình khảo sát, mình có thể biết xem có một chế độ bảo hộ bảo hiểm cho việc mất thẻ tín dụng của tôi không?",0,0,1
+ Dại quá gần đây có một gói dịch vụ ngân hàng gì mà tôi có thể hợp tác để tiết kiệm chi phí cho việc đảm bảo bảo mật thông tin cá nhân?,0,0,1
+" Nếu tôi muốn biết trữ lại bột ngọt bộ để làm cho bánh ưng đất trên thẻ tín dụng của mình, tôi phải làm thế nào?",0,0,1
+"Nếu tôi sử dụng thẻ, sẽ có phí để rút tiền không?",0,0,1
+"Ngoài ra việc sử dụng thẻ ghi nợ, có bất kỳ dịch vụ khác mà tôi có thể yêu cầu ưu đãi?",0,0,1
+Tôi có thể thanh toán tiền dịch vụ khách hàng qua thẻ tín dụng không?,0,0,1
+"Nếu tôi lãnh đạo một doanh nghiệp và muốn mở tài khoản cho doanh nghiệp, tôi phải tìm kiếm một tài trợ dự án trọn gói không?",0,0,1
+" Khi mình muốn quét mã QR để nhận hàng nhanh, hãy tìm thấy dịch vụ gì trên ứng dụng VPBank?",1,0,0
+" Nếu tôi có một vay động sản và muốn thay đổi lãi suất, hãy giải thích xu hướng nào tốt nhất?",0,0,1
+" Khi tôi muốn mua sắm, có thể sử dụng thẻ tín dụng để trả góp thay vì sử dụng tiền mặt để mua sắm bao nhiêu tuần?",0,0,1
+ Có thể sử dụng thẻ tín dụng để mua trái tim hay thăm dưỡng?,0,0,1
+Tại sao khi mở khoản vay nhiều nhất thì chi phí lãi suất trung bình hơn?,0,0,1
+Tôi có thể hủy thẻ tín dụng đi không?,0,0,1
+Chấp nhận bảo hiểm cho khoản vay trung và dài hạn của VPBank sao?,0,0,1
+Tại sao khi mình đặt yêu cầu hủy khoản vay thì lại có phải trả khoản vay đi?,0,0,1
+Bằng việc gửi tiền điện tử có thể hấp dẫn VPBank tăng được tính điểm điểm tích lũy cho tài khoản ghiép?,0,0,1
+ Tôi có thể mở khoản vay để mua một ô tô mới không?,0,0,1
+ Có bao nhiêu số thẻ tín dụng một khách hàng có thể mở?,0,0,1
+" Liên quan đến dịch vụ vay tiền, tôi có thể trả về tiền nhanh hơn thời hạn gốc lần nào?",0,0,1
+ Số phí lãi thuê cho việc sử dụng dịch vụ Internet Banking là bao nhiêu?,0,1,0
+" Nếu tôi mở khoản vay lần đầu, tôi có thể yêu cầu thay đổi số tiền vay sau đó?",0,0,1
+ Vay nhanh tín chấp được dùng để mua sắm trên mạng bán hàng sao?,0,0,1
+ Thẻ tín dụng có thể sử dụng cho việc điều chế bảo hiểm cho xe máy không?,0,0,1
+ Dịch vụ bảo lãnh nào tốt nhất cho khách hàng yêu cầu hơi hấp dẫn hơn?,1,1,0
+ Phải chịu phí gì khi muốn hủy bỏ thẻ tín dụng?,0,0,1
+ Ngân hàng có một giao dịch quốc tế nhanh nhất được gợi ý không?,1,1,0
+ Dịch vụ đổi tiền ngoại tệ hưu ích không? Chứng nhậ,0,0,1
+ Dịch vụ giải phóng băng keo nào tốt nhất cho quá trình vay tiếp sức chủ sạp?,0,1,0
+ Có thể nhanh chóng kiểm tra trạng thái vay hợp vốn trên điện thoại không?,0,0,1
+ Điều kiện để trả lại tiết kiệm trước là gì?,0,1,0
+ Điều kiện để mở tài khoản vay online là gì?,0,0,1
+ Tìm kiếm thẻ có một mức lượng đực tiêm nhỏ hơn bình quân để trải qua quá trình kiểm tra nhất?,0,0,1
+Tìm hiểu xem tại sao Thẻ tín dụng VPBank Super Shopee Platinum là một loại thẻ tín dụng được đông đảo khách hàng yên tâm?,0,0,1
+Ngân hàng nào có chính sách vay xuống của trung bình hơn?,0,0,1
+"Khi mở thẻ tín dụng, tôi có nhu cầu gửi tiết kiệm để có hơn lãi không?",0,0,1
+Cách nhận biết một dịch vụ tài khoản ngân hàng điện tử tốt không?,1,1,0
+Có thể mở Thẻ ghi nợ nội địa không đồng thời gửi tiết kiệm?,1,0,0
+" Tôi muốn hỏi về các chương trình hấp dẫn cho khách hàng mới đăng ký một tài khoản ngân hàng. Tạm biệt, có gì cho phép tôi biết?",1,0,0
+ Tại sao lãi suất vay tín dụng thường lên hơn vay trả nợ trước hạn?,0,1,0
+" Khi mua hàng online, đôi khi gặp phải giao dịch đã thành công, nhưng đơn hàng chưa đến, tại sao?",1,0,0
+ Tôi muốn mở thẻ gì để có thể vay tiền?,0,0,1
+ Bạn có thể giúp tôi hiểu thêm về quy định về giao dịch trái phiếu?,0,1,0
+ Vay trọng tài có quy định về suất lãi không?,0,0,1
+ Tại sao mình phải thanh toán thêm tiền phí để mở thẻ?,0,0,1
+ Ngân hàng có gói dịch vụ nào đối với sinh viên?,0,0,1
+" Trước khi mở một tài khoản số đẹp, tôi cần biết gì?",1,0,0
+ Liệu có thể đạt được giảm lãi suất vay khi hoạt động giao dịch quá trong một số tháng liên tiếp?,0,0,1
+ Làm sao để xác minh một vay tín chấp hợp lệ?,0,0,1
+ Sản phẩm nào cho phép khách hàng chuyển tiền giữa hội nhà tốt nhất?,1,0,0
+ Vấn đề gì mô tả về việc mở vay thế chấp để xây dựng một công trình xây dựng?,0,0,1
+ Điều kiện để được hỗ trợ qua dịch vụ bảo lãnh dự thầu bao nhiêu tiền?,0,0,1
+ Tôi muốn biết có được giảm lãi suất cho số giro nếu mở thẻ tín dụng đồng thời?,0,0,1
+ Có thể mở vay xác minh và mở thẻ tín dụng cùng lúc không?,1,0,0
+ Tôi muốn biết có được nhận hồ sơ tài khoản online để thực hiện giao dịch trực tuyến?,1,0,0
+ Có thể giao dịch bảo hiểm online không?,0,0,1
+ Tôi muốn biết lịch giao dịch để gửi tiết kiệm vào kho thế hệ được liệu gì?,0,1,0
+Tôi có thể vay và dùng thẻ giao dịch cùng lúc?,1,0,0
+Dịch vụ tài trợ dự án trọn gói liên quan đến việc mở thẻ tín dụng không?,0,0,1
+Khi tôi không thể trả lũy khoản vay được thế nào?,0,0,1
+Vay tiếp sức chủ sạp có lãi suất không cố định?,0,0,1
+Ngân hàng có mở thẻ tín dụng cho người mới đến Việt Nam không?,0,0,1
+Vay siêu tốc có thể sử dụng cho việc mở thị trường nhà phân phối đại lý không?,0,0,1
+ Tôi có thể sử dụng Thẻ tín dụng VPBank Super Shopee Platinum và Thẻ đa năng 2 trong 1 VPBank Flex Mastercard gần nhất trong một thời gian động để làm gì?,0,0,1
+ Điều kiện để nhận được dịch vụ chuyển tiền liên ngân hàng qua Internet Banking là gì?,0,0,1
+ Tối ưu hóa trải nghiệm tài chính của bạn bằng loại gì đó trong Chương Trình Tài Trợ của VPBank?,1,1,0
+ Phí cho việc sử dụng Thẻ đa năng 2 trong 1 VPBank Flex Mastercard là bao nhiêu bình quân?,0,0,1
+ Tại sao việc mở vay tín chấp có đúng lình với việc mở thẻ tín dụng?,1,0,0
+ Có thể vay tiền đến khoảng 1 triệu đồng trong một tháng không?,0,0,1
+ Vay vốn theo dự án nào có thể có lãi suất tốt nhất?,0,0,1
+ Số tài khoản tiết kiệm cũng như số vai trò giao dịch của tôi có tạo điều kiện cho việc mở tài khoản thanh toán không?,1,0,0
+ Tôi có thể mở một thẻ tín dụng và gửi tiết kiệm trực tuyến cùng lúc không?,0,0,1
+" Nếu tôi không thể trả lại tiền theo hợp đồng, đã có sẵn các điều kiện gì để ngân hàng cho phép mình chèn khoản vay thế chấp?",0,0,1
+ Ngân hàng có phát hành gì cho khách hàng đang quảng cáo kinh doanh?,1,0,0
+" Tại sao lần đầu tiên mỗi tháng, tôi không nhận được thông tin giao dịch trên ứng dụng của mình?",1,1,0
+" Bằng một cách đơn giản nhất, tại sao tôi nên chọn vay tiêu dùng hơn vay xây dựng?",0,1,0
+" Khi không có tiền bạc, tôi có thể gửi quảng cáo qua thẻ tín dụng vì thế mới có thể mua được món ngon không?",0,0,1
+ Phương thức gửi tiền mới đã ra đời như ngân hàng chuyển khoản SMS và giới thiệu cho chúng tôi?,1,1,0
+ Tôi có thể vay tiền bằng chất mượn không?,0,0,1
+ Dịch vụ nào cho phép khách hàng thông qua quy trình vay nhanh nhất?,0,0,1
+ Thẻ nào có khoản lãi gia tăng nhanh nhất?,0,0,1
+ Làm thế nào để hủy lưu trữ thẻ tín dụng mà không được đổi tiền?,0,0,1
+ Tôi có thể hủy quyền dùng một số dịch vụ của ngân hàng không?,0,0,1
+ Có tốt hơn một số dịch vụ ngân hàng cho một gia đình lớn không?,0,1,0
+ Tôi có thể mở tài khoản ngân hàng và mở thẻ tín dụng cùng lúc?,0,0,1
+ Điều kiện để mở tài khoản ngân hàng là gì?,0,1,0
+ Ngân hàng có đảm bảo mình sẽ không có vấn đề về an toàn khi sử dụng dịch vụ và các thẻ của họ?,0,0,1
+ Thẻ tín dụng nào có giáo dục chu khoáo hình thức lập hoá hồng tốt nhất?,0,0,1
+ Có thể mở thẻ nhiều hơn một lần trên một tài khoản?,0,0,1
+ Có thể tôi mở vay thế chấp ngay lập tức với hồ sơ đăng ký một thẻ tín dụng?,0,0,1
+ Dịch vụ nào tốt nhất cho khách hàng muốn kiểm soát chất lượng và thống kê chi tiêu?,0,0,1
+ Tình hình liên doanh giữa các ngân hàng và công ty cung cấp dịch vụ xác nhận L/C thực tế là gì?,0,1,0
+ Tình hình thị trường liên quan đến việc vay trung và dài hạn trước và sau Covid-19 là gì?,0,1,0
+ Lợi ích của việc giữ thẻ tín dụng có giá trị bao nhiêu?,0,0,1
+ Có có quy định về số lượng thẻ tín dụng một khách hàng có thể mở?,0,0,1
+ Có thể điều chỉnh lãi suất trên một khoản vay tín chấp đang đang hoạt động?,0,0,1
+ Điều kiện tốt nhất để nhận được ưu đãi tài trợ vốn lưu động ngắn hạn của ngân hàng?,0,0,1
+ Phí quy đổi thẻ tín dụng trên thị trường ngân hàng Việt Nam bao nhiêu?,0,0,1
+" Tôi muốn biết cách để thanh toán vay qua điện thoại, không?",0,0,1
+ Điều kiện cho được sử dụng dịch vụ cho vay qua điện thoại là gì?,0,1,0
+ Có thể mở vay ngay bằng điện thoại không?,0,0,1
+" Hình thức thanh toán vay qua điện thoại, có tín dụng hay thế chấp?",0,1,0
+ Vay vốn qua điện thoại có bao nhiêu lãi suất cao nhất?,0,0,1
+" Điều kiện cho được giải phóng tài khoản thẻ vay qua điện thoại, không?",0,0,1
+ Làm sao để kết nối với hình thức dịch vụ quảng cáo tốt nhất của VPBank?,0,0,1
+ Đang có khuyến mại giảm phí hoặc lãi suất cho vay vốn tại VPBank hiện nay không?,0,0,1
+" Ngoài việc mở thẻ tín dụng, có gì khác tại VPBank mà tôi có thể áp dụng để trải nghiệm sản phẩm tin tưởng hơn?",1,1,0
+ Bạn có thể hướng dẫn tôi qua các bước đăng ký tài khoản thanh toán trực tuyến VPBank online?,0,0,1
+ Có thể tôi có sử dụng thẻ tín dụng và vay cùng lúc?,1,0,0
+ Điều kiện để được mở khoản vay gì?,0,0,1
+ Ngân hàng có thể tạo cho một thẻ vay nhanh từ nhiều loại thẻ gì?,1,0,0
+ Có thể tôi vay bằng tiền bán dẫn từ một thẻ vay nào?,0,0,1
+ Có thể chuyển khoản từ một thẻ tín dụng sang một khoản tiết kiệm cùng ngan hàng không?,0,0,1
+ Thẻ tín dụng có phượng pháp chi phương giác nào để giảm chi phí?,0,0,1
+ Tại sao lại lần nào để đặt một giảm giá mới cho thẻ tín dụng?,0,0,1
+ Tôi có thể dùng thẻ tín dụng để thanh toán cho lòng ghế xe máy được không?,0,0,1
+ Thông tin về quy định và điều kiện cấp được vay giúp gì cho khách hàng?,0,1,0
+ Có thể mua sách thịnh vấn tín dụng qua website của ngân hàng không?,0,0,1
+ Khách hàng có thể kiểm tra lại giao dịch mình đã thực hiện trên thẻ và tài khoản bằng cách thăng ký đăng nhập gì?,1,0,0
+" Với các sản phẩm tín dụng tại ngân hàng, có khả nghịch cho mình vay nhỏ cho mình trong một thời gian ngắn không?",0,0,1
+ Chúng ta có thể tự điều chỉnh giá trị giám sát tài khoản trên VPBank NEO không?,0,0,1
+ Tôi có thể đăng ký cho vay nhanh hơn với bảng giá lãi suất hàng tháng cao hơn?,0,1,0
+" Tôi muốn biết thông tin để đăng ký một tài khoản thanh toán tại ngân hàng, sao là điều gì?",0,0,1
+ Tôi có thể trả lại số tiền gửi qua vay tín chấp không?,0,0,1
+ Vay nhỏ sẽ được đưa vào khảo sát tính tưởng tượng bạn không?,0,0,1
+ Chúng ta có thể hoạt động với số tiền trong vay đa năng tương tự như sử dụng tiền mặt không?,0,0,1
+ Vay thế chấp có tốn phí lãi gì cho khách hàng?,0,0,1
+ Điều kiện để sử dụng vay thế chấp lần đầu tiên là gì?,0,0,1
+ Doanh nghiệp siêu nhỏ có thể mượn vay như thế nào để mua xe hơi cho hoạt động kinh doanh?,0,0,1
+" Nếu mình muốn mở một sản phẩm thẻ tín dụng, tại sao nên chọn VPBank Prime 5in1 hơn hẳn những sản phẩm khác?",0,0,1
+" Khi mở một thẻ tín dụng, có thể hạn mức trả phí tháng thứ nhất không được quá mức nào?",0,0,1
+" Nếu mình chưa có Tài khoản số đẹp tại VPBank, có thể mở một tài khoản mới online không?",0,0,1
+ Ngân hàng có dịch vụ gửi tiền điện tử cho khách hàng trong nước hay không?,0,0,1
+ Lãi suất thay đổi nhanh như thế nào cho vay nhưng phải trả nó gần đây hơn?,0,1,0
+" Nếu tôi để quên mật khẩu vay, thì sẽ xảy ra gì?",0,0,1
+ Sản phẩm nào của ngân hàng hỗ trợ chủ động tích lũy như thế nào?,0,0,1
+" Để được vay bằng thẻ gì, tôi cần có bảo hiểm nào?",1,0,0
+" Nếu tôi muốn vay để mua một xe, tại sao tôi cần một thẻ tín dụng?",1,0,0
+" Tôi đang muốn mở một tài khoản thanh toán, tuy nhiên, tôi có thể mở nhiều tài khoản cùng lúc không?",0,0,1
+ VPBank có chính sách giảm phí hoặc ưu đãi cho khách hàng nếu họ muốn lắp đặt thêm một số dịch vụ đối xứng?,0,1,0
+ Tôi có thể mở một thẻ tín dụng với lãi suất thấp nhất nhưng lại không cần giảm giá trị tài sản?,0,0,1
+ Tôi muốn biết phí ưu đãi hấp dẫn cho khách hàng mới có được thúc đẩn mở thẻ tín dụng tại VPBank?,0,0,1
+" Sử dụng dịch vụ gửi tiết kiệm, tôi có thể gửi tiền cho bánh xè ngang hàng tuần?",0,0,1
+" Dành cho khách hàng yêu nhỏ, ngân hàng có gói tiền lưu động tốt nhất cho trẻ mông?",1,0,0
+ Có điều kiện để đăng ký và sử dụng dịch vụ thẻ tín dụng cho doanh nghiệp do nữ làm chủ của VPBank?,0,0,1
+ Tôi có thể lấy ra bản sao của thẻ ghi nợ mình đang sử dụng?,0,0,1
+ Bộ phận hỗ trợ gì để giải quyết vấn đề vay lương cho mình?,0,0,1
+ Liệu VPBank có cung cấp gói hỗ trợ vay dự án trọn gói cho khách hàng mới?,0,0,1
+ Phí chăm sóc thẻ ghi nợ nội địa bao nhiêu tiền trong tháng này?,0,0,1
+" Tôi cần một thẻ tín dụng mở tốt cho việc giao dịch qua internet, tuyệt vời không?",0,0,1
+ Tôi muốn biết các loại thẻ tín dụng có sẵn tại ngân hàng này?,0,0,1
+" Đối với một loạt trọng tài quan hệ, có thể sử dụng thẻ tín dụng cho việc thanh toán phí bảo lãnh nào?",0,0,1
+" Tôi muốn biết các lựa chọn hợp lựa để trả vay tín dụng, có được không?",1,0,0
+" Thông thường, lãi suất cho vay dự án tài chính bao nhiêu percent?",0,1,0
+ Điều kiện sử dụng thẻ tín dụng đối với người vâng ngốc là gì?,1,0,0
+Tôi có thể nhận ưu đãi khuyến mại khi mở tài khoản ngân hàng online không?,0,0,1
+Ngân hàng có phát hành thẻ đứng thường nào?,0,0,1
+Có một số dịch vụ tối ưu cho người vay nhưng không có tài sản đảm bảo không?,0,0,1
+"Nếu lãi suất vay quá cao, tôi có thể thay đổi lãi suất mình chịu?",0,0,1
+Dịch vụ bán trao gió tại ngân hàng nào tốt nhất?,0,1,0
+Dễ dàng không gian nào để đăng ký mở thẻ tín dụng?,0,0,1
+" Tôi muốn xem tờ rời chứng nhận cho một vay, có thể làm theo thực tế trực tuyến?",0,0,1
+" Khi không có thẻ, có thể tạo chế độ giảm giá cho việc được tính năng vay vốn trực tuyến ngân hàng?",0,0,1
+" Ngoài trung thu, có nơi bán vay thế chấp được ưu đãi lãi suất hơn?",0,1,0
+" Tôi muốn biết thông tin về chính sách giảm giá vay vốn của một ngân hàng, để xem có đáp ứng nhu cầu không?",0,0,1
+ Tại sao lại phải cho vay một cách tự động trong khi có gói tiết kiệm có thể dễ dàng tạo lịch tiền?,0,1,0
+ Tạm ngưng dịch vụ gửi tiền tiện ích của ngân hàng khi vay lên bao nhiêu tiền?,0,0,1
+ Có thể mở tài khoản thanh toán cùng mở thẻ tín dụng không?,0,0,1
+ Lãi suất khảo sát tài chính bao nhiêu điều kiện phải hợp lệ?,0,1,0
+ Điều kiện mở tài khoản thanh toán ngân hàng cần nhận gì từ khách hàng?,0,0,1
+ Tôi có thể mở một vay nhanh và một thẻ tín dụng cùng lúc không?,1,0,0
+ Điều kiện để mở khoản vay tiêu dùng như thế nào?,0,1,0
+ Phương thức đăng ký một khoản vay trước hạn ở VPBank?,0,1,0
+ Ngân hàng có thể cho phép khách hàng trả lương vay nhanh qua ứng dụng?,0,0,1
+ Điều kiện cho phép mở thẻ Diamond World?,0,0,1
+" Đối với gói Tài khoản số đẹp VPBank Prime 5in1, có được tính phí không được tính theo lượng giao dịch mỗi tháng hay được miễn phí giao dịch?",0,0,1
+" Nếu muốn trả góp thế chấp vay trong thời gian ngắn, hãy hỏi trước đây loại vay nào phù hợp nhất?",0,1,0
+ Có thể sử dụng giải pháp dành riêng cho doanh nghiệp do nữ làm chủ để chuyển tiền quốc tế không?,0,1,0
+" Nếu tôi có thể mua thẻ tín dụng và vay gửi tiết kiệm cùng lúc, thì phí gì đãi nhất?",1,0,0
+" Nếu mình mở vay gửi tiết kiệm, mình có thể nộp thanh toán theo tháng một lần không?",0,0,1
+ Vay Nhập Khẩu có tạo ra giám sát tiện ích cho tài khoản không?,0,1,0
+ Cho vay trung hạn có tốn phí để chuyển tiền đến một ngân hàng khác không?,0,0,1
+ Ngân hàng nào có chính sách quảng cáo nhà đất như thế nào cho khách hàng?,0,1,0
+" Nếu tôi mở thẻ tín dụng và vay cùng lúc, thì sẽ có kịp để quản lý họ?",1,0,0
+" Tôi muốn mở thẻ tiếp sức chủ sạp, phải hội đồng xác nhận gì?",0,0,1
+" Đến năm nay, có tạo ra sản phẩm nào giúp khách hàng nâng cao trải nghiệm sử dụng tài khoản điện tử?",1,0,0
+ Vay siêu tốc có thể trả cho một ngày gốc lệ phải không?,0,0,1
+ Có thể mở nhiều vay trực tuyến cùng lúc?,0,0,1
+ Hình thức thanh toán lãi cho thẻ tín dụng là bao nhiêu?,0,0,1
+ Thẻ tài khoản số đẹp gì tốt hơn?,0,0,1
+ Giá thẻ lãi suất cho vay trong tháng này là bao nhiêu?,0,1,0
+" Có một sản phẩm tại VPBank đãng giá cho người già, được gọi là ""Sản phẩm Giáo Dục Thường Niên""?",0,1,0
+ Có thể dùng thẻ tín dụng để mua sách?,0,0,1
+ Tại sao lại không thể trả lương vào tài khoản VPBank để được giảm thuế phí dự án?,0,1,0
+ Vay thế chấp có thể vay đến bao nhiêu tiền?,0,0,1
+ Có tài trợ nào để giúp người dân tiếp tục viết hoạt động kinh doanh sau một thiên tai?,0,1,0
+ Thẻ tín dụng tốn phí bao nhiêu mỗi tháng?,0,0,1
+ Tìm hiểu xem có quy định nào về giới hạn số liệu tài khoản của tôi trên Dịch vụ Ngân Hàng Trực Tuyến?,0,0,1
+ Sản phẩm nào dành cho học sinh?,0,0,1
+ Hãy giải thích về các hình thức thanh toán cho dịch vụ vay vốn được cung cấp?,1,0,0
+ Chỉ có VPBank mới có dịch vụ chuyển tiền liên ngân hàng không?,0,0,1
+ Dịch vụ nào tốt nhất cho việc chuyển tiền qua Internet Banking?,0,0,1
+ Tôi có thể hủy vay vốn trước thời hạn thanh toán không?,0,0,1
+ Làm sao để kiểm soát gasto qua thẻ tín dụng?,0,0,1
+ Vay vốn có nhu cầu nghiêm ngặt nhất để được phê duyệt?,0,0,1
+" Nếu tôi chưa có thẻ thông tin, có thể đăng ký thẻ tín dụng không?",0,0,1
+ Vay tín chấp được sử dụng để nhập thử đường đô thị mới?,0,0,1
+ Hợp đồng dịch vụ qua email có hiệu lực được không?,0,0,1
+ Có thể một ngân hàng cung cấp cả thẻ tín dụng và dịch vụ giao dịch qua email không?,1,0,0
+" Nếu tôi có quá tải trong vay, có thể tăng khoản vay hợp đồng hoặc làm gì?",0,0,1
+ Phí hưởng ưu đãi khách hàng cho sản phẩm nào được ưu tiên nhất?,0,0,1
+ Làm thế nào để trả lại một vay thế chấp đã trả lần đầu?,0,0,1
+ Điều kiện để mở thẻ tín dụng cho doanh nghiệp do nữ làm chủ là gì?,0,0,1
+ Tôi có thể mở thẻ tín dụng và vay cùng lúc không?,1,0,0
+ Điều kiện để được hỗ trợ tín dụng và sử dụng thẻ là gì?,1,0,0
+ Ngân hàng có ưu đãi gì cho khách hàng vừa mở thẻ vừa gửi tiết kiệm?,0,0,1
+ Phí mô phỏng thẻ tín dụng đầu tiên là bao nhiêu?,0,0,1
+ Lãi suất cho vay chuyến đi quốc tế hiện tại là bao nhiêu?,0,0,1
+ Dịch vụ gì hỗ trợ tốt nhất cho việc chuyển tiền giữa các ngân hàng?,0,0,1
+ Tôi muốn biết dịch vụ gửi tiền qua điện thoại của ngân hàng có tốt không?,1,0,0
+ Phương thức thanh toán qua giao dịch điện tử có rất đơn giản không?,0,0,1
+ Sản phẩm nào tốt nhất để đầu tư trong tài sản cố định?,0,1,0
+ Tài sản gì được hỗ trợ cho vay dự án kinh doanh?,0,0,1
+" Nếu tôi chọn mua thẻ vào ngày khuyến mại, tôi có được ưu đãi không?",0,0,1
+ Tôi có thể được thu hồi tiền lãi nếu tạm ngưng sử dụng thẻ ghi nợ nội địa?,0,0,1
+ Vay vốn giúp mình có được ưu đãi tài chính nào?,0,0,1
+ Ngân hàng có dịch vụ hỗ trợ gì cho khách hàng giảm chi phí dư trả góp thẻ?,0,0,1
+ Tôi có thể vay nữa để mở dự án kinh doanh?,0,1,0
+" Nếu tôi quá hoạt động trên thẻ tín dụng, hóa hồng tốt bao nhiêu thì lãi suất lãi tăng?",0,0,1
+ Tôi có thể sử dụng khoản vay siêu tốc để mua hàng quốc tế chưa?,0,0,1
+ Vay thế chấp sạp chợ cho tôi phải trả tiền vay quá hạn không?,0,0,1
+ Có thể khách hàng sử dụng thẻ tín dụng để thanh toán cho doanh nghiệp không?,0,0,1
+ Vay trả nợ trước hạn cũ có phí thường niên không?,0,0,1
+ Tôi cần phải chuẩn bị giấy tờ gì để được mở thẻ WE cho doanh nghiệp do nữ làm chủ?,0,0,1
+" Khi người dùng mở một tài khoản cho vay giữa hai ngân hàng khác nhau, liền có phải trả lỗi hoặc đồng thuận hóa chi phí gì?",0,0,1
+ Có thể một khách hàng có thể cập nhật thông tin liên kết với một thẻ tài xế của mình trong một thẻ tín dụng khác?,0,0,1
+ Có thể khách hàng dùng dịch vụ trao đổi vốn theo chuẩn API trong một trong những dịch vụ tín dụng của ngân hàng không?,0,1,0
+" Khi gọi điện thoại hotline để hỏi thông tin về vay, phải có yếu tố xác minh nào để nhân viên ngân hàng giúp đỡ?",0,0,1
+" Nếu bạn có một số khoản vay, có thể điều chỉnh lãi suất các khoản vay một cách tự động không?",0,0,1
+ Ngân hàng có một chính sách nào giúp giảm chi phí giao dịch online cho khách hàng vay?,0,0,1
+ Có khách hàng nào có thể giúp mình trả lại tốt hơn về loại dịch vụ vay thế chấp tốt nhất?,0,1,0
+ Tôi muốn biết những gì VPBank NEO cung cấp cho khách hàng vay vốn?,0,0,1
+ Dịch vụ gửi tiền quốc tế qua Ngân hàng có độ bảo mật gì?,0,0,1
+ Có thể mở ví tài khoản qua ứng dụng VPBank NEO không?,0,0,1
+ Số lượng dịch vụ bảo hiểm VPBank có bao nhiêu loại?,0,1,0
+ Có thể hủy hợp đồng thanh toán thông qua giao dịch qua email một cách dễ dàng không?,0,0,1
+ Có thể kết hợp gói VPBank Prime 5in1 với việc vay tiền tại một lúc?,0,0,1
+" Ngoài việc dùng để trao tiền, có thể thẻ tín dụng được sử dụng để gửi tiền qua mạng không?",0,0,1
+ Tại sao để một khách hàng phải đáp ứng điều kiện vay trước khi được chấp nhận một yêu cầu vay?,0,0,1
+" Nếu một khách hàng có đang vay tín dụng và muốn mở thẻ truyền thông, có thể họ được phép không?",0,1,0
+" Khi tôi mở thẻ quần áo, có có được nhận ưu đãi khuyến mại cho sản phẩm trực tuyến?",0,0,1
+ Làm sao để hối chế việc lãi suất vay tăng lên?,0,0,1
+ Vay vốn từ ngân hàng có chịu rủi ro hơn so với vay từ doanh nghiệp?,0,0,1
+ Có thể một khách hàng có được mở hợp đồng ngoại tệ gia công (letter of credit) với số tiền vay không?,0,1,0
+Hãy đưa ra những dịch vụ của ngân hàng hữu ích nhất cho người mới bắt đầu kiếm tiền?,1,1,0
+"Để được ưu tiên trong việc được chấp nhận vay, hãy làm gì?",0,1,0
+"Với tài khoản số đẹp, có thể hẹp lînh số dư không?",0,0,1
+Bạn muốn biết về quy định về trả lương cho khách hàng VPBank nào?,0,1,0
+"Ngoài các dịch vụ trên đã liệt kê, có một dịch vụ để hỗ trợ nhu cầu giải quyết chi phí đi xe?",1,0,0
+ Tại sao lại lựa chọn vay nhanh hơn vay tín chấp?,0,0,1
+ Được gì quảng bá cho khách hàng về dịch vụ cá nhân của ngân hàng?,1,1,0
+ Số tiền một lần giải trị tối thiểu để mở vay tiêu dùng là bao nhiêu?,0,0,1
+" Để có thể dễ dàng quản lý tài khoản hàng tháng, bảo hộ bằng một dịch vụ gì?",0,0,1
+" Nếu tôi gặp trục trạng trong việc thanh toán khoản vay, có thể không trả suất kế hoạch để đối lượng tốt hơn điều kiện không?",0,1,0
+ Tôi có thể sử dụng thẻ tín dụng và dự án nào của Dịch vụ dự án ngân hàng VPBank ?,0,0,1
+" Nếu không thành công quyết định vay vốn, tôi có thể sử dụng thẻ tín dụng trả lại tiền cần thiết cho công việc trước không?",0,1,0
+ Tìm hiểu được rõ về phí dịch vụ bảo lãnh bảo hiểm của VPBank rồi?,0,1,0
+" Trước khi đến văn phòng đổi thẻ, tôi có thể trả tiền trực tuyến không?",0,0,1
+ Tôi có thể mở nhiều tài khoản thanh toán không?,0,0,1
+" Nếu tôi muốn vay vốn cho dự án kinh doanh, tại sao nên chọn Ngân hàng VPBank?",0,0,1
+ Thẻ tín dụng nào có quy định được hữu ích nhất cho việc tính toán lương?,0,0,1
+ Ngân hàng có cung cấp gì cho khách hàng muốn chuyển tiền trong nước bằng Internet Banking?,0,0,1
+" Nếu tôi chịu rõ rệt tính năng quảng cáo, có thể được nhận ưu đãi cho thẻ tín dụng không?",0,0,1
+ Tôi có thể mở một thẻ tín dụng và một sản phẩm bảo hiểm cùng lúc không?,1,0,0
+ Sự đáng tin cậy của chính phủ trong việc thực hiện các lệnh thủ tuấn cho các ngân hàng?,0,1,0
+ Làm thế nào để đăng ký dịch vụ internet banking của ngân hàng?,0,0,1
+ Tôi có thể mở một sản phẩm hoán đổi ngoại tệ và một vay tín chấp cùng lúc không?,1,0,0
+" Chính sách xác minh thông tin tài khoản của ngân hàng, là gì?",0,0,1
+ Có thể tôi vay vốn để mở một cửa hàng mới chứ?,0,0,1
+ Điều kiện để có thể mở một thẻ tín dụng online không?,0,0,1
+ Có thể vay vốn để mua một xe máy hoặc xe ô tô mới?,0,0,1
+ Hình thức thanh toán tiền lãi vay nhanh (express loan)?,0,1,0
+ Dịch vụ nào được tư vấn hỗ trợ cho khách hàng vay vốn tốt nhất?,0,0,1
+" Ngoài ra, có bất kỳ ưu đãi khác để được quý khách hưởng ưu đãi quốc gia khi được chọn làm ngân hàng hàng ngày?",1,0,0
+" Nếu chế độ vay theo giời túc, tôi muốn hưởng ưu đãi gì để có thể nhanh hơn trong quá trình vay?",0,1,0
+" Nếu tôi muốn được tốt nhất hữu ích của VPBank Loyality, tôi cần làm gì?",0,0,1
+" Khi mua hàng trực tuyến, ngân hàng hỗ trợ giảm giá gì cho khách hàng được tham gia Chương Trình VPBank Shield?",0,0,1
+ Liệu tôi có thể trả lại một vay đã trả lũy kến một lần nữa nếu tình hình tăng trưởng không đạt yệu cầu?,0,0,1
+" Xem xét điều kiện để trở thành đại lý VPBank, có kỳ hạn thời gian hay không?",0,0,1
+" Khi tôi mở vay tiêu dùng, có được mở thêm một vay tín chấp không?",0,0,1
+ Thẻ tín dụng có sử dụng cho việc thanh toán vay không?,0,0,1
+ Làm thế nào để kiểm soát tốt rủi ro khi vay vốn online?,0,0,1
+ VPBank có thể cho phép mua sắm online với thẻ ghi nợ nội địa không?,0,0,1
+ Thẻ ghi nợ Nội địa có tính chất là vay không?,0,0,1
+ Phải đặt trước để có thể hoạt động những dịch vụ qua email ở VPBank?,1,0,0
+ Có thể quay lương của mình thông qua thẻ ghi nợ nội địa không?,0,0,1
+ Có phần trăm thuốc liệu hoạt chất trong các gói khuyến mại tài khoản VPBank Loyalty không?,0,0,1
+" Trong vai trò làm ngân hàng, hãy giải thích về tài trợ vốn để mua nhà, bao gồm điều kiện và lợi ích?",0,0,1
+" Tôi muốn biết giá các loại thẻ tín dụng của các ngân hàng, có thể hỏi như thế nào?",0,0,1
+" Nếu tôi chết mất, có thể các thẻ tín dụng của tôi được ngân hàng bắt đầu chi phí nộp lương, hay không?",0,0,1
+ Ngân hàng có đáp ứng yêu cầu tài trợ dự án kinh doanh nhỏ không?,0,0,1
+ Vay siêu tốc cho phép viết ký mới vào hợp đồng?,0,0,1
+ Điều kiện để được hỗ trợ đăng ký VPBank Loyalty?,0,0,1
+ Điều kiện mở thẻ tín dụng VPBank Prime 5in1?,0,0,1
+ Ngân hàng có cung cấp dịch vụ bảo lãnh đối ứng không?,0,1,0
+ Gói tài khoản số đẹp bao gồm những dịch vụ nào?,0,0,1
+ Tài khoản số đẹp tốn phí bao nhiêu hồng để sử dụng tính từ tháng 1?,0,1,0
+ Tại sao lại phải đăng ký dịch vụ Giao Dịch Qua Email để giao dịch online?,0,0,1
+ Vay nốp lịch trả nợ: Làm thế nào để rút tiền sau khi thanh toán vay?,0,1,0
+ Lưu ý khi áp dụng dịch vụ Tài khoản số đẹp: Tại sao nên lựa chọn loại tài khoản này?,0,0,1
+ Làm thế nào để gửi tiết kiệm vào thẻ tín dụng?,0,0,1
+" Nếu khách hàng không muốn phải lưu trữ thẻ, có thể làm gì để vay vốn với VPBank?",0,0,1
+" Khi tôi cần vay nhiều tiền, tôi có thể chọn loại vay nào?",0,1,0
+" Nếu tôi sử dụng Vay đa năng, tôi có thể nạp tiền lại khi tiền hạn hoạt động kết thúc không?",0,0,1
+ Tôi có thể mở vay và thẻ tín dụng cùng lúc đại diện tại nhà?,1,0,0
+ Đóng góp bao nhiêu tiền mỗi tháng để đảm bảo lãi quan trọng được trả lũy?,0,1,0
+ Có thể có vay gấp chất lượng cao cho quần áo để bán lấy thu về?,0,0,1
+" Nếu không có đủ điều kiện để trả vay, thì sẽ gặp sao?",0,0,1
+ Dịch vụ chuyển tiền quốc tế có giá trị hấp dẫn hơn để gửi tiền cho hàng hóa ngoài nước?,1,0,0
+ Bảo hiểm giữ cho tôi an toàn trước quá trình được đề nghị vay không?,0,1,0
+ Cho vay nhỏ nhất để mua laptop là bao nhiêu tiền?,0,0,1
+ Làm thế nào để trả lương gói tài khoản số đẹp VPSuper một cách hiệu quả?,0,1,0
+ Dịch vụ vay của ngân hàng có giảm lãi suất gì khi khách hàng tăng tiền vay?,0,0,1
+ Làm thế nào để biết ngân hàng cung cấp cho vay nhanh nhất cho khách hàng mới?,0,0,1
+" Khi dùng VPBank NEO, khách hàng có thể thực hiện tất cả những gì một ngân hàng điện tử phải cho phép?",1,1,0
+" Trong quá trình dùng ứng dụng VPBank NEO, tìm hiểu cách bảo mật bảng mật khẩu của mình quan trọng hạn?",0,0,1
+ Dùng rõ hơn gì mô tả các dịch vụ bảo hiểm đối với khách hàng có tài sản lớn?,0,1,0
+ Làm sao để kiểm soát hoạt động các thẻ của mình trực tuyến?,0,0,1
+ Tôi có thể hoàn thành yêu cầu vay đa năng qua trang web không?,0,1,0
+ Có thể gửi thanh toán điện thoại qua ứng dụng điện thoại của một ngân hàng không?,0,0,1
+" Dạn nghèo, tôi cần một sách sống giúp tăng doanh thu. Tình hình tài chính tôi có thể mượn tiền tại một ngân hàng để mua sách này không?",0,1,0
+Có thể mua bán ngoại tệ trực tiếp qua ứng dụng VPBank NEO không?,0,0,1
+"Nếu tôi lã thành tiền vay, tôi có thể thanh toán nó bằng thẻ tín dụng hoặc không?",0,0,1
+Có nên mở thẻ tín dụng hoặc chọn dịch vụ vay để tiêu dùng sản phẩm mỗi ngày không?,1,0,0
+Vay thế chấp đáp ứng nhu cầu gì của khách hàng?,1,0,0
+Có thể sử dụng bảo hiểm nhanh chóng khi có thời gian trả góp lâu không?,0,1,0
+" Nếu khách hàng muốn đóng yêu cầu vay ngân hàng, phải có một thẻ tín dụng cũ hoặc có thể không?",0,0,1
+" Nếu tôi không đủ điều kiện cho để mở thẻ tín dụng, có thể mở thẻ thế nào khác?",1,0,0
+ Bảo lãnh quốc tế: Ngân hàng hỗ trợ nhận hàng ngoại thường phải có đủ điều kiện nào?,0,0,1
+" Nếu khách hàng không thể thanh toán lại vay đầu tiên, Ngân hàng có thể sa thành gì?",0,0,1
+ Sản phẩm Vay Thuế+ bán ra tại đâu?,0,0,1
+" Nếu tôi mua quà trang sức trên trang web, có thể tạm gửi tiền bằng thẻ tín dụng không?",0,0,1
+" Vay vốn nhỏ sử dụng tài sản liên kết đã tồn tại trước, có được chấp nhận không?",0,0,1
+ Đặt thẻ tín dụng mới có bốc thải quá trình nào?,0,0,1
+ Có khách hàng nào được nhận ưu đãi đặc biệt khi mở thẻ Tiết kiệm trả lãi trước của VPBank?,0,0,1
+ Dịch vụ giao dịch qua email đáng để sử dung hay không?,0,0,1
+ Tôi có thể sử dụng thẻ vay và thẻ tín dụng cùng một lúc để mua sắm online?,1,0,0
+ Có phải chỉ người có doanh nghiệp được tìm kiếm các dịch vụ doanh nghiệp do nữ làm chủ?,1,0,0
+ Hãy giúp tôi biết tìm kiếm sản phẩm bán dẫn như thế nào trên ứng dụng VPBank NEO?,1,0,0
+ Thẻ nào tốt nhất cho khách hàng gia dương?,0,0,1
+ Vay tiếp sức chủ sạp có tính năng phát hành thẻ không?,0,0,1
+ Phía bán có thể hỗ trợ cho tôi biết lãi suất không?,0,0,1
+ Tại sao việc gửi tiền bằng dịch vụ giao dịch qua email là một lựa chọn tốt?,0,0,1
+" Nhượng bộ quyền sử dụng thẻ tín dụng cho thành viên gia đình, có hợp pháp không?",0,0,1
+ Khi nạp tiền vào thẻ tín dụng thì sẽ có chi phí bao nhiêu?,0,0,1
+ Nếu không có gửi tiền bằng điện thoại thì có thể mua sản phẩm thông qua website nhân tạo không?,0,0,1
+" Đối với dịch vụ gửi tiền bằng thẻ tín dụng, có những khoản trừ không?",0,0,1
+ Đặt một câu hỏi về lợi ích đối xứng cho khách hàng khi sử dụng VPBank Loyalty với số dư tài khoản tín dụng?,1,0,0
+ Tôi có thể mở vay theo dạng góp được từ VPBank trong vòng một ngày?,0,1,0
+ VPBank có gửi thông tin về hết sức hỗ trợ và ưu đãi khách hàng khi chúng tôi gửi tiết kiệm kèm theo giao dịch qua email không?,0,0,1
+ Tôi có thể hủy lịch gửi tiết kiệm đang đăng ký bằng VPBank trước khi chính thức gửi tiết kiệm?,0,0,1
+ Tôi có thể mở vay trả góp lương và dùng chứng nhận lương không?,0,1,0
+" Khi đi dạy hay làm việc quốc tế, tôi có thể dùng được dịch vụ giao ngân hàng quốc tế của ngân hàng không?",1,1,0
+ Dịch vụ nào hỗ trợ cho việc rút tiền được tại quầy tài xưởng?,0,0,1
+ Điều kiện vay nhà trong quy định của ngân hàng là gì?,0,0,1
+ Tìm hiểu xem loại vay tại ngân hàng có hỗ trợ cho việc mở thương hiệu mới?,0,0,1
+ Có thể mình mở và sử dụng các loại thẻ ghi nợ và vay tín dụng cùng lúc?,1,0,0
+ Điều kiện mở thẻ ghi nợ nội địa là bao nhieu đại lượng tiền bạc?,0,0,1
+ Có thể mua hợp đồng mua bán ngoại tệ với chiết khấu nhanh 3 giờ dựa trên thẻ ghi nợ?,0,1,0
+ Có một chương trình tài trợ nào cho khách hàng mới mở tài khoản ngân hàng của bank?,0,0,1
+ Tôi có thể sử dụng thẻ và vay trong một cái giao dịch đơn lúc không?,1,0,0
+ Hội nghị thông tin cầu hộng vằ giá phị cho việc đăng ký bảo hiểm thủy hại?,0,1,0
+ Điều kiện gỡ bỏ hạn suất dùng thẻ ghi nợ bình thường là gì?,0,0,1
+ Điều kiện mở gởi tiết kiệm từ thẻ tín dụng lần đầu tiên là gì?,0,0,1
+ Số tiền lương thường xuyên tối đa để đăng ký dịch vụ cho vay nhanh nhất là bao nhiêu?,0,0,1
+ Có thể vay và mở thẻ tín dụng cùng lúc không?,1,0,0
+ Điều kiện để nhanh chóng được phê duyệt một yêu cầu vay ngân hàng là gì?,0,1,0
+ Dịch vụ bảo lãnh dự thầu của một ngân hàng tốt nhất là gì?,0,1,0
+ Sản phẩm tín dụng có được hỗ trợ chuyển tiền không?,0,0,1
+ Phiếu giáo hội tài chính là gì?,0,1,0
+ Thẻ tín dụng được sử dụng để mua gì?,0,0,1
+ Tại sao lại phải đóng yếu tố phí giao dịch khi mình muốn gửi tiền qua điện thoại?,0,0,1
+ Điều kiện để được trải nghiệm dịch vụ Logistics của ngân hàng VPBank là gì?,0,1,0
+ Điều kiện để được trải nghiệm dịch vụ giao dịch qua email của ngân hàng nào đảm bảo bảo mật?,0,0,1
+ Có một dịch vụ thay thế cho Vay tín chấp để khách hàng có thể tiết kiệm lãi suất không?,0,1,0
+ What are the common requirements to apply for a loan?,0,1,0
+ Can I get a loan using my savings account as collateral?,0,0,1
+ Is it possible to pay off my loan earlier without any penalties?,0,0,1
+ What is the maximum loan amount that I can apply for?,1,0,0
+ What happens if I miss a loan repayment?,0,0,1
+ Can I check my loan balance online?,0,0,1
+ Do I need to visit a branch to apply for a loan?,0,0,1
+ Can I use my mobile device to make loan repayments?,0,0,1
+ Is there a grace period before I start repaying my loan?,0,0,1
+. What are the benefits of having a secured loan?,0,0,1
+. Can I use my loan for business purposes?,0,0,1
+. Is it possible to apply for a loan with a co-applicant?,0,0,1
+. What documents do I need to prepare before applying for a loan?,0,0,1
+. Do I need to pay any fees to maintain my loan account?,0,0,1
+. Can I apply for a loan even if I have a poor credit score?,0,0,1
+" Nếu tôi được chấp nhận cho việc vay một lượng, tôi có thể giảm số lượng mối quyết định cho việc vay để giảm lãi suất?",0,0,1
+" Dựa trên kinh nghiệm của bạn, thẻ tín dụng dành riêng cho sinh viên rất tốt hơn không?",0,0,1
+ Ngân hàng có gì để giúp khách hàng tìm kiếm được các sản phẩm dịch vụ phù hợp cho họ?,1,0,0
+ Tôi có thể hỏi về tình trạng tài khoản của mình online?,0,0,1
+ Dịch vụ vay trung hạn của ngân hàng như thế nào?,0,0,1
+ Có thể thay đổi số điện thoại liên hệ của mình khi có thẻ?,0,0,1
+ Tôi có thể mở hộ khẩu tài khoản quản lý tiền điện tử không?,0,0,1
+ Dịch vụ bảo lãnh ngân hàng liệu có bảo đảm an toàn cho vay vốn không?,0,0,1
+ Có thể cho phép nhận thông báo qua email về hoạt động thẻ tín dụng?,0,0,1
+ Tại sao một vay trả góp thích hợp hơn một vay siêu vốn?,0,0,1
+ Tôi muốn biết xem một gói dịch vụ ngân hàng bao gồm gì?,1,0,0
+ Có thể trả phí lưu trữ cho thẻ tín dụng không?,0,0,1
+" Để được giảm phí dịch vụ qua Internet Banking, tôi phải làm gì?",1,0,0
+ Vay gì để mở ra thị trường kinh doanh cho doanh nghiệp?,1,0,0
+" Tôi muốn mở một thẻ ghi nợ nội địa, nhưng tôi đang có một thẻ tín dụng trong tài khoản của mình, có thể tôi có thể mở thêm một thẻ ghi nợ không?",0,0,1
+" Nếu tôi đang có một thẻ tín dụng và một vay cùng lúc, tôi có thể đăng ký cho một vay mới để thay thế cho vay cũ không?",1,0,0
+ Điều kiện để được mở thẻ tín dụng là gì?,0,0,1
+ Điều kiện để được vay tốt nhất là gì?,0,0,1
+ Hợp đồng cho vay đến một ngày nào được gọi là gì?,0,0,1
+ Tôi có thể đổi thẻ ghi nợ nội địa thành thẻ ghi nợ quốc tế?,0,0,1
+ Dịch vụ tiền gửi cho người doanh nghiệp có kỳ hạn nào ưu đãi?,0,1,0
+ Dịch vụ nào hỗ trợ khách hàng tiết kiệm tiền hưởng lãi cho kế hoạch lập ra rồi?,1,0,0
+ Thẻ tín dụng có thể mở cho doanh nghiệp không?,0,0,1
+ Tôi có thể mở hội nghị ngân hàng online không?,0,1,0
+"Bạn có thể hỗ trợ tôi mở một vay thế chấp không? (credit, loan)",0,0,1
+"Tìm hiểu xem ngân hàng có cung cấp bất kỳ chương trình tài trợ nào cho doanh nghiệp do nữ làm chủ hay không? (loan, general)",0,0,1
+"Tôi có thể dùng thẻ tín dụng cho việc gửi tiền quốc tế không? (credit, loan)",0,0,1
+Tìm hiểu xem có bao nhiêu loại dịch vụ tiền gửi ngân hàng cung cấp? (general),0,0,1
+Sử dụng thẻ nào để được chiết kiểm lãi thuế trên giao dịch tiêu dùng trong nước? (credit),0,0,1
+ Tôi có thể mở vay cá nhân và thẻ tín dụng cùng lúc?,1,0,0
+ Điều kiện để được trải niệm dịch vụ giao dịch qua email?,0,0,1
+ Ngân hàng có ưu đãi cho khách hàng sử dụng dịch vụ truyền tiện cả nghề nghiệp và số dư?,0,0,1
+ Phí bảo hành cho vay chính mạng là bao nhiêu?,0,0,1
+ Thẻ nào có tính năng giảm giá trực tuyến?,0,0,1
+" Thông tin về gói VPBank Loyalty, bao gồm phí và lợi ích?",1,0,0
+" Tôi muốn biết lãi suất cho vay tín chấp XNK nhập khẩu với điều kiện 24 tháng trả góp, tốt nhất bao nhiêu?",0,0,1
+" Ngoài ra quá trình đăng ký thẻ tín dụng, có phải cần gửi bất kỳ giấy tờ nào đến trung tâm ngân hàng không?",0,0,1
+ Nhờ Thu Chứng Từ NK được tìm thấp nhất ở đâu?,1,0,0
+ Dịch vụ bảo lãnh nhận hàng liên tục có miễn phí không?,0,0,1
+ Có khả nghĩa rằng tôi có thể đổi một thẻ thanh toán thành một thẻ tín dụng?,0,0,1
+ Ngân hàng có hỗ trợ giảm giá hoặc sự lấp động cho dịch vụ tiền gửi không?,0,1,0
+" Để có thể mở tài khoản tín dụng, tôi cần phải có một số dư ở tài khoản tiền gửi?",0,0,1
+ Thẻ nào có tính năng hỗ trợ giảm giá nhiều nhất?,0,0,1
+" Ngoài ra dịch vụ gửi tiền trong nước, có khách hàng còn có thể gửi tiền qua các hạng mục khác không?",1,0,0
+" Khi muốn giảm phí cho vay trong thời gian ngắn, tại sao nhưng lựa chọn thẻ ghi nợ nội địa hơn vay vốn?",0,1,0
+" Trên đây có thể đăng ký một điều kiện dự thầu cho dịch vụ bảo lãnh nội địa, chứ không phải chỉ cho dịch vụ bảo lãnh thực hiện hợp đồng?",0,0,1
+ Có thể mở vay quảng cáo với tiết kiệm tín dụng?,0,1,0
+ Tôi có thể có hai thẻ tín dụng cùng mã số giảm tại một thời điểm đối với một tài khoản không?,0,0,1
+ Khi nào là ngày trả tiền thịt ra trong vay tín chấp?,0,0,1
+ Vay của mình có thể bị giải phóng không?,0,0,1
+ Liên kết tiết kiệm gần nhất với dịch vụ chuyển tiền qua Internet Banking là gì?,1,0,0
+ Một thẻ đối tượng cho phép lấy tiền tại đối tượng bán hàng hay không?,0,0,1
+ Tôi có thể trả vay tín chấp bằng thẻ tín dụng không?,0,1,0
+ VPBank có phân loại thẻ tín dụng theo mức doanh thu hay không?,0,0,1
+" Khi vay vốn, mô hình cho dau tien giai đoạn sau như thế nào?",0,1,0
+ Ngân hàng có mẫu thẻ gì cho phép mở rộng lương thẻ với số tiền mỗi lần không quá 2 triệu?,0,0,1
+" Trên một số thẻ tín dụng, có thể thực hiện giao dịch nhập tiền tại đối tác để tiết kiệm lãi thành viên không?",0,0,1
+ Vui lòng hỏi ngân hàng nào cung cấp hợp đồng mua bán ngoại tệ hoán đổi?,0,1,0
+" Khi muốn dịch vụ giao dịch qua email, tôi phải có đăng ký gì?",0,0,1
+ Sản phẩm vay thế chấp sạp chợ có tính năng gì khác biệt so với vay thế chấp sạp chợ?,0,0,1
+" Nếu tôi đang sử dụng dịch vụ vay thế chấp sạp chợ, có thể sử dụng thẻ tín dụng không?",0,0,1
+ Làm sao để tìm hiểu thêm về sản phẩm Tiết kiệm trả lãi trước của VPBank?,0,1,0
+" Nếu tôi mở vay xuất nhập khẩu, có thể gửi thêm tiền không?",0,0,1
+ Hợp đồng mua bán ngoại tệ có đòi hỏi lưu ngân hàng nào không?,0,1,0
+" Khi tôi gửi tiền, có thể chuyển cho tài khoản khác của mình không?",1,0,0
+ Dịch vụ tài trợ XNK có được hỗ trợ doanh nghiệp siêu nhỏ không?,0,0,1
+" Đối với nhà đầu tư, tôi có thể biết tốt lãi suất của các dịch vụ chiết khấu L/C trước khi đăng ký?",0,0,1
+Vay tín dụng có được sử dụng để vay cho bất kỳ mục đích nào?,0,0,1
+Vấn đề gì có thể gặp phải khi đang sử dụng ứng dụng cho thẻ tín dụng?,0,0,1
+Điều kiện để nhận được dịch vụ bảo lãnh hàng để gửi đến đối được là gì?,0,1,0
+Khi có phí lời giải giao dịch quá hết rất nhanh thì ngân hàng có cung cấp gì cho khách hàng?,0,1,0
+" Nếu tôi là doanh nghiệp do nữ làm chủ, tôi có thể sử dụng giải pháp nào để vay tiền?",0,0,1
+" Liên hệ để đăng ký một bảo hiểm VP Smart PLAN, bao nhiêu khoảng thời gian ít nhất?",0,1,0
+" Nếu tôi muốn tìm hiểu về phương thức thanh toán cho lãi thuế, tôi có thể gặp gỡ ai đó để hỏi hỏi?",0,1,0
+ Vay nhà đại lý có bao nhiêu lãi suất độ cao hơn?,0,0,1
+" Khi mở một thẻ ghi nợ, phải góp tiền bất kỳ khoản gọi lên nào?",0,0,1
+ VPBank có đang cung cấp dịch vụ nhà đất để mua bán không?,0,0,1
+ Bên thứ ba có thể hủy một giao dịch trả góp tín dụng chưa hoàn thành không?,0,0,1
+ Có thể mở thẻ tín dụng và vay cùng một lúc tại VPBank chứ?,1,0,0
+ VPBank có dịch vụ gửi tiền qua thẻ cào không?,0,0,1
+ Doanh nghiệp do nữ có gói tài khoản thanh toán phù hợp cho các công ty siêu nhỏ hay không?,0,0,1
+ Làm sao để đăng ký lưu tiền bằng thẻ tín dụng tại VPBank?,0,0,1
+ VPBank có có được hỗ trợ trực tuyến qua ứng dụng hoặc website để giải đáp các câu hỏi liên quan đến các dịch vụ của mình không?,1,0,0
+" Điều kiện để được sử dụng dịch vụ vay tín chấp, có gì khác nhau so với thẻ tín dụng?",0,1,0
+ Nếu không có tiền bạc thì có thể tạo một vay trả về sau để mua hàng online?,0,0,1
+ Tại sao lĩnh vực tài chính luôn là nền tảng cho kinh tế của mỗi nước?,1,1,0
+" Tôi có thể khảo sát các sản phẩm, chính sách và hướng dẫn sử dụng trước khi tạo tài khoản ngân hàng trực tuyến?",0,0,1
+" Vay nhanh nhất là gì, và có thể được sử dụng trải qua cả năm không?",0,1,0
+ Đóng yếu để được ưu tiên trong quá trình thử nghiệm dịch vụ trực tuyến ngân hàng là gì?,0,1,0
+" Nếu tôi muốn hỗ trợ tài chính tư vấn, có một số dịch vụ miễn phí chính thức không?",0,1,0
+ Tôi có thể sử dụng vay cùng một lúng túng với thẻ tín dụng không?,1,0,0
+ Tôi có thể hủy biến một lương tiền gửi vì lỗi do ngân hàng gửi lầm không?,0,1,0
+ Bạn có thể hỗ trợ tôi mở một tài khoản online một cách đơn giản?,0,0,1
+" Khi tôi có sử dụng thẻ ghi nợ, tôi có thể cắt thẻ để tránh lãi suất thêm?",0,0,1
+ Địa chỉ trang web ngân hàng điện tử của VPBank NEO là gì?,0,0,1
+ Có thể ngân hàng tạo cho một giấy phép cho tôi sử dụng tiết kiệm trực tuyến?,0,1,0
+ Thời hạn chấp nhận nhận thẻ tín dụng mới nhất là bao nhiêu?,0,0,1
