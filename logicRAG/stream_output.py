@@ -86,3 +86,22 @@ def get_llama_response(memory_variables, current_retrived_docs, prompt):
         yield chunk_message  # Trả từng phần của câu trả lời
 
     return history
+
+def get_llama_response_for_fb(current_retrived_docs, prompt):
+
+    current_retrived_docs['context'] += prompt
+    
+    response = client.chat.completions.create(
+        model="meta-llama/Llama-3.2-11B-Vision-Instruct",
+        messages=current_retrived_docs,
+        max_tokens=500,
+        stream=True
+    )
+
+    full_response = ""
+    for chunk in response:
+        chunk_message = chunk['choices'][0]['delta'].get('content', '')
+        full_response += chunk_message
+        yield chunk_message  # Trả từng phần của câu trả lời
+
+    return full_response
