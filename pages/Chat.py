@@ -81,11 +81,11 @@ def filter_profanity(text, profanity_list):
     return text
 
 # -------------------- Xử lý truy vấn và tạo phản hồi --------------------
-from logicRAG.semantic_search import DenseSemanticSearch
+from logicRAG.semantic_search import SparseBM25Search
 def process_database_response(user_input, index, all_chunks):
     search_results = query(query_text=user_input, index=index, chunks=all_chunks, distance_threshold=5)
-    dense_search = DenseSemanticSearch(all_chunks)
-    dense_results = dense_search.search(user_input, top_k=5)
+    bm25_search = SparseBM25Search(all_chunks)
+    bm25_results = bm25_search.search(user_input, top_k=5)
     
     # Vector context
     docs, summary = "", ""
@@ -98,16 +98,16 @@ def process_database_response(user_input, index, all_chunks):
         summary = intergrate_context([docs, summary])
     retrieved_context = {"role": "system", "content": f"Retrieved Document (Vector): {summary}"}
 
-    # Dense context
-    dense_docs = " ".join(dense_results)
-    dense_summary = intergrate_context([dense_docs]) if dense_docs else ""
-    dense_context = {"role": "system", "content": f"Retrieved Document (Dense): {dense_summary}"}
+    # BM25 context
+    bm25_docs = " ".join(bm25_results)
+    bm25_summary = intergrate_context([bm25_docs]) if bm25_docs else ""
+    bm25_context = {"role": "system", "content": f"Retrieved Document (BM25): {bm25_summary}"}
 
     print(f"retrieved_context is {retrieved_context}")
-    print(f"dense_context is {dense_context}")
+    print(f"bm25_context is {bm25_context}")
 
     # Gộp context lại
-    merged_context = {"role": "system", "content": f"{retrieved_context['content']}\n{dense_context['content']}"}
+    merged_context = {"role": "system", "content": f"{retrieved_context['content']}\n{bm25_context['content']}"}
 
     response_gen = get_llama_response(
         st.session_state.memory.load_memory_variables({}),

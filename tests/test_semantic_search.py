@@ -1,7 +1,7 @@
 import unittest
-from logicRAG.semantic_search import DenseSemanticSearch
+from logicRAG.semantic_search import SparseBM25Search
 
-class TestDenseSemanticSearch(unittest.TestCase):
+class TestSparseBM25Search(unittest.TestCase):
     def setUp(self):
         self.docs = [
             "Hôm nay trời đẹp và nắng.",
@@ -10,7 +10,7 @@ class TestDenseSemanticSearch(unittest.TestCase):
             "Chatbot có thể hỗ trợ khách hàng 24/7.",
             "Dịch vụ ngân hàng số ngày càng phát triển."
         ]
-        self.searcher = DenseSemanticSearch(self.docs)
+        self.searcher = SparseBM25Search(self.docs)
 
     def test_search_relevant(self):
         query = "ngân hàng và dịch vụ tài chính"
@@ -20,7 +20,7 @@ class TestDenseSemanticSearch(unittest.TestCase):
     def test_search_irrelevant(self):
         query = "bóng đá thế giới"
         results = self.searcher.search(query, top_k=2)
-        # Dense search có thể trả về kết quả gần nhất, nhưng nếu không liên quan sẽ điểm thấp
+        # BM25 sẽ trả về kết quả có điểm thấp hoặc rỗng nếu không liên quan
         self.assertIsInstance(results, list)
         self.assertTrue(len(results) <= 2)
 
