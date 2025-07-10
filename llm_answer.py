@@ -35,3 +35,5 @@ def facebook_response(user_input):
     )
     
     return response_gen
+
+# facebook_response("bạn là ai?")

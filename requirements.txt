@@ -17,4 +17,5 @@ torch
 python-docx
 python-dotenv
 ngrok
+plotly
 #exceptions

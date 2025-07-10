@@ -3,7 +3,6 @@ import os
 from flask import Flask, request
 from dotenv import load_dotenv
 from facebook_action import *
-from llm_answer import facebook_response
 load_dotenv()
 
 VERIFY_TOKEN = os.getenv("VERIFY_TOKEN")
@@ -32,7 +31,7 @@ def webhook():
                 sender_id = message_event.get('sender',{}).get('id')
                 message = message_event.get('message',{}).get('text')
                 if sender_id and message:
-                    reply_to_message(sender_id, facebook_response(message))
+                    reply_to_message(sender_id, "VPBANK XIN CHÀO")
         
             #process for comment
             for change in entry.get('changes', []):
@@ -47,7 +46,7 @@ def webhook():
 
                 print(field, verb, item)
                 if from_id != PAGE_ID and field == 'feed' and verb == 'add' and item == 'comment' and comment_id:
-                    reply_to_comment(comment_id, facebook_response(comment))
+                    reply_to_comment(comment_id, "VPBANK XIN CHÀO")
 
 
         return "EVENT_RECEIVED", 200

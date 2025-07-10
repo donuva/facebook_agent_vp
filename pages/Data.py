@@ -43,6 +43,8 @@ uploaded_files = st.file_uploader(
 )
 
 # ------------------ Xử lý tệp sau khi tải lên ------------------
+# def process_files():
+
 if uploaded_files:
     with st.spinner('Đang xử lý...'):
         st.write("📂 Danh sách tệp đã tải lên:")

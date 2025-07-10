@@ -46,3 +46,7 @@ python server.py
 ngrok http 5000
 '''
 ### call back url của webhook: link_ngrok/webhook
+
+### chạy code crawl_data
+# pip install playwright
+# playwright install
