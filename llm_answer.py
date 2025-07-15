@@ -27,7 +27,7 @@ def facebook_response(user_input):
     retrieved_context = {"role": "system", "content": f"Retrieved Document: {summary}"}
 
     
-    print(f"retrieved_context is {retrieved_context}")
+    #print(f"retrieved_context is {retrieved_context}")
     
     response_gen =get_llama_response_for_fb(
         retrieved_context,
@@ -36,4 +36,4 @@ def facebook_response(user_input):
     
     return response_gen
 
-# facebook_response("bạn là ai?")
+print(facebook_response("bạn là ai?"))
