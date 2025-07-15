@@ -18,11 +18,11 @@ def facebook_response(user_input):
     docs, summary = "", ""
     for i, doc in enumerate(search_results):
         docs += doc + " "
-        if len(docs) > 2000:
-            summary = intergrate_context([docs, summary])
-            docs = ""
-    if docs:
-        summary = intergrate_context([docs, summary])
+    #     if len(docs) > 2000:
+    #         summary = intergrate_context([docs, summary])
+    #         docs = ""
+    # if docs:
+    #     summary = intergrate_context([docs, summary])
     
     retrieved_context = {"role": "system", "content": f"Retrieved Document: {summary}"}
 
