@@ -1,7 +1,10 @@
 import os
 import requests
+from dotenv import load_dotenv
+load_dotenv()
 PAGE_ACCESS_TOKEN = os.getenv("PAGE_ACCESS_TOKEN")
 
+print(PAGE_ACCESS_TOKEN)
 def reply_to_message(sender_id, text):
     url = 'https://graph.facebook.com/v23.0/me/messages'
     params = {'access_token': PAGE_ACCESS_TOKEN}
