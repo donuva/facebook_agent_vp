@@ -36,4 +36,4 @@ def facebook_response(user_input):
     
     return response_gen
 
-print(facebook_response("bạn là ai?"))
+# print(facebook_response("bạn là ai?"))
