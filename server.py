@@ -2,7 +2,7 @@ import requests
 import os
 from fastapi import FastAPI, Request
 from fastapi.responses import PlainTextResponse
-
+from llm_answer import *
 from dotenv import load_dotenv
 import uvicorn
 from facebook_action import *
@@ -36,7 +36,7 @@ async def webhook(request: Request):
                 sender_id = message_event.get("sender", {}).get("id")
                 message = message_event.get("message", {}).get("text")
                 if sender_id and message:
-                    reply_to_message(sender_id, "VPBANK XIN CHÀO")
+                    reply_to_message(sender_id, facebook_response(comment))
 
             for change in entry.get("changes", []):
                 field = change.get("field")
@@ -49,7 +49,7 @@ async def webhook(request: Request):
 
                 print(field, verb, item)
                 if from_id != PAGE_ID and field == "feed" and verb == "add" and item == "comment" and comment_id:
-                    reply_to_comment(comment_id, "VPBANK XIN CHÀO")
+                    reply_to_comment(comment_id, facebook_response(comment))
 
         return PlainTextResponse("EVENT_RECEIVED", status_code=200)
 
