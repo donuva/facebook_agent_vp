@@ -1,5 +1,5 @@
 from logicRAG.vectorDB.query import query
-from logicRAG.stream_output import get_llama_response_for_fb, intergrate_context
+from logicRAG.stream_output import get_llama_response_for_fb#, intergrate_context
 from logicRAG.vectorDB.indexing import load_index
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
