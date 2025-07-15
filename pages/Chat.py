@@ -75,10 +75,13 @@ user_input = st.chat_input("Nhập tin nhắn để trò chuyện với chatbot"
 
 # -------------------- Lọc từ ngữ không phù hợp --------------------
 def filter_profanity(text, profanity_list):
-    for word in profanity_list:
-        if word in text:
-            text = text.replace(word, "***")
-    return text
+    polite_text = text
+    for word in text.split(" "):
+        print(f"từ đơn : {word}")
+        if word in profanity_list:
+            polite_text = text.replace(word, "***")
+    
+    return polite_text
 
 # -------------------- Xử lý truy vấn và tạo phản hồi --------------------
 def process_database_response(user_input, index, all_chunks):
