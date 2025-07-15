@@ -36,7 +36,7 @@ async def webhook(request: Request):
                 sender_id = message_event.get("sender", {}).get("id")
                 message = message_event.get("message", {}).get("text")
                 if sender_id and message:
-                    reply_to_message(sender_id, comment)
+                    reply_to_message(sender_id, facebook_response(message))
 
             for change in entry.get("changes", []):
                 field = change.get("field")
