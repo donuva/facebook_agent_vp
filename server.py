@@ -47,7 +47,7 @@ async def webhook(request: Request):
                 comment_id = value.get("comment_id")
                 from_id = value.get("from", {}).get("id")
                 comment = value.get("message")
-                post_id = value.get("post").get("id")
+                post_id = value.get("post_id")
 
                 print(field, verb, item)
                 if from_id != PAGE_ID and field == "feed" and verb == "add" and item == "comment" and comment_id:
