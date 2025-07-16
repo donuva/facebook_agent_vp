@@ -39,4 +39,4 @@ def get_post_info(post_id):
         print(f"LỖI KHI LẤY BÀI VIẾT: {e}")
         return {}
     
-print(get_post_info("200090973179526_122233492256150598"))
+# print(get_post_info("200090973179526_122233492256150598"))

@@ -51,7 +51,7 @@ async def webhook(request: Request):
 
                 print(field, verb, item)
                 if from_id != PAGE_ID and field == "feed" and verb == "add" and item == "comment" and comment_id:
-                    print(f"POST ID IS {post_id}")
+                    print(get_post_info(post_id))
                     reply_to_comment(comment_id, facebook_response(comment))
 
         return PlainTextResponse("EVENT_RECEIVED", status_code=200)
