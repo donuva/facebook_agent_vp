@@ -39,4 +39,19 @@ def get_post_info(post_id):
         print(f"LỖI KHI LẤY BÀI VIẾT: {e}")
         return {}
     
-# print(get_post_info("200090973179526_122233492256150598"))
+def get_campaign(text): #lấy tên hastash làm tên campaign
+    campaign_list = []
+
+    for word in text.split(" "):
+        if "#" in word:
+            campaign_list.append(word.split("#")[1])
+
+    return campaign_list
+
+def confidence_score(question, answer):#few_shot + random sampling
+
+
+
+# text="cuộc thi Young Talent VPBank có nhiều hấp dẫn!\n#young_campaign #talent_trẻ"
+# print(get_campaign(text))
+
