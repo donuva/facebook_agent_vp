@@ -35,7 +35,7 @@ async def webhook(request: Request):
             for message_event in entry.get("messaging", []):
                 sender_id = message_event.get("sender", {}).get("id")
                 message = message_event.get("message", {}).get("text")
-                if sender_id and message:
+                if sender_id != PAGE_ID and message:
                     print(message)
                     reply_to_message(sender_id, facebook_response(message))
 
@@ -47,9 +47,11 @@ async def webhook(request: Request):
                 comment_id = value.get("comment_id")
                 from_id = value.get("from", {}).get("id")
                 comment = value.get("message")
+                post_id = value.get("post").get("id")
 
                 print(field, verb, item)
                 if from_id != PAGE_ID and field == "feed" and verb == "add" and item == "comment" and comment_id:
+                    print(f"POST ID IS {post_id}")
                     reply_to_comment(comment_id, facebook_response(comment))
 
         return PlainTextResponse("EVENT_RECEIVED", status_code=200)
