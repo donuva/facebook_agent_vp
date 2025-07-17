@@ -50,10 +50,10 @@ intents = [
     "Online Services (Business)",
 ]
 
-text = input("Nhập câu hỏi: ")
-llm_scores = classify_intent_llm(text, intents)
+# text = input("Nhập câu hỏi: ")
+# llm_scores = classify_intent_llm(text, intents)
 
-print("\n=== Kết quả classify_intent_llm (llama-3.1-8b-instant) ===")
-print(llm_scores)
+# print("\n=== Kết quả classify_intent_llm (llama-3.1-8b-instant) ===")
+# print(llm_scores)
 
 

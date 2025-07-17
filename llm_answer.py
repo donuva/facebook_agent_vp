@@ -1,39 +1,52 @@
+# logic_rag_with_intent.py
+
 from logicRAG.vectorDB.query import query
-from logicRAG.stream_output import get_llama_response_for_fb#, intergrate_context
+from logicRAG.stream_output import get_llama_response_for_fb
 from logicRAG.vectorDB.indexing import load_index
+from intent_clasify import classify_intent_llm, intents  # <-- import intent list & classify hàm
 import os
+
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
- # Đọc dữ liệu chunk đã lưu sẵn
+
+# 1. LOAD CHUNKS, INDEX chỉ 1 lần khi import
 with open('data/.cache/chunks.txt', 'r', encoding='utf-8') as f:
     all_chunks = [chunk for chunk in f.read().split('\n|||') if chunk.strip()]
 
-#load thử 1 index để test
 db_index = load_index("data/.cache/faiss_Default_index.bin")
 
-# -------------------- Xử lý truy vấn và tạo phản hồi --------------------
+# 2. Hàm trả lời Facebook + intent
 def facebook_response(user_input):
+    """
+    Nhận đầu vào user_input (string)
+    Trả về (answer, confidence, intent)
+    """
+    # ---- (a) Truy vấn vector DB lấy context
     search_results = query(query_text=user_input, index=db_index, chunks=all_chunks, distance_threshold=5)
-   
-    #-------Tóm tắt contextual/ hay RAG----------------------
-    docs, summary = "", ""
-    for i, doc in enumerate(search_results):
-        docs += doc + " "
-    #     if len(docs) > 2000:
-    #         summary = intergrate_context([docs, summary])
-    #         docs = ""
-    # if docs:
-    #     summary = intergrate_context([docs, summary])
+    docs = " ".join(search_results)
+    retrieved_context = {"role": "system", "content": f"Retrieved Document: {docs}"}
     
-    retrieved_context = {"role": "system", "content": f"Retrieved Document: {summary}"}
-
-    
-    #print(f"retrieved_context is {retrieved_context}")
-    
-    response_gen =get_llama_response_for_fb(
+    # ---- (b) LLM sinh câu trả lời
+    answer = get_llama_response_for_fb(
         retrieved_context,
         user_input
     )
     
-    return response_gen
+    # ---- (c) LLM classify intent (multi-label, multi-score)
+    intent_scores = classify_intent_llm(user_input, intents)
+    if intent_scores:
+        intent = max(intent_scores, key=intent_scores.get)
+        confidence = float(intent_scores[intent])
+    else:
+        intent = "Khác"
+        confidence = 0.6
 
-# print(facebook_response("bạn là ai?"))
+    return answer, confidence, intent
+
+# --- Test thử ---
+if __name__ == "__main__":
+    test_question = input("Nhập câu hỏi: ")
+    ans, conf, intent = facebook_response(test_question)
+    print("\n---- Trả lời ----")
+    print("Answer:", ans)
+    print("Confidence:", conf)
+    print("Intent:", intent)

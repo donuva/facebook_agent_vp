@@ -26,7 +26,7 @@ def reply_to_comment(comment_id, text):
 
 def get_post_info(post_id):
     url = f"https://graph.facebook.com/v19.0/{post_id}"
-    fields = "message, story, created_time, permalink_url, attachments"
+    fields = "message"
     params = {
         "fields": fields,
         "access_token": PAGE_ACCESS_TOKEN
@@ -52,7 +52,5 @@ def confidence_score(question, answer):#few_shot + random sampling
     pass
 
 
-text = "Chương trình #Back2School sắp diễn ra! Tham gia #Summer2024 nhé."
-print(get_campaign(text))
-# Kết quả: ['Back2School', 'Summer2024']
+#print(get_post_info())
 

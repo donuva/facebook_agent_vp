@@ -49,12 +49,12 @@ async def webhook(request: Request):
                         user=sender_id,
                         question=message
                     )
-                    # # 2. Gọi LLM để lấy answer, confidence, intent
-                    # ans, conf, intent = facebook_response(message)  # Bạn cần chỉnh llm_answer.py trả tuple này
-                    # # 3. Update vào DB
-                    # update_llm_result(mid, ans, conf, intent)
+                    # 2. Gọi LLM để lấy answer, confidence, intent
+                    ans, conf, intent = facebook_response(message)  # Bạn cần chỉnh llm_answer.py trả tuple này
+                    # 3. Update vào DB
+                    update_llm_result(mid, ans, conf, intent)
                     # 4. Trả lời lại FB
-                    reply_to_message(sender_id, facebook_response(message))
+                    reply_to_message(sender_id, ans)
 
             # Xử lý comment feed
             for change in entry.get("changes", []):
@@ -76,14 +76,15 @@ async def webhook(request: Request):
                         date=date,
                         user=from_id,
                         question=comment,
+                        campaign = get_campaign(get_post_info(post_id).get("message"))
                         url=f"https://facebook.com/{post_id}"
                     )
-                    # # 2. Gọi LLM để lấy answer, confidence, intent
-                    # ans, conf, intent = facebook_response(comment)
-                    # # 3. Update vào DB
-                    # update_llm_result(comment_id, ans, conf, intent)
+                    # 2. Gọi LLM để lấy answer, confidence, intent
+                    ans, conf, intent = facebook_response(comment)
+                    # 3. Update vào DB
+                    update_llm_result(comment_id, ans, conf, intent)
                     # 4. Trả lời lại FB
-                    reply_to_comment(comment_id, facebook_response(comment))
+                    reply_to_comment(comment_id, facebook_response(ans))
 
         return PlainTextResponse("EVENT_RECEIVED", status_code=200)
 
