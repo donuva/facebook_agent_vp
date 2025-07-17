@@ -33,12 +33,13 @@ with st.sidebar:
     except:
         filter_conf = (0.4, 1.0)
     filter_campaign = st.multiselect("Chiến dịch", options=list(df["campaign"].unique()), default=[])
-    filter_user = st.multiselect("User", options=list(df["user"].unique()), default=[])
+    #filter_user = st.multiselect("User", options=list(df["user"].unique()), default=[])
+    st.write("**LỌC THEO INTENT**")
+    quick_intent = st.selectbox("Chọn intent phổ biến", [""] + intent_list)
     filter_handled = st.radio("Trạng thái xử lý", ["Tất cả", "Đã xử lý", "Chưa xử lý"])
     search_key = st.text_input("Tìm kiếm", "")
     st.markdown("---")
-    st.write("**Gắn intent/tag nhanh**")
-    quick_intent = st.selectbox("Chọn intent phổ biến", [""] + intent_list)
+    
 
 # ========== ÁP DỤNG BỘ LỌC ========== 
 df_view = df.copy()
@@ -49,8 +50,8 @@ if filter_date:
 df_view = df_view[(df_view["confidence"].astype(str).astype(float) >= filter_conf[0]) & (df_view["confidence"].astype(str).astype(float) <= filter_conf[1])]
 if filter_campaign:
     df_view = df_view[df_view["campaign"].isin(filter_campaign)]
-if filter_user:
-    df_view = df_view[df_view["user"].isin(filter_user)]
+# if filter_user:
+#     df_view = df_view[df_view["user"].isin(filter_user)]
 if filter_handled != "Tất cả":
     handled_val = (filter_handled == "Đã xử lý")
     df_view = df_view[df_view["handled"].astype(str).apply(lambda x: x in ["1", "True", "true"]) == handled_val]

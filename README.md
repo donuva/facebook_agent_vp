@@ -43,7 +43,7 @@ streamlit run Home.py --server.port 6789
 
 '''
 python server.py
-ngrok http 5000
+ngrok http 80
 '''
 ### call back url của webhook: link_ngrok/webhook
 
