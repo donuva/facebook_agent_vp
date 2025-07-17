@@ -7,7 +7,6 @@ import pandas as pd
 DB_PATH = 'mainboard.db'
 
 # ====== TẠO BẢNG ======
-# ====== TẠO BẢNG ======
 def create_db():
     conn = sqlite3.connect(DB_PATH)
     # Thêm cột is_bot_reply vào bảng nếu chưa có
@@ -31,7 +30,8 @@ def create_db():
             last_edit_time TEXT,
             edit_log TEXT,
             search TEXT,
-            is_bot_reply INTEGER DEFAULT 0
+            is_bot_reply INTEGER DEFAULT 0, 
+            response_time REAL DEFAULT 0
         )
     ''')
     conn.commit()
@@ -50,14 +50,15 @@ def insert_message(fb_comment_id, date, user, question, campaign=None, url=None,
     conn.close()
 
 # ====== HÀM UPDATE KẾT QUẢ LLM ======
-def update_llm_result(fb_comment_id, answer, confidence, intent, is_bot_reply=True):
+def update_llm_result(fb_comment_id, answer, confidence, intent, is_bot_reply=True, response_time=None):
     conn = sqlite3.connect(DB_PATH)
     conn.execute('''
-        UPDATE mainboard SET answer=?, confidence=?, intent=?, is_bot_reply=?
+        UPDATE mainboard SET answer=?, confidence=?, intent=?, is_bot_reply=?, response_time=?
         WHERE fb_comment_id=?
-    ''', (answer, confidence, intent, is_bot_reply, fb_comment_id))
+    ''', (answer, confidence, intent, is_bot_reply, response_time, fb_comment_id))
     conn.commit()
     conn.close()
+
 
 # ====== HÀM UPDATE KHI ADMIN CHỈNH SỬA ======
 def update_admin_fields(
