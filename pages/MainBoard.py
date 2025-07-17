@@ -1,72 +1,37 @@
 import streamlit as st
 import pandas as pd
-import datetime
-import random
+from db_actions import load_all, update_admin_fields
 
-# Cấu hình giao diện trang Streamlit
 st.set_page_config(page_title="Facebook Agent Mainboard", layout="wide")
 st.title("👩‍💼 Facebook Agent Mainboard")
 
-# ======= DỮ LIỆU GIẢ LẬP =======
-# Thiết lập seed để đảm bảo kết quả ngẫu nhiên có thể tái hiện
-random.seed(42)
+# ======= Định nghĩa intent và admin =======
+intent_list = ["Account Types",
+                "Card Types",
+                "Online Services (Business)"]
+admin_users = ["Admin A", "Admin B"] 
 
-# Danh sách admin giả lập
-admin_users = ["Admin A", "Admin B", "Admin C"]
+# ======= LOAD DỮ LIỆU THẬT TỪ DB =======
+df = load_all()
 
-# Danh sách intent giả định
-intent_list = ["Giá", "Giao hàng", "Bảo hành", "Màu sắc", "Sử dụng", "Khác"]
+# Đảm bảo đủ cột (nếu thiếu thì tạo cột trống)
+columns_needed = [
+    "date", "campaign", "user", "question", "answer", "confidence", "fb_comment_id",
+    "url", "admin_reply", "edit_log", "admin_note", "feedback", "rating", "handled",
+    "intent", "last_editor", "last_edit_time", "search"
+]
+for col in columns_needed:
+    if col not in df.columns:
+        df[col] = ""
 
-# Tạo danh sách dữ liệu mô phỏng
-data = []
-for i in range(50):  # Tạo 50 dòng dữ liệu giả lập
-    # === Các trường dữ liệu được random hóa ===
-    date = datetime.date(2024, 7, random.randint(1, 10))  # Giả lập ngày từ 1-10/7/2024
-    campaign = random.choice(["Summer2024", "Back2School", "Test"])  # Tên chiến dịch giả
-    user = random.choice(["Nguyễn A", "Lê B", "Trần C", "Hoàng D", "Linh E"])  # Tên người dùng giả
-    question = f"Câu hỏi số {i+1} của {user} ({random.choice(intent_list)})"  # Nội dung câu hỏi giả
-    answer = f"Câu trả lời tự động {i+1}" if random.random() > 0.25 else "Xin chờ admin hỗ trợ."  # Tự động trả lời hoặc cần hỗ trợ
-    confidence = round(random.uniform(0.4, 0.99), 2)  # Mức độ tự tin LLM (0.4 - 0.99)
-    fb_comment_id = str(1000 + i)  # ID comment giả định
-    url = f"https://facebook.com/comment/{fb_comment_id}"  # Link giả cho comment
-    admin_reply = "" if random.random() > 0.5 else f"Đã phản hồi: {random.choice(admin_users)}"
-    edit_log = "" if random.random() > 0.5 else f"Chỉnh sửa bởi {random.choice(admin_users)} lúc {date}."
-    admin_note = "" if random.random() > 0.7 else f"Ghi chú nội bộ {i}"
-    feedback = "" if random.random() > 0.7 else f"LLM yếu phần này"
-    rating = random.choice([1, 2, 3, 4, 5, None, None])  # Chấm điểm LLM hoặc để trống
-    handled = random.choice([True, False])  # Trạng thái đã xử lý hay chưa
-    intent = random.choice(intent_list)
-    
-    # Thêm dòng dữ liệu vào danh sách
-    data.append({
-        "date": date,
-        "campaign": campaign,
-        "user": user,
-        "question": question,
-        "answer": answer,
-        "confidence": confidence,
-        "fb_comment_id": fb_comment_id,
-        "url": url,
-        "admin_reply": admin_reply,
-        "edit_log": edit_log,
-        "admin_note": admin_note,
-        "feedback": feedback,
-        "rating": rating,
-        "handled": handled,
-        "intent": intent,
-        "last_editor": random.choice(admin_users) if edit_log else "",
-        "last_edit_time": date if edit_log else "",
-        "search": f"{user} {question} {answer}",  # Trường để hỗ trợ tìm kiếm nhanh
-    })
-
-# Tạo DataFrame từ dữ liệu giả
-df = pd.DataFrame(data)
-
-# ========== GIAO DIỆN BỘ LỌC ========== 
+# ========== GIAO DIỆN BỘ LỌC ==========
 with st.sidebar:
     st.header("Bộ lọc")
     filter_date = st.date_input("Lọc theo ngày", value=None)
-    filter_conf = st.slider("Mức tự tin LLM", 0.4, 1.0, (0.4, 1.0), 0.01)
+    try:
+        filter_conf = st.slider("Mức tự tin LLM", 0.4, 1.0, (0.4, 1.0), 0.01)
+    except:
+        filter_conf = (0.4, 1.0)
     filter_campaign = st.multiselect("Chiến dịch", options=list(df["campaign"].unique()), default=[])
     filter_user = st.multiselect("User", options=list(df["user"].unique()), default=[])
     filter_handled = st.radio("Trạng thái xử lý", ["Tất cả", "Đã xử lý", "Chưa xử lý"])
@@ -75,32 +40,42 @@ with st.sidebar:
     st.write("**Gắn intent/tag nhanh**")
     quick_intent = st.selectbox("Chọn intent phổ biến", [""] + intent_list)
 
-# ========== ÁP DỤNG BỘ LỌC ========== 
+# ========== ÁP DỤNG BỘ LỌC ==========
 df_view = df.copy()
 if filter_date:
-    df_view = df_view[df_view["date"] == filter_date]
-df_view = df_view[(df_view["confidence"] >= filter_conf[0]) & (df_view["confidence"] <= filter_conf[1])]
+    df_view = df_view[df_view["date"] == pd.to_datetime(filter_date).date().isoformat()]
+df_view = df_view[(df_view["confidence"].astype(str).astype(float) >= filter_conf[0]) & (df_view["confidence"].astype(str).astype(float) <= filter_conf[1])]
 if filter_campaign:
     df_view = df_view[df_view["campaign"].isin(filter_campaign)]
 if filter_user:
     df_view = df_view[df_view["user"].isin(filter_user)]
 if filter_handled != "Tất cả":
-    df_view = df_view[df_view["handled"] == (filter_handled == "Đã xử lý")]
+    handled_val = (filter_handled == "Đã xử lý")
+    # Chuyển sang bool nếu bị lưu là int
+    df_view = df_view[df_view["handled"].astype(str).apply(lambda x: x in ["1", "True", "true"]) == handled_val]
 if search_key:
     df_view = df_view[df_view["search"].str.lower().str.contains(search_key.lower())]
 if quick_intent:
     df_view = df_view[df_view["intent"] == quick_intent]
 
-# ========== CẢNH BÁO CÂU KHÓ ========== 
-n_new_hard = len(df[(df["confidence"] < 0.7) & (~df["handled"])])
+# ========== CẢNH BÁO CÂU KHÓ ==========
+try:
+    n_new_hard = len(df[(df["confidence"].astype(float) < 0.7) & (~df["handled"].astype(str).isin(["1", "True", "true"]))])
+except:
+    n_new_hard = 0
 if n_new_hard > 0:
     st.warning(f"⚡ Có {n_new_hard} câu hỏi khó mới chưa được xử lý!")
 
-# ========== BÁO CÁO TỔNG QUÁT ========== 
+# ========== BÁO CÁO TỔNG QUÁT ==========
 col1, col2, col3 = st.columns(3)
-n_confident = len(df[df["confidence"] >= 0.8])
-n_hard = len(df[df["confidence"] < 0.8])
-avg_resp = round(df["confidence"].mean() * 10, 2)
+try:
+    n_confident = len(df[df["confidence"].astype(float) >= 0.8])
+    n_hard = len(df[df["confidence"].astype(float) < 0.8])
+    avg_resp = round(df["confidence"].astype(float).mean() * 10, 2)
+except:
+    n_confident = 0
+    n_hard = 0
+    avg_resp = 0
 col1.metric("Câu tự tin LLM", n_confident)
 col2.metric("Câu cần xử lý", n_hard)
 col3.metric("Mức tự tin TB (%)", avg_resp * 10)
@@ -108,10 +83,23 @@ col3.metric("Mức tự tin TB (%)", avg_resp * 10)
 # ========== HIỂN THỊ MAINBOARD ========== 
 left, right = st.columns(2)
 
+def save_admin_edit(row, note, feedback, admin_reply, handled, rating, intent, editor):
+    from datetime import datetime
+    update_admin_fields(
+        fb_comment_id=row['fb_comment_id'],
+        admin_note=note,
+        feedback=feedback,
+        admin_reply=admin_reply,
+        handled=handled,
+        rating=rating,
+        last_editor=editor,
+    )
+    st.success("Đã lưu chỉnh sửa!")
+
 # Cột trái: Câu LLM tự tin
 with left:
     st.subheader("✅ Câu trả lời tự tin (LLM confident)")
-    conf_df = df_view[df_view['confidence'] >= 0.8]
+    conf_df = df_view[df_view['confidence'].astype(float) >= 0.8]
     for i, row in conf_df.iterrows():
         with st.expander(f"{row['user']}: {row['question']} [{row['confidence']}]"):
             st.write(f"**Trả lời:** {row['answer']}")
@@ -122,47 +110,56 @@ with left:
             llm_score = st.slider(
                 f"Chấm điểm LLM (1-5)",
                 1, 5,
-                int(row["rating"]) if pd.notna(row["rating"]) else 3,
+                int(row["rating"]) if pd.notna(row["rating"]) and str(row["rating"]).isdigit() else 3,
                 step=1,
                 key=f"score{row['fb_comment_id']}"
             )
             feedback = st.text_area("Góp ý cho chatbot", value=row["feedback"], key=f"fb{row['fb_comment_id']}")
             note = st.text_area("Ghi chú nội bộ", value=row["admin_note"], key=f"note{row['fb_comment_id']}")
-            st.write(f"**Lần chỉnh gần nhất:** {row['last_editor']} - {row['last_edit_time']}")
-            new_intent = st.selectbox("Gắn intent", intent_list, index=intent_list.index(row["intent"]), key=f"intent{row['fb_comment_id']}")
+            admin_reply = st.text_area("Phản hồi admin", value=row["admin_reply"], key=f"admrep{row['fb_comment_id']}")
+            intent_val = st.selectbox("Gắn intent", intent_list, index=intent_list.index(row["intent"]) if row["intent"] in intent_list else 0, key=f"intent{row['fb_comment_id']}")
+            handled = st.checkbox("Đã xử lý", value=(str(row["handled"]).lower() in ["1", "true"]), key=f"handled{row['fb_comment_id']}")
+            editor = st.selectbox("Người chỉnh", admin_users, key=f"editor{row['fb_comment_id']}")
+            if st.button("Lưu chỉnh sửa", key=f"save{row['fb_comment_id']}"):
+                save_admin_edit(row, note, feedback, admin_reply, handled, llm_score, intent_val, editor)
+                st.experimental_rerun()
 
 # Cột phải: Câu hỏi khó
 with right:
     st.subheader("🤔 Câu hỏi khó (LLM không tự tin)")
-    hard_df = df_view[df_view['confidence'] < 0.8]
+    hard_df = df_view[df_view['confidence'].astype(float) < 0.8]
     for i, row in hard_df.iterrows():
         with st.expander(f"{row['user']}: {row['question']} [{row['confidence']}]"):
             st.write(f"**Gợi ý trả lời:** {row['answer']}")
             st.write(f"**Chiến dịch:** {row['campaign']}")
             st.write(f"**Intent:** {row['intent']}")
             st.write(f"[➡️ Xem bình luận Facebook]({row['url']})")
-            new_reply = st.text_area("Phản hồi của admin", value=row["admin_reply"], key=f"admrep{row['fb_comment_id']}")
-            mark = st.checkbox("Đã xử lý", value=row["handled"], key=f"mark{row['fb_comment_id']}")
             note = st.text_area("Ghi chú nội bộ", value=row["admin_note"], key=f"note2{row['fb_comment_id']}")
-            st.write(f"**Nhật ký:** {row['edit_log']}")
+            feedback = st.text_area("Góp ý cho chatbot", value=row["feedback"], key=f"fb2{row['fb_comment_id']}")
+            admin_reply = st.text_area("Phản hồi admin", value=row["admin_reply"], key=f"admrep2{row['fb_comment_id']}")
             llm_score = st.slider(
                 f"Chấm điểm LLM (1-5)",
                 1, 5,
-                int(row["rating"]) if pd.notna(row["rating"]) else 3,
+                int(row["rating"]) if pd.notna(row["rating"]) and str(row["rating"]).isdigit() else 3,
                 step=1,
-                key=f"score{row['fb_comment_id']}"
+                key=f"score2{row['fb_comment_id']}"
             )
-            feedback = st.text_area("Góp ý cho chatbot", value=row["feedback"], key=f"fb2{row['fb_comment_id']}")
-            new_intent = st.selectbox("Gắn intent", intent_list, index=intent_list.index(row["intent"]), key=f"intent2{row['fb_comment_id']}")
-            st.write(f"**Lần chỉnh gần nhất:** {row['last_editor']} - {row['last_edit_time']}")
+            intent_val = st.selectbox("Gắn intent", intent_list, index=intent_list.index(row["intent"]) if row["intent"] in intent_list else 0, key=f"intent2{row['fb_comment_id']}")
+            handled = st.checkbox("Đã xử lý", value=(str(row["handled"]).lower() in ["1", "true"]), key=f"handled2{row['fb_comment_id']}")
+            editor = st.selectbox("Người chỉnh", admin_users, key=f"editor2{row['fb_comment_id']}")
+            if st.button("Lưu chỉnh sửa", key=f"save2{row['fb_comment_id']}"):
+                save_admin_edit(row, note, feedback, admin_reply, handled, llm_score, intent_val, editor)
+                st.experimental_rerun()
 
-# ========== BẢNG NHẬT KÝ ========== 
+# ========== BẢNG NHẬT KÝ ==========
 st.markdown("---")
 st.subheader("📋 Nhật ký hoạt động")
-log_data = df[["fb_comment_id", "user", "question", "last_editor", "last_edit_time", "edit_log"]]
-st.dataframe(log_data, hide_index=True)
+log_data = df[["fb_comment_id", "user", "question", "last_editor", "last_edit_time", "edit_log"]] if all(col in df.columns for col in ["fb_comment_id", "user", "question", "last_editor", "last_edit_time", "edit_log"]) else pd.DataFrame()
+if not log_data.empty:
+    st.dataframe(log_data, hide_index=True)
 
-# ========== LỊCH SỬ CHỈNH SỬA ========== 
+# ========== LỊCH SỬ CHỈNH SỬA ==========
 st.subheader("🕑 Lịch sử chỉnh sửa admin")
-edit_logs = df[df["edit_log"] != ""][["fb_comment_id", "edit_log"]]
-st.dataframe(edit_logs, hide_index=True)
+if "edit_log" in df.columns:
+    edit_logs = df[df["edit_log"] != ""][["fb_comment_id", "edit_log"]]
+    st.dataframe(edit_logs, hide_index=True)

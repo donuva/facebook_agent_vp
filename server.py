@@ -14,6 +14,8 @@ PAGE_ID = os.getenv("PAGE_ID")
 
 app = FastAPI()
 
+CONFIDENCE_THRESHOLD = 0.75
+
 @app.api_route("/webhook", methods=["GET", "POST"])
 async def webhook(request: Request):
     if request.method == "GET":
@@ -54,7 +56,8 @@ async def webhook(request: Request):
                     # 3. Update vào DB
                     update_llm_result(mid, ans, conf, intent)
                     # 4. Trả lời lại FB
-                    reply_to_message(sender_id, ans)
+                    if conf >= CONFIDENCE_THRESHOLD:
+                        reply_to_message(sender_id, ans)
 
             # Xử lý comment feed
             for change in entry.get("changes", []):
@@ -76,7 +79,7 @@ async def webhook(request: Request):
                         date=date,
                         user=from_id,
                         question=comment,
-                        #campaign = get_campaign(get_post_info(post_id).get("message")),
+                        campaign = get_campaign(get_post_content(post_id)),
                         url=f"https://facebook.com/{post_id}"
                     )
                     # 2. Gọi LLM để lấy answer, confidence, intent
@@ -84,7 +87,8 @@ async def webhook(request: Request):
                     # 3. Update vào DB
                     update_llm_result(comment_id, ans, conf, intent)
                     # 4. Trả lời lại FB
-                    reply_to_comment(comment_id, facebook_response(ans))
+                    if conf >= CONFIDENCE_THRESHOLD:
+                        reply_to_comment(comment_id, ans)
 
         return PlainTextResponse("EVENT_RECEIVED", status_code=200)
 

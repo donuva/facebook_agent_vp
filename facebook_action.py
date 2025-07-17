@@ -24,20 +24,6 @@ def reply_to_comment(comment_id, text):
     r = requests.post(url, params=params, json=payload)
     print(f"ĐẪ TRẢ LỜI COMMENT là {r.text}")
 
-def get_post_info(post_id):
-    url = f"https://graph.facebook.com/v23.0/{post_id}"
-    fields = "message, story, created_time, permalink_url, attachments"
-    params = {
-        "fields": fields,
-        "access_token": PAGE_ACCESS_TOKEN
-    }
-    try:
-        response = requests.get(url, params, timeout=10)
-        response.raise_for_status()
-        return response.json()
-    except requests.RequestException as e:
-        print(f"LỖI KHI LẤY BÀI VIẾT: {e}")
-        return {}
     
 def get_campaign(text): #lấy tên hastash làm tên campaign
     campaign_list = []
@@ -52,5 +38,20 @@ def confidence_score(question, answer):#few_shot + random sampling
     pass
 
 
-print(get_post_info(200090973179526_122233803668150598))
+def get_post_content(post_id):
+    url = f"https://graph.facebook.com/v19.0/{post_id}"
+    params = {
+        "fields": "message,permalink_url,created_time,from",
+        "access_token": PAGE_ACCESS_TOKEN
+    }
+    r = requests.get(url, params=params)
+    if r.status_code == 200:
+        return r.json()["message"]
+    return None
+
+
+
+
+# post_id = "200090973179526_122233803668150598"
+# print(get_campaign(get_post_content(post_id)))
 
