@@ -1,11 +1,11 @@
 import os
+from db_actions import insert_message, update_llm_result
 from fastapi import FastAPI, Request
 from fastapi.responses import PlainTextResponse
 from llm_answer import *           # cần: facebook_response(message) trả về (ans, conf, intent)
 from dotenv import load_dotenv
 import uvicorn
 from facebook_action import *      # reply_to_message, reply_to_comment, get_post_info
-from db_actions import *           # import các hàm DB: insert_message, update_llm_result, ...
 
 load_dotenv()
 VERIFY_TOKEN = os.getenv("VERIFY_TOKEN")
@@ -49,12 +49,12 @@ async def webhook(request: Request):
                         user=sender_id,
                         question=message
                     )
-                    # 2. Gọi LLM để lấy answer, confidence, intent
-                    ans, conf, intent = facebook_response(message)  # Bạn cần chỉnh llm_answer.py trả tuple này
-                    # 3. Update vào DB
-                    update_llm_result(mid, ans, conf, intent)
+                    # # 2. Gọi LLM để lấy answer, confidence, intent
+                    # ans, conf, intent = facebook_response(message)  # Bạn cần chỉnh llm_answer.py trả tuple này
+                    # # 3. Update vào DB
+                    # update_llm_result(mid, ans, conf, intent)
                     # 4. Trả lời lại FB
-                    reply_to_message(sender_id, ans)
+                    reply_to_message(sender_id, facebook_response(message))
 
             # Xử lý comment feed
             for change in entry.get("changes", []):
@@ -78,12 +78,12 @@ async def webhook(request: Request):
                         question=comment,
                         url=f"https://facebook.com/{post_id}"
                     )
-                    # 2. Gọi LLM để lấy answer, confidence, intent
-                    ans, conf, intent = facebook_response(comment)
-                    # 3. Update vào DB
-                    update_llm_result(comment_id, ans, conf, intent)
+                    # # 2. Gọi LLM để lấy answer, confidence, intent
+                    # ans, conf, intent = facebook_response(comment)
+                    # # 3. Update vào DB
+                    # update_llm_result(comment_id, ans, conf, intent)
                     # 4. Trả lời lại FB
-                    reply_to_comment(comment_id, ans)
+                    reply_to_comment(comment_id, facebook_response(comment))
 
         return PlainTextResponse("EVENT_RECEIVED", status_code=200)
 
