@@ -49,9 +49,10 @@ def get_campaign(text): #lấy tên hastash làm tên campaign
     return campaign_list
 
 def confidence_score(question, answer):#few_shot + random sampling
+    pass
 
 
-
-# text="cuộc thi Young Talent VPBank có nhiều hấp dẫn!\n#young_campaign #talent_trẻ"
-# print(get_campaign(text))
+text = "Chương trình #Back2School sắp diễn ra! Tham gia #Summer2024 nhé."
+print(get_campaign(text))
+# Kết quả: ['Back2School', 'Summer2024']
 

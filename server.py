@@ -1,13 +1,13 @@
-import requests
 import os
 from fastapi import FastAPI, Request
 from fastapi.responses import PlainTextResponse
-from llm_answer import *
+from llm_answer import *           # cần: facebook_response(message) trả về (ans, conf, intent)
 from dotenv import load_dotenv
 import uvicorn
-from facebook_action import *
-load_dotenv()
+from facebook_action import *      # reply_to_message, reply_to_comment, get_post_info
+from db_actions import *           # import các hàm DB: insert_message, update_llm_result, ...
 
+load_dotenv()
 VERIFY_TOKEN = os.getenv("VERIFY_TOKEN")
 PAGE_ACCESS_TOKEN = os.getenv("PAGE_ACCESS_TOKEN")
 PAGE_ID = os.getenv("PAGE_ID")
@@ -27,18 +27,36 @@ async def webhook(request: Request):
         return PlainTextResponse("Verification token mismatch", status_code=403)
 
     if request.method == "POST":
+        import datetime
         data = await request.json()
-        print("ĐÃ NHẬN POST FB GỬI TỚT WEBHOOK")
+        print("ĐÃ NHẬN POST FB GỬI TỚI WEBHOOK")
         print("Received event: ", data)
 
         for entry in data.get("entry", []):
+            # Xử lý inbox message
             for message_event in entry.get("messaging", []):
                 sender_id = message_event.get("sender", {}).get("id")
                 message = message_event.get("message", {}).get("text")
+                mid = message_event.get("message", {}).get("mid")     # FB message unique id
+                date = datetime.datetime.now().isoformat()
+                # ---- XỬ LÝ INBOX ----
                 if sender_id != PAGE_ID and message:
                     print(message)
-                    reply_to_message(sender_id, facebook_response(message))
+                    # 1. Lưu vào DB
+                    insert_message(
+                        fb_comment_id=mid,
+                        date=date,
+                        user=sender_id,
+                        question=message
+                    )
+                    # 2. Gọi LLM để lấy answer, confidence, intent
+                    ans, conf, intent = facebook_response(message)  # Bạn cần chỉnh llm_answer.py trả tuple này
+                    # 3. Update vào DB
+                    update_llm_result(mid, ans, conf, intent)
+                    # 4. Trả lời lại FB
+                    reply_to_message(sender_id, ans)
 
+            # Xử lý comment feed
             for change in entry.get("changes", []):
                 field = change.get("field")
                 value = change.get("value", {})
@@ -48,69 +66,26 @@ async def webhook(request: Request):
                 from_id = value.get("from", {}).get("id")
                 comment = value.get("message")
                 post_id = value.get("post_id")
-
-                print(field, verb, item)
+                date = datetime.datetime.now().isoformat()
+                # ---- XỬ LÝ COMMENT ----
                 if from_id != PAGE_ID and field == "feed" and verb == "add" and item == "comment" and comment_id:
                     print(get_post_info(post_id))
-                    reply_to_comment(comment_id, facebook_response(comment))
+                    # 1. Lưu vào DB
+                    insert_message(
+                        fb_comment_id=comment_id,
+                        date=date,
+                        user=from_id,
+                        question=comment,
+                        url=f"https://facebook.com/{post_id}"
+                    )
+                    # 2. Gọi LLM để lấy answer, confidence, intent
+                    ans, conf, intent = facebook_response(comment)
+                    # 3. Update vào DB
+                    update_llm_result(comment_id, ans, conf, intent)
+                    # 4. Trả lời lại FB
+                    reply_to_comment(comment_id, ans)
 
         return PlainTextResponse("EVENT_RECEIVED", status_code=200)
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=5000)
-    
-# import requests
-# import os
-# from flask import Flask, request
-# from dotenv import load_dotenv
-# from facebook_action import *
-# load_dotenv()
-
-# VERIFY_TOKEN = os.getenv("VERIFY_TOKEN")
-# PAGE_ACCESS_TOKEN = os.getenv("PAGE_ACCESS_TOKEN")
-# PAGE_ID = os.getenv("PAGE_ID")
-
-# app = Flask(__name__)
-
-# @app.route('/webhook', methods=['GET', 'POST'])
-# def webhook():
-#     if request.method == 'GET':
-#         # Xác thực với Facebook khi setup webhook
-#         if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.verify_token") == VERIFY_TOKEN:
-#             print("ĐÃ XÁC THỰC WEBHOOK")
-#             return request.args.get("hub.challenge"), 200
-#         return "Verification token mismatch", 403
-
-#     if request.method == 'POST':
-#         data = request.get_json()
-#         print("ĐÃ NHẬN POST FB GỬI TỚT WEBHOOK")
-#         print("Received event: ", data)
-#         # Xử lý dữ liệu comment, message
-#         for entry in data.get('entry', []):
-#             #process for message
-#             for message_event in entry.get('messaging', []):
-#                 sender_id = message_event.get('sender',{}).get('id')
-#                 message = message_event.get('message',{}).get('text')
-#                 if sender_id and message:
-#                     reply_to_message(sender_id, "VPBANK XIN CHÀO")
-        
-#             #process for comment
-#             for change in entry.get('changes', []):
-#                 field = change.get('field')
-#                 value = change.get('value',{})
-#                 item = value.get('item')
-#                 verb = value.get('verb')
-#                 comment_id = value.get('comment_id')
-#                 message = value.get('message')
-#                 from_id = value.get('from',{}).get('id')
-#                 comment = value.get('message')
-
-#                 print(field, verb, item)
-#                 if from_id != PAGE_ID and field == 'feed' and verb == 'add' and item == 'comment' and comment_id:
-#                     reply_to_comment(comment_id, "VPBANK XIN CHÀO")
-
-
-#         return "EVENT_RECEIVED", 200
-
-# if __name__ == '__main__':
-#     app.run(port=5000, debug=True)
