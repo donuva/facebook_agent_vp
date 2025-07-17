@@ -49,12 +49,14 @@ async def webhook(request: Request):
                         fb_comment_id=mid,
                         date=date,
                         user=sender_id,
-                        question=message
+                        question=message,
+                        is_bot_reply=False
                     )
                     # 2. Gọi LLM để lấy answer, confidence, intent
                     ans, conf, intent = facebook_response(message)  # Bạn cần chỉnh llm_answer.py trả tuple này
                     # 3. Update vào DB
-                    update_llm_result(mid, ans, conf, intent)
+                    is_bot_reply = (conf >= CONFIDENCE_THRESHOLD)
+                    update_llm_result(mid, ans, conf, intent, is_bot_reply)
                     # 4. Trả lời lại FB
                     if conf >= CONFIDENCE_THRESHOLD:
                         reply_to_message(sender_id, ans)
@@ -80,12 +82,14 @@ async def webhook(request: Request):
                         user=from_id,
                         question=comment,
                         campaign = get_campaign(get_post_content(post_id)),
-                        url=f"https://facebook.com/{post_id}"
+                        url=f"https://facebook.com/{post_id}",
+                        is_bot_reply=False
                     )
                     # 2. Gọi LLM để lấy answer, confidence, intent
                     ans, conf, intent = facebook_response(comment)
                     # 3. Update vào DB
-                    update_llm_result(comment_id, ans, conf, intent)
+                    is_bot_reply = (conf >= CONFIDENCE_THRESHOLD)
+                    update_llm_result(mid, ans, conf, intent, is_bot_reply)
                     # 4. Trả lời lại FB
                     if conf >= CONFIDENCE_THRESHOLD:
                         reply_to_comment(comment_id, ans)

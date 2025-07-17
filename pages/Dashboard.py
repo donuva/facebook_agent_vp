@@ -4,44 +4,36 @@ import numpy as np
 from datetime import datetime, timedelta
 import plotly.express as px
 import plotly.graph_objects as go
+from db_actions import load_all  # Hàm load_all() để lấy dữ liệu từ DB
 
 # Cấu hình trang hiển thị
 st.set_page_config(page_title="Chatbot Facebook Dashboard", layout="wide")
 
-# ====== GIẢ LẬP DỮ LIỆU CHATBOT ======
-np.random.seed(42)  # Đặt seed cố định để có thể tái hiện dữ liệu
-n = 500  # Số lượng dòng dữ liệu giả lập
-start_date = datetime(2024, 1, 1)
 
-# Tạo DataFrame với các trường mô phỏng hội thoại chatbot
-chat_df = pd.DataFrame({
-    'timestamp': [start_date + timedelta(minutes=30*i) for i in range(n)],  # Giả lập thời gian cách nhau 30 phút
-    'user_id': np.random.randint(1, 100, n),  # Giả lập ID người dùng từ 1 đến 100
-    'message': np.random.choice(['Hi', 'Order', 'Thanks', 'Help', 'CTA Clicked', 'Bye'], n),  # Tin nhắn mô phỏng
-    'is_bot_reply': np.random.choice([True, False], n, p=[0.9, 0.1]),  # Tỷ lệ trả lời bởi bot (90%)
-    'response_time': np.random.normal(2, 0.5, n).clip(min=0.5),  # Thời gian phản hồi trung bình ~2s
-    'intent': np.random.choice(['greeting', 'order', 'thankyou', 'support', 'cta', 'goodbye'], n),  # Intent gán
-    'clicked_cta': np.random.choice([True, False], n, p=[0.2, 0.8]),  # Tỷ lệ nhấp CTA ~20%
-    'rating': np.random.choice([1, 2, 3, 4, 5, None], n, p=[0.1, 0.1, 0.2, 0.3, 0.2, 0.1])  # Phân phối điểm hài lòng
-})
-chat_df['date'] = chat_df['timestamp'].dt.date  # Thêm cột ngày để nhóm thống kê theo ngày
+# ====== LOAD DỮ LIỆU THẬT ======
+# Load dữ liệu từ DB
+df = load_all()  # Giả sử bạn có hàm load_all() trong db_actions.py để lấy dữ liệu từ DB
+
+st.dataframe(df)
+# # Tạo cột ngày để nhóm thống kê theo ngày
+# df['date'] = pd.to_datetime(df['timestamp']).dt.date  # Thêm cột ngày để nhóm theo ngày
 
 # ====== TÍNH TOÁN CHỈ SỐ TỔNG HỢP ======
-total_msgs = len(chat_df)  # Tổng số tin nhắn
-bot_replies = chat_df['is_bot_reply'].sum()  # Số tin nhắn do bot phản hồi
+total_msgs = len(df)  # Tổng số tin nhắn
+bot_replies = df['is_bot_reply'].sum()  # Số tin nhắn do bot phản hồi
 success_rate = bot_replies / total_msgs  # Tỷ lệ bot phản hồi
-avg_response = chat_df['response_time'].dropna().mean()  # Thời gian phản hồi TB
-intent_counts = chat_df['intent'].value_counts()  # Số lượng intent
-cta_clicks = chat_df['clicked_cta'].sum()  # Số lượt nhấp CTA
+avg_response = df['response_time'].mean()  # Thời gian phản hồi trung bình
+intent_counts = df['intent'].value_counts()  # Số lượng intent
+cta_clicks = df['clicked_cta'].sum()  # Số lượt nhấp CTA
 cta_rate = cta_clicks / total_msgs  # Tỷ lệ chuyển đổi CTA
-avg_rating = chat_df['rating'].dropna().mean()  # Điểm hài lòng trung bình
-total_rated = chat_df['rating'].count()  # Số lượt đánh giá
-rating_dist = chat_df['rating'].value_counts().sort_index()  # Phân phối điểm
-msg_by_day = chat_df.groupby('date').size()  # Số lượng tin nhắn theo ngày
+avg_rating = df['rating'].dropna().mean()  # Điểm hài lòng trung bình
+total_rated = df['rating'].count()  # Số lượt đánh giá
+rating_dist = df['rating'].value_counts().sort_index()  # Phân phối điểm
+msg_by_day = df.groupby('date').size()  # Số lượng tin nhắn theo ngày
 
 # ====== DASHBOARD ======
 st.title("🤖 Chatbot Facebook Analytics Dashboard")
-st.markdown("### Phân tích hiệu quả chatbot Facebook tự động (dữ liệu demo)")
+st.markdown("### Phân tích hiệu quả chatbot Facebook tự động")
 
 # 4 chỉ số chính
 col1, col2, col3, col4 = st.columns(4)
@@ -52,7 +44,7 @@ col4.metric("Điểm hài lòng TB", f"{avg_rating:.2f}/5 ⭐")
 
 # Hiển thị bảng dữ liệu đầy đủ
 with st.expander("🔍 Xem bảng dữ liệu gốc"):
-    st.dataframe(chat_df)
+    st.dataframe(df)
 
 st.markdown("---")
 
@@ -133,5 +125,5 @@ with tab3:
 # ====== CHÂN TRANG ======
 st.markdown("""
 ---
-*TEAM 202*
+*TEAM 202_CHALLENGE 12: FACEBOOK_AGENT*
 """)

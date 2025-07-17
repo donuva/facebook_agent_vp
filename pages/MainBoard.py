@@ -60,7 +60,7 @@ if quick_intent:
 
 # ========== CẢNH BÁO CÂU KHÓ ==========
 try:
-    n_new_hard = len(df[(df["confidence"].astype(float) < 0.7) & (~df["handled"].astype(str).isin(["1", "True", "true"]))])
+    n_new_hard = len(df[(df["confidence"].astype(float) < 0.75) & (~df["handled"].astype(str).isin(["1", "True", "true"]))])
 except:
     n_new_hard = 0
 if n_new_hard > 0:
@@ -69,8 +69,8 @@ if n_new_hard > 0:
 # ========== BÁO CÁO TỔNG QUÁT ==========
 col1, col2, col3 = st.columns(3)
 try:
-    n_confident = len(df[df["confidence"].astype(float) >= 0.8])
-    n_hard = len(df[df["confidence"].astype(float) < 0.8])
+    n_confident = len(df[df["confidence"].astype(float) >= 0.75])
+    n_hard = len(df[df["confidence"].astype(float) < 0.75])
     avg_resp = round(df["confidence"].astype(float).mean() * 10, 2)
 except:
     n_confident = 0
@@ -98,8 +98,8 @@ def save_admin_edit(row, note, feedback, admin_reply, handled, rating, intent, e
 
 # Cột trái: Câu LLM tự tin
 with left:
-    st.subheader("✅ Câu trả lời tự tin (LLM confident)")
-    conf_df = df_view[df_view['confidence'].astype(float) >= 0.8]
+    st.subheader("✅ Câu trả lời tự tin ")
+    conf_df = df_view[df_view['confidence'].astype(float) >= 0.75]
     for i, row in conf_df.iterrows():
         with st.expander(f"{row['user']}: {row['question']} [{row['confidence']}]"):
             st.write(f"**Trả lời:** {row['answer']}")
@@ -122,12 +122,41 @@ with left:
             editor = st.selectbox("Người chỉnh", admin_users, key=f"editor{row['fb_comment_id']}")
             if st.button("Lưu chỉnh sửa", key=f"save{row['fb_comment_id']}"):
                 save_admin_edit(row, note, feedback, admin_reply, handled, llm_score, intent_val, editor)
-                st.experimental_rerun()
+                st.rerun()
 
-# Cột phải: Câu hỏi khó
+# # Cột phải: Câu hỏi khó
+# with right:
+#     st.subheader("🤔 Câu hỏi khó")
+#     hard_df = df_view[df_view['confidence'].astype(float) < 0.75]
+#     for i, row in hard_df.iterrows():
+#         with st.expander(f"{row['user']}: {row['question']} [{row['confidence']}]"):
+#             st.write(f"**Gợi ý trả lời:** {row['answer']}")
+#             st.write(f"**Chiến dịch:** {row['campaign']}")
+#             st.write(f"**Intent:** {row['intent']}")
+#             st.write(f"[➡️ Xem bình luận Facebook]({row['url']})")
+#             note = st.text_area("Ghi chú nội bộ", value=row["admin_note"], key=f"note2{row['fb_comment_id']}")
+#             feedback = st.text_area("Góp ý cho chatbot", value=row["feedback"], key=f"fb2{row['fb_comment_id']}")
+#             admin_reply = st.text_area("Phản hồi admin", value=row["admin_reply"], key=f"admrep2{row['fb_comment_id']}")
+#             llm_score = st.slider(
+#                 f"Chấm điểm LLM (1-5)",
+#                 1, 5,
+#                 int(row["rating"]) if pd.notna(row["rating"]) and str(row["rating"]).isdigit() else 3,
+#                 step=1,
+#                 key=f"score2{row['fb_comment_id']}"
+#             )
+#             intent_val = st.selectbox("Gắn intent", intent_list, index=intent_list.index(row["intent"]) if row["intent"] in intent_list else 0, key=f"intent2{row['fb_comment_id']}")
+#             handled = st.checkbox("Đã xử lý", value=(str(row["handled"]).lower() in ["1", "true"]), key=f"handled2{row['fb_comment_id']}")
+#             editor = st.selectbox("Người chỉnh", admin_users, key=f"editor2{row['fb_comment_id']}")
+#             if st.button("Lưu chỉnh sửa", key=f"save2{row['fb_comment_id']}"):
+#                 save_admin_edit(row, note, feedback, admin_reply, handled, llm_score, intent_val, editor)
+#                 st.rerun()
+
 with right:
     st.subheader("🤔 Câu hỏi khó (LLM không tự tin)")
-    hard_df = df_view[df_view['confidence'].astype(float) < 0.8]
+    hard_df = df[(df["confidence"].astype(float) < 0.75)]  # Lọc từ df gốc, không phải df_view, vì có thể bị loại trong filter khác
+    # Kiểm tra dữ liệu đã tồn tại chưa
+    if hard_df.empty:
+        st.info("Không có câu hỏi khó trong dữ liệu được lọc.")
     for i, row in hard_df.iterrows():
         with st.expander(f"{row['user']}: {row['question']} [{row['confidence']}]"):
             st.write(f"**Gợi ý trả lời:** {row['answer']}")
@@ -149,7 +178,7 @@ with right:
             editor = st.selectbox("Người chỉnh", admin_users, key=f"editor2{row['fb_comment_id']}")
             if st.button("Lưu chỉnh sửa", key=f"save2{row['fb_comment_id']}"):
                 save_admin_edit(row, note, feedback, admin_reply, handled, llm_score, intent_val, editor)
-                st.experimental_rerun()
+                st.rerun()
 
 # ========== BẢNG NHẬT KÝ ==========
 st.markdown("---")

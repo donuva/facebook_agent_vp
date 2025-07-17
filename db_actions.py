@@ -7,8 +7,10 @@ import pandas as pd
 DB_PATH = 'mainboard.db'
 
 # ====== TẠO BẢNG ======
+# ====== TẠO BẢNG ======
 def create_db():
     conn = sqlite3.connect(DB_PATH)
+    # Thêm cột is_bot_reply vào bảng nếu chưa có
     conn.execute('''
         CREATE TABLE IF NOT EXISTS mainboard (
             fb_comment_id TEXT PRIMARY KEY,
@@ -28,30 +30,32 @@ def create_db():
             last_editor TEXT,
             last_edit_time TEXT,
             edit_log TEXT,
-            search TEXT
+            search TEXT,
+            is_bot_reply INTEGER DEFAULT 0
         )
     ''')
     conn.commit()
     conn.close()
 
+
 # ====== HÀM LƯU CƠ BẢN (nhận tin mới) ======
-def insert_message(fb_comment_id, date, user, question, campaign=None, url=None):
+def insert_message(fb_comment_id, date, user, question, campaign=None, url=None, is_bot_reply=True):
     conn = sqlite3.connect(DB_PATH)
     conn.execute('''
         INSERT OR IGNORE INTO mainboard 
-        (fb_comment_id, date, user, question, campaign, url)
-        VALUES (?, ?, ?, ?, ?, ?)
-    ''', (fb_comment_id, date, user, question, campaign, url))
+        (fb_comment_id, date, user, question, campaign, url, is_bot_reply)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    ''', (fb_comment_id, date, user, question, campaign, url, is_bot_reply))
     conn.commit()
     conn.close()
 
 # ====== HÀM UPDATE KẾT QUẢ LLM ======
-def update_llm_result(fb_comment_id, answer, confidence, intent):
+def update_llm_result(fb_comment_id, answer, confidence, intent, is_bot_reply=True):
     conn = sqlite3.connect(DB_PATH)
     conn.execute('''
-        UPDATE mainboard SET answer=?, confidence=?, intent=?
+        UPDATE mainboard SET answer=?, confidence=?, intent=?, is_bot_reply=?
         WHERE fb_comment_id=?
-    ''', (answer, confidence, intent, fb_comment_id))
+    ''', (answer, confidence, intent, is_bot_reply, fb_comment_id))
     conn.commit()
     conn.close()
 
@@ -59,7 +63,7 @@ def update_llm_result(fb_comment_id, answer, confidence, intent):
 def update_admin_fields(
     fb_comment_id, 
     admin_reply=None, handled=None, rating=None, feedback=None, admin_note=None,
-    last_editor=None
+    last_editor=None, is_bot_reply=None
 ):
     conn = sqlite3.connect(DB_PATH)
     now = datetime.datetime.now().isoformat()
@@ -86,9 +90,14 @@ def update_admin_fields(
         fields.append('last_edit_time=?')
         values.append(now)
         # Tự động ghi thêm vào edit_log
-        conn.execute('''
-            UPDATE mainboard SET edit_log = COALESCE(edit_log, '') || ? WHERE fb_comment_id=?
+        conn.execute(''' 
+            UPDATE mainboard SET edit_log = COALESCE(edit_log, '') || ? WHERE fb_comment_id=? 
         ''', (f"\n{now} - {last_editor} edited.", fb_comment_id))
+    
+    if is_bot_reply is not None:
+        fields.append('is_bot_reply=?')
+        values.append(is_bot_reply)
+
     # Cập nhật các trường
     if fields:
         sql = f"UPDATE mainboard SET {', '.join(fields)} WHERE fb_comment_id=?"
@@ -96,6 +105,7 @@ def update_admin_fields(
         conn.execute(sql, tuple(values))
         conn.commit()
     conn.close()
+
 
 # ====== HÀM UPDATE TRƯỜNG ĐƠN LẺ (VD: chỉ intent, hoặc handled,...) ======
 def update_single_field(fb_comment_id, field, value):
