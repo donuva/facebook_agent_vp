@@ -1,22 +1,17 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
-from datetime import datetime, timedelta
 import plotly.express as px
 import plotly.graph_objects as go
 from db_actions import load_all  # Hàm load_all() để lấy dữ liệu từ DB
 
-# Cấu hình trang hiển thị
-st.set_page_config(page_title="Chatbot Facebook Dashboard", layout="wide")
-
+# # Cấu hình trang hiển thị
+# st.set_page_config(page_title="Chatbot Facebook Dashboard", layout="wide")
 
 # ====== LOAD DỮ LIỆU THẬT ======
 # Load dữ liệu từ DB
 df = load_all()  # Giả sử bạn có hàm load_all() trong db_actions.py để lấy dữ liệu từ DB
 
 st.dataframe(df)
-# # Tạo cột ngày để nhóm thống kê theo ngày
-# df['date'] = pd.to_datetime(df['timestamp']).dt.date  # Thêm cột ngày để nhóm theo ngày
 
 # ====== TÍNH TOÁN CHỈ SỐ TỔNG HỢP ======
 total_msgs = len(df)  # Tổng số tin nhắn
@@ -24,8 +19,6 @@ bot_replies = df['is_bot_reply'].sum()  # Số tin nhắn do bot phản hồi
 success_rate = bot_replies / total_msgs  # Tỷ lệ bot phản hồi
 avg_response = df['response_time'].mean()  # Thời gian phản hồi trung bình
 intent_counts = df['intent'].value_counts()  # Số lượng intent
-cta_clicks = df['clicked_cta'].sum()  # Số lượt nhấp CTA
-cta_rate = cta_clicks / total_msgs  # Tỷ lệ chuyển đổi CTA
 avg_rating = df['rating'].dropna().mean()  # Điểm hài lòng trung bình
 total_rated = df['rating'].count()  # Số lượt đánh giá
 rating_dist = df['rating'].value_counts().sort_index()  # Phân phối điểm
@@ -64,17 +57,6 @@ with tab1:
                       title="Intent phổ biến nhất")
         st.plotly_chart(fig1, use_container_width=True)
 
-    with c2:
-        # Biểu đồ donut: tỷ lệ nhấp CTA
-        cta_data = pd.DataFrame({
-            'Loại': ['Nhấp CTA', 'Không nhấp'],
-            'Số lượng': [cta_clicks, total_msgs - cta_clicks]
-        })
-        fig2 = px.pie(cta_data, values='Số lượng', names='Loại', hole=0.5,
-                      color_discrete_sequence=px.colors.sequential.RdBu,
-                      title="Tỷ lệ chuyển đổi CTA")
-        st.plotly_chart(fig2, use_container_width=True)
-
     c3, c4 = st.columns([1, 1])
     with c3:
         # Gauge: đánh giá trung bình
@@ -108,8 +90,7 @@ with tab2:
     st.markdown("#### Số lượng tin nhắn theo intent")
     st.dataframe(intent_counts.rename_axis("Intent").reset_index(name="Số lượng"))
     
-    st.markdown("#### Thống kê chuyển đổi CTA & đánh giá")
-    st.metric("Số lượt nhấp CTA", cta_clicks)
+    st.markdown("#### Thống kê đánh giá")
     st.metric("Tổng lượt đánh giá", total_rated)
 
 # ====== TAB 3: Tương tác theo thời gian ======
@@ -120,10 +101,8 @@ with tab3:
                    title="Tương tác người dùng theo ngày")
     st.plotly_chart(fig5, use_container_width=True)
 
-    # Nếu cần, có thể thêm bộ lọc ngày tại đây
-
 # ====== CHÂN TRANG ======
-st.markdown("""
----
-*TEAM 202_CHALLENGE 12: FACEBOOK_AGENT*
+st.markdown(""" 
+--- 
+*TEAM 202_CHALLENGE 12: FACEBOOK_AGENT* 
 """)

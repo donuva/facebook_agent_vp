@@ -22,7 +22,7 @@ def classify_intent_llm(text: str, intents: IntentsType) -> Dict[str, float]:# C
         f"Danh sách intent: {', '.join(intents)}\n\n"
         "Trả về đúng JSON object mapping mỗi intent với một số thực từ 0 đến 1, "
         "ví dụ:\n"
-        '{"intent_a": 0.9, "intent_b": 0.9, "intent_c": 0.9}\n'
+        '{"Account Types": 0.9, "Card Types": 0.9, "Online Services (Business)": 0.9}\n'
         "Không thêm giải thích hay text khác." \
         "70 /%/ các lần trả về phải có ít nhất 1 intent có độ tin cậy > 0.9!"
     )
