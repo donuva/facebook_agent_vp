@@ -11,7 +11,7 @@ from db_actions import load_all  # Hàm load_all() để lấy dữ liệu từ 
 # Load dữ liệu từ DB
 df = load_all()  # Giả sử bạn có hàm load_all() trong db_actions.py để lấy dữ liệu từ DB
 
-st.dataframe(df)
+# st.dataframe(df)
 
 # ====== TÍNH TOÁN CHỈ SỐ TỔNG HỢP ======
 total_msgs = len(df)  # Tổng số tin nhắn

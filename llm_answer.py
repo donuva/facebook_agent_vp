@@ -21,7 +21,7 @@ def facebook_response(user_input):
     Trả về (answer, confidence, intent)
     """
     # ---- (a) Truy vấn vector DB lấy context
-    search_results = query(query_text=user_input, index=db_index, chunks=all_chunks, distance_threshold=5)
+    search_results = query(query_text=user_input, index=db_index, chunks=all_chunks, top_k=20, distance_threshold=10)
     docs = " ".join(search_results)
     retrieved_context = {"role": "system", "content": f"Retrieved Document: {docs}"}
     
