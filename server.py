@@ -76,7 +76,7 @@ async def webhook(request: Request):
                         date=date,
                         user=from_id,
                         question=comment,
-                        campaign = get_campaign(get_post_info(post_id).get("message"))
+                        campaign = get_campaign(get_post_info(post_id).get("message")),
                         url=f"https://facebook.com/{post_id}"
                     )
                     # 2. Gọi LLM để lấy answer, confidence, intent
