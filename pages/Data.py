@@ -29,7 +29,7 @@ with open('data/.cache/chunks.txt', 'r', encoding='utf-8') as f:
 # ------------------ Chọn database để lưu trữ embeddings ------------------
 options = st.multiselect(
     "Lưu embeddings vào cơ sở dữ liệu:",
-    ["Mail Database", "Default Database", "Drive Database"],
+    ["Account Database", "Card Database", "Business Database"],
 )
 
 # ------------------ Chọn kích thước đoạn văn (chunk) ------------------
@@ -59,11 +59,11 @@ if uploaded_files:
             st.text_area(f"Nội dung của {file.name}", text, height=200)
 
             # Lưu embeddings vào database tương ứng
-            if "Mail Database" in options:
+            if "Account Database" in options:
                 store_embeddings_faiss(embeddings=embeddings, index=Mail_index)
-            if "Default Database" in options:
+            if "Card Database" in options:
                 store_embeddings_faiss(embeddings=embeddings, index=Default_index)
-            if "Drive Database" in options:
+            if "Business Database" in options:
                 store_embeddings_faiss(embeddings=embeddings, index=Drive_index)
 
     # ------------------ Ghi lại chunks vào file đệm ------------------
@@ -73,11 +73,11 @@ if uploaded_files:
             f.write(chunk + "\n|||")
 
     # ------------------ Lưu chỉ mục FAISS vào file ------------------
-    if "Mail Database" in options:
+    if "Account Database" in options:
         save_index(Mail_index, filename='data/.cache/faiss_Mail_index.bin')
-    if "Default Database" in options:
+    if "Card Database" in options:
         save_index(Default_index, filename='data/.cache/faiss_Default_index.bin')
-    if "Drive Database" in options:
+    if "Business Database" in options:
         save_index(Drive_index, filename='data/.cache/faiss_Drive_index.bin')
 
 # ------------------ Hiển thị footer ------------------

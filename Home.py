@@ -45,7 +45,7 @@ def login(cursor):
             st.session_state.id = user_data[0]
             st.session_state.name = username
             st.session_state.password = password
-            st.switch_page("pages/Chat.py")
+            st.switch_page("pages/MainBoard.py")
 
 # ----------------------- Hiển thị trạng thái đăng nhập -----------------------
 def show_logged_in(cursor):

@@ -40,10 +40,12 @@ with st.sidebar:
     st.write("**Gắn intent/tag nhanh**")
     quick_intent = st.selectbox("Chọn intent phổ biến", [""] + intent_list)
 
-# ========== ÁP DỤNG BỘ LỌC ==========
+# ========== ÁP DỤNG BỘ LỌC ========== 
 df_view = df.copy()
 if filter_date:
-    df_view = df_view[df_view["date"] == pd.to_datetime(filter_date).date().isoformat()]
+    # Chuyển đổi trường "date" thành ngày và so sánh với filter_date
+    df_view['date'] = pd.to_datetime(df_view['date']).dt.date  # Chỉ lấy phần ngày
+    df_view = df_view[df_view["date"] == filter_date]
 df_view = df_view[(df_view["confidence"].astype(str).astype(float) >= filter_conf[0]) & (df_view["confidence"].astype(str).astype(float) <= filter_conf[1])]
 if filter_campaign:
     df_view = df_view[df_view["campaign"].isin(filter_campaign)]
@@ -51,12 +53,12 @@ if filter_user:
     df_view = df_view[df_view["user"].isin(filter_user)]
 if filter_handled != "Tất cả":
     handled_val = (filter_handled == "Đã xử lý")
-    # Chuyển sang bool nếu bị lưu là int
     df_view = df_view[df_view["handled"].astype(str).apply(lambda x: x in ["1", "True", "true"]) == handled_val]
 if search_key:
     df_view = df_view[df_view["search"].str.lower().str.contains(search_key.lower())]
 if quick_intent:
     df_view = df_view[df_view["intent"] == quick_intent]
+
 
 # ========== CẢNH BÁO CÂU KHÓ ==========
 try:
