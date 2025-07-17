@@ -91,7 +91,7 @@ async def webhook(request: Request):
                     # 3. Update vào DB
                     is_bot_reply = (conf >= CONFIDENCE_THRESHOLD)
                     response_time = (datetime.datetime.now() - datetime.datetime.fromisoformat(date)).total_seconds()
-                    update_llm_result(mid, ans, conf, intent, is_bot_reply, response_time)
+                    update_llm_result(comment_id, ans, conf, intent, is_bot_reply, response_time)
                     # 4. Trả lời lại FB
                     if conf >= CONFIDENCE_THRESHOLD:
                         reply_to_comment(comment_id, ans)
