@@ -32,7 +32,7 @@ def get_campaign(text): #lấy tên hastash làm tên campaign
         if "#" in word:
             campaign_list.append(word.split("#")[1])
 
-    return campaign_list
+    return campaign_list[0]
 
 def confidence_score(question, answer):#few_shot + random sampling
     pass
