@@ -69,14 +69,14 @@ async def webhook(request: Request):
                 date = datetime.datetime.now().isoformat()
                 # ---- XỬ LÝ COMMENT ----
                 if from_id != PAGE_ID and field == "feed" and verb == "add" and item == "comment" and comment_id:
-                    print(get_post_info(post_id))
+                    print(post_id)
                     # 1. Lưu vào DB
                     insert_message(
                         fb_comment_id=comment_id,
                         date=date,
                         user=from_id,
                         question=comment,
-                        campaign = get_campaign(get_post_info(post_id).get("message")),
+                        #campaign = get_campaign(get_post_info(post_id).get("message")),
                         url=f"https://facebook.com/{post_id}"
                     )
                     # 2. Gọi LLM để lấy answer, confidence, intent

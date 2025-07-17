@@ -25,8 +25,8 @@ def reply_to_comment(comment_id, text):
     print(f"ĐẪ TRẢ LỜI COMMENT là {r.text}")
 
 def get_post_info(post_id):
-    url = f"https://graph.facebook.com/v19.0/{post_id}"
-    fields = "message"
+    url = f"https://graph.facebook.com/v23.0/{post_id}"
+    fields = "message, story, created_time, permalink_url, attachments"
     params = {
         "fields": fields,
         "access_token": PAGE_ACCESS_TOKEN
@@ -52,5 +52,5 @@ def confidence_score(question, answer):#few_shot + random sampling
     pass
 
 
-#print(get_post_info())
+print(get_post_info(200090973179526_122233803668150598))
 
